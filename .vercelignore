@@ -1,0 +1,8 @@
+.git
+.gitignore
+.vercelignore
+.env*
+.DS_Store
+README.md
+tools
+node_modules
