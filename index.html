@@ -33,13 +33,14 @@
 /* v3. Opening: één detail in een klein venster tussen de woorden; scrollen opent het venster tot de foto
    schermvullend is. Daarna schuift een vel over de foto (de foto wijkt terug) met meteen het antwoord op
    wie, wat, voor wie, waar en hoe je contact opneemt. De rest staat rustig op een vaste breedte:
-   diensten als lijst, werk als index, over, contact. Eén letter: Switzer (Indian Type Foundry). */
+   diensten als vijf kolommen, werk als rustig raster, over en contact met het label in de kantlijn. Eén letter: Switzer (Indian Type Foundry). */
 @font-face{font-family:"Switzer";src:url(fonts/switzer-400.woff2) format("woff2");font-weight:400;font-display:swap}
 @font-face{font-family:"Switzer";src:url(fonts/switzer-500.woff2) format("woff2");font-weight:500;font-display:swap}
 :root{
   --bg:#F7F6F2; --bg-2:#ECE9E3; --ink:#131312; --ink-2:#55514B; --ink-3:#736E67; --line:#DEDAD2;
   --sans:"Switzer","Helvetica Neue",Helvetica,Arial,sans-serif;
   --max:1280px; --pad:clamp(18px,3vw,40px); --gap:clamp(14px,1.8vw,26px);
+  --edge:max(var(--pad),calc((100% - var(--max)) / 2 + var(--pad)));
   --out:cubic-bezier(.16,1,.3,1); --soft:cubic-bezier(.4,0,.2,1);
   color-scheme:light;
 }
@@ -69,12 +70,12 @@ nav a{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repe
 nav a:hover{background-size:100% 1px}
 
 /* balk die verschijnt zodra de opening voorbij is */
-.bar{position:fixed;inset:0 0 auto;z-index:60;background:color-mix(in srgb,var(--bg) 86%,transparent);-webkit-backdrop-filter:saturate(1.3) blur(14px);backdrop-filter:saturate(1.3) blur(14px);box-shadow:0 1px 0 var(--line);transform:translateY(-101%);transition:transform .55s var(--out)}
+.bar{position:fixed;inset:0 0 auto;z-index:60;background:rgba(247,246,242,.9);background:color-mix(in srgb,var(--bg) 86%,transparent);-webkit-backdrop-filter:saturate(1.3) blur(14px);backdrop-filter:saturate(1.3) blur(14px);box-shadow:0 1px 0 var(--line);transform:translateY(-101%);transition:transform .55s var(--out)}
 .bar.show{transform:none}
 .bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:56px}
 .bar .sig{height:24px}
 .bar nav{display:flex;gap:24px;font-size:14px}
-@media (max-width:560px){.bar nav{gap:18px}.bar nav .opt{display:none}.bar .sig{height:22px}}
+@media (max-width:560px){.bar nav{gap:18px}nav .opt{display:none}.bar .sig{height:22px}}
 
 /* opening: het venster */
 .venster{position:relative;height:300vh}
@@ -83,7 +84,7 @@ nav a:hover{background-size:100% 1px}
 .frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(calc(var(--sc,1.22) * var(--push,1)))}
 .veil{position:absolute;inset:0;background:#0e0e0d;opacity:var(--veil,0);pointer-events:none}
 .shade{position:absolute;inset:auto 0 0;height:40%;background:linear-gradient(to top,rgba(12,12,11,.5),rgba(12,12,11,0));opacity:var(--io,0);pointer-events:none}
-.hd{position:absolute;inset:0 0 auto;z-index:3;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:72px;padding:0 var(--pad);font-size:14px;opacity:var(--ho,1);visibility:var(--hv,visible)}
+.hd{position:absolute;inset:0 0 auto;z-index:3;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:72px;padding:0 var(--edge);font-size:14px;opacity:var(--ho,1);visibility:var(--hv,visible)}
 .hd .where{color:var(--ink-3)}
 .hd .where b{font-weight:400;color:var(--ink);margin-left:6px}
 .hd nav{justify-self:end;display:flex;gap:24px}
@@ -95,7 +96,7 @@ nav a:hover{background-size:100% 1px}
 .cap{position:absolute;left:50%;top:calc(50% + var(--hh) + 16px);transform:translateX(-50%);font-size:13px;color:var(--ink-3);white-space:nowrap;opacity:var(--co,1)}
 .hint{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);display:grid;justify-items:center;gap:10px;font-size:12px;color:var(--ink-3);opacity:var(--co,1)}
 .hint i{width:1px;height:34px;background:currentColor;animation:drip 2.4s cubic-bezier(.65,0,.35,1) infinite}
-.credit{position:absolute;left:var(--pad);right:var(--pad);bottom:clamp(20px,3vw,36px);display:flex;justify-content:space-between;gap:20px;color:#fff;font-size:14px;opacity:var(--io,0);transform:translateY(calc((1 - var(--io,0)) * 12px))}
+.credit{position:absolute;left:var(--edge);right:var(--edge);bottom:clamp(20px,3vw,36px);display:flex;justify-content:space-between;gap:20px;color:#fff;font-size:14px;opacity:var(--io,0);transform:translateY(calc((1 - var(--io,0)) * 12px))}
 .credit b{font-weight:500}
 .credit span{opacity:.8}
 @media (max-width:760px){
@@ -110,7 +111,7 @@ nav a:hover{background-size:100% 1px}
 .sheet{position:relative;z-index:2;margin-top:-100svh;background:var(--bg);border-radius:22px 22px 0 0;box-shadow:0 -40px 80px -50px rgba(0,0,0,.55)}
 
 /* intro: wie, wat, voor wie, waar */
-.intro{padding-top:clamp(28px,3vw,40px);padding-bottom:clamp(88px,10vw,150px)}
+.intro{padding-top:calc(56px + clamp(16px,2vw,28px));padding-bottom:clamp(88px,10vw,150px)}
 .intro-top{display:flex;justify-content:space-between;align-items:baseline;gap:20px;font-size:14px}
 .intro-top .who{font-size:14px;font-weight:500}
 .intro-top p{color:var(--ink-3);font-variant-numeric:tabular-nums}
@@ -125,10 +126,12 @@ nav a:hover{background-size:100% 1px}
 .sec-head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);row-gap:18px;align-items:baseline;padding-top:16px;border-top:1px solid var(--ink);margin-bottom:clamp(36px,4.5vw,64px)}
 .label{grid-column:1/span 3;font-size:14px;font-weight:500}
 .sec-main{grid-column:4/-1;display:grid;gap:20px}
-.sec-main .display{font-size:clamp(28px,3vw,44px);letter-spacing:-.035em;line-height:1.06}
+.sec-main .display,.c-intro .display{font-size:clamp(28px,3vw,44px);letter-spacing:-.035em;line-height:1.06}
 .note{color:var(--ink-2);max-width:48ch;text-wrap:pretty}
-.body{margin-left:calc((100% + var(--gap)) * 3 / 12)}
-@media (max-width:860px){.label,.sec-main{grid-column:1/-1}.body{margin-left:0}}
+.split{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);row-gap:18px;align-items:start;padding-top:16px;border-top:1px solid var(--ink)}
+.split>.label{line-height:1.2}
+.split>:not(.label){grid-column:4/-1}
+@media (max-width:860px){.label,.sec-main,.split>:not(.label){grid-column:1/-1}.split{row-gap:28px}}
 
 /* diensten: vijf gelijke kolommen */
 .svc5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--gap)}
@@ -159,19 +162,19 @@ nav a:hover{background-size:100% 1px}
 @media (max-width:760px){.works{grid-template-columns:1fr}}
 
 /* over */
-.about{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));column-gap:var(--gap);row-gap:36px;align-items:end}
+.about{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));column-gap:var(--gap);row-gap:28px;align-items:end}
 .pic{grid-column:1/span 5}
 .pic img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px;background:var(--bg-2)}
 .txt{grid-column:6/-1;display:grid;gap:18px;padding-bottom:8px}
 .txt>p{color:var(--ink-2);font-size:clamp(16px,1.2vw,18px);line-height:1.6;max-width:40ch;text-wrap:pretty}
 .txt .sign{height:40px;margin-top:14px;color:var(--ink)}
-@media (max-width:860px){.pic,.txt{grid-column:1/-1}.pic img{aspect-ratio:4/5}}
+@media (max-width:640px){.pic,.txt{grid-column:1/-1}}
 
 /* contact: één rustige kaart */
-.cbox{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);row-gap:36px;padding:clamp(28px,4vw,56px);border-radius:16px;background:#fff}
-.c-intro{grid-column:1/span 6;display:grid;gap:14px;align-content:start}
+.cbox{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:36px clamp(32px,5vw,72px);padding:clamp(28px,4vw,56px);border-radius:16px;background:#fff}
+.c-intro{flex:1 1 300px;max-width:30rem;display:grid;gap:14px}
 .c-intro .note{max-width:40ch}
-.c-ways{grid-column:8/-1;display:grid;gap:28px;align-content:end}
+.c-ways{flex:0 1 auto;min-width:0;display:grid;gap:28px}
 .way{display:grid;gap:4px}
 .way .k{font-size:13px;color:var(--ink-3)}
 .way .v{font-size:clamp(19px,1.7vw,24px);font-weight:500;letter-spacing:-.02em;overflow-wrap:anywhere;user-select:all}
@@ -179,7 +182,6 @@ nav a:hover{background-size:100% 1px}
 .tbtn.ok{background-size:0 1px}
 .call{display:none}
 @media (hover:none),(pointer:coarse){.call{display:inline}}
-@media (max-width:860px){.c-intro,.c-ways{grid-column:1/-1}}
 
 .foot .wrap>div{display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px;padding:24px 0 calc(28px + env(safe-area-inset-bottom));border-top:1px solid var(--ink);font-size:13px;color:var(--ink-3)}
 .foot .sig{height:24px;margin-right:auto;color:var(--ink)}
@@ -245,7 +247,7 @@ nav a:hover{background-size:100% 1px}
       <div class="hd">
         <a href="#top" aria-label="Freek Wennekers Vastgoedfotografie"><i class="sig" aria-hidden="true"></i></a>
         <p class="where">Vastgoedfotografie<b>Haarlem en omstreken</b></p>
-        <nav aria-label="Snel naar"><a href="#diensten">Diensten</a><a href="#werk">Werk</a><a href="#contact">Contact</a></nav>
+        <nav aria-label="Snel naar"><a href="#diensten">Diensten</a><a href="#werk">Werk</a><a class="opt" href="#over">Over</a><a href="#contact">Contact</a></nav>
       </div>
       <p class="words" aria-hidden="true"><span class="w l"><span>Karakter in</span></span> <span class="w r"><span>ieder detail.</span></span></p>
       <p class="cap">Tjalk, Amstelveen · bij schemering</p>
@@ -283,8 +285,8 @@ nav a:hover{background-size:100% 1px}
         <div class="sec-main"><p class="display">Zes woningen, van grachtenpand tot villa.</p></div>
       </header>
       <ul class="works">
-        <li><button class="work" type="button" data-i="0" aria-label="Tjalk, Amstelveen: 9 foto’s bekijken"><span class="wimg"><img src="img/tjalk-45-1200.webp" srcset="img/tjalk-45-640.webp 640w, img/tjalk-45-1200.webp 1200w" sizes="(min-width: 1280px) 600px, (min-width: 761px) 47vw, 100vw" alt="Vastgoedfoto Tjalk, Amstelveen: vrijstaande villa met tuin" loading="lazy" decoding="async"><img class="alt" src="img/tjalk-06-1200.webp" srcset="img/tjalk-06-640.webp 640w, img/tjalk-06-1200.webp 1200w" sizes="(min-width: 1280px) 600px, (min-width: 761px) 47vw, 100vw" alt="" loading="lazy" decoding="async"></span><span class="wcap"><b>Tjalk</b><span>Amstelveen</span><em>9 foto’s</em></span></button></li>
-        <li><button class="work" type="button" data-i="1" aria-label="Valeriusterras, Amsterdam: 8 foto’s bekijken"><span class="wimg"><img src="img/valeriusterras-01-1200.webp" srcset="img/valeriusterras-01-640.webp 640w, img/valeriusterras-01-1200.webp 1200w" sizes="(min-width: 1280px) 600px, (min-width: 761px) 47vw, 100vw" alt="Vastgoedfoto Valeriusterras, Amsterdam: nieuwbouwappartement" loading="lazy" decoding="async"><img class="alt" src="img/valeriusterras-07-1200.webp" srcset="img/valeriusterras-07-640.webp 640w, img/valeriusterras-07-1200.webp 1200w" sizes="(min-width: 1280px) 600px, (min-width: 761px) 47vw, 100vw" alt="" loading="lazy" decoding="async"></span><span class="wcap"><b>Valeriusterras</b><span>Amsterdam</span><em>8 foto’s</em></span></button></li>
+        <li><button class="work" type="button" data-i="0" aria-label="Tjalk, Amstelveen: 9 foto’s bekijken"><span class="wimg"><img src="img/tjalk-43-1200.webp" srcset="img/tjalk-43-640.webp 640w, img/tjalk-43-1200.webp 1200w" sizes="(min-width: 1280px) 600px, (min-width: 761px) 47vw, 100vw" alt="Vastgoedfoto Tjalk, Amstelveen: vrijstaande villa bij schemering" loading="lazy" decoding="async"><img class="alt" src="img/tjalk-06-1200.webp" srcset="img/tjalk-06-640.webp 640w, img/tjalk-06-1200.webp 1200w" sizes="(min-width: 1280px) 600px, (min-width: 761px) 47vw, 100vw" alt="" loading="lazy" decoding="async"></span><span class="wcap"><b>Tjalk</b><span>Amstelveen</span><em>9 foto’s</em></span></button></li>
+        <li><button class="work" type="button" data-i="1" aria-label="Valeriusterras, Amsterdam: 8 foto’s bekijken"><span class="wimg"><img src="img/valeriusterras-01-1200.webp" srcset="img/valeriusterras-01-640.webp 640w, img/valeriusterras-01-1200.webp 1200w" sizes="(min-width: 1280px) 600px, (min-width: 761px) 47vw, 100vw" alt="Vastgoedfoto Valeriusterras, Amsterdam: nieuwbouwappartement" loading="lazy" decoding="async"><img class="alt" src="img/valeriusterras-18-1200.webp" srcset="img/valeriusterras-18-640.webp 640w, img/valeriusterras-18-1200.webp 1200w" sizes="(min-width: 1280px) 600px, (min-width: 761px) 47vw, 100vw" alt="" loading="lazy" decoding="async"></span><span class="wcap"><b>Valeriusterras</b><span>Amsterdam</span><em>8 foto’s</em></span></button></li>
         <li><button class="work" type="button" data-i="2" aria-label="Schotersingel, Haarlem: 7 foto’s bekijken"><span class="wimg"><img src="img/schotersingel-11-1200.webp" srcset="img/schotersingel-11-640.webp 640w, img/schotersingel-11-1200.webp 1200w" sizes="(min-width: 1280px) 600px, (min-width: 761px) 47vw, 100vw" alt="Vastgoedfoto Schotersingel, Haarlem: benedenwoning met tuin" loading="lazy" decoding="async"><img class="alt" src="img/schotersingel-01-1200.webp" srcset="img/schotersingel-01-640.webp 640w, img/schotersingel-01-1200.webp 1200w" sizes="(min-width: 1280px) 600px, (min-width: 761px) 47vw, 100vw" alt="" loading="lazy" decoding="async"></span><span class="wcap"><b>Schotersingel</b><span>Haarlem</span><em>7 foto’s</em></span></button></li>
         <li><button class="work" type="button" data-i="3" aria-label="Egelantiersstraat, Amsterdam: 9 foto’s bekijken"><span class="wimg"><img src="img/egelantiersstraat-03-1200.webp" srcset="img/egelantiersstraat-03-640.webp 640w, img/egelantiersstraat-03-1200.webp 1200w" sizes="(min-width: 1280px) 600px, (min-width: 761px) 47vw, 100vw" alt="Vastgoedfoto Egelantiersstraat, Amsterdam: grachtenpand met vide" loading="lazy" decoding="async"><img class="alt" src="img/egelantiersstraat-13-1200.webp" srcset="img/egelantiersstraat-13-640.webp 640w, img/egelantiersstraat-13-1200.webp 1200w" sizes="(min-width: 1280px) 600px, (min-width: 761px) 47vw, 100vw" alt="" loading="lazy" decoding="async"></span><span class="wcap"><b>Egelantiersstraat</b><span>Amsterdam</span><em>9 foto’s</em></span></button></li>
         <li><button class="work" type="button" data-i="4" aria-label="Hillegomstraat, Amsterdam: 8 foto’s bekijken"><span class="wimg"><img src="img/hillegomstraat-01-1200.webp" srcset="img/hillegomstraat-01-640.webp 640w, img/hillegomstraat-01-1200.webp 1200w" sizes="(min-width: 1280px) 600px, (min-width: 761px) 47vw, 100vw" alt="Vastgoedfoto Hillegomstraat, Amsterdam: benedenwoning met tuin" loading="lazy" decoding="async"><img class="alt" src="img/hillegomstraat-09-1200.webp" srcset="img/hillegomstraat-09-640.webp 640w, img/hillegomstraat-09-1200.webp 1200w" sizes="(min-width: 1280px) 600px, (min-width: 761px) 47vw, 100vw" alt="" loading="lazy" decoding="async"></span><span class="wcap"><b>Hillegomstraat</b><span>Amsterdam</span><em>8 foto’s</em></span></button></li>
@@ -293,29 +295,30 @@ nav a:hover{background-size:100% 1px}
     </section>
 
     <section class="sec wrap" id="over" aria-labelledby="h-over">
-      <header class="sec-head">
-        <h2 class="label" id="h-over">Over</h2>
-        
-      </header>
-      <div class="body about">
-        <!-- tijdelijk beeld: vervangen door de foto van Freek die door een woning loopt en fotografeert -->
-        <figure class="pic"><img src="img/hillegomstraat-05-1200.webp" srcset="img/hillegomstraat-05-640.webp 640w, img/hillegomstraat-05-1200.webp 1200w" sizes="(min-width: 861px) 440px, 90vw" alt="Freek Wennekers aan het werk in een woning" loading="lazy" decoding="async"></figure>
+      <div class="split">
+      <h2 class="label" id="h-over">Over</h2>
+      <div class="about">
+        <!-- tijdelijk beeld: vervangen door de foto van Freek die door een woning loopt en fotografeert (alt dan: "Freek Wennekers fotografeert een woning") -->
+        <figure class="pic"><img src="img/schotersingel-21-1200.webp" srcset="img/schotersingel-21-640.webp 640w, img/schotersingel-21-1200.webp 1200w" sizes="(min-width: 1280px) 500px, (min-width: 641px) 40vw, 92vw" alt="Keuken en eettafel met doorkijk naar de tuin, Schotersingel in Haarlem" loading="lazy" decoding="async"></figure>
         <div class="txt">
           <p>Ik ben Freek Wennekers, vastgoedfotograaf in Haarlem en omstreken. Ik werk voor makelaars, ontwikkelaars en particuliere verkopers en heb ruim 2.400 woningen gefotografeerd.</p>
           <p>Ik neem de tijd voor licht en opstelling, en bewerk al het materiaal zelf. Zo krijgt elke woning dezelfde zorg en dezelfde stijl, van de eerste foto tot de plattegrond.</p>
           <i class="sig sign" aria-label="Freek Wennekers" role="img"></i>
         </div>
       </div>
+      </div>
     </section>
 
     <section class="sec wrap" id="contact" aria-labelledby="h-contact">
-      <header class="sec-head"><h2 class="label" id="h-contact">Contact</h2></header>
+      <div class="split">
+      <h2 class="label" id="h-contact">Contact</h2>
       <div class="cbox">
         <div class="c-intro"><p class="display">Vragen?</p><p class="note">Bel of mail gerust, ook als je nog aan het oriënteren bent. Stuur het adres van de woning en wat je nodig hebt mee, dan maak ik een vrijblijvende offerte op maat.</p></div>
         <div class="c-ways">
           <div class="way"><span class="k">E-mail</span><span class="v">freekwennekers@gmail.com</span><span class="a"><button class="ul tbtn" type="button" data-copy="freekwennekers@gmail.com">Kopieer</button></span></div>
           <div class="way"><span class="k">Telefoon</span><span class="v">+31 6 28 18 65 51</span><span class="a"><a class="ul call" href="tel:+31628186551">Bel direct</a><button class="ul tbtn" type="button" data-copy="+31 6 28 18 65 51">Kopieer</button></span></div>
         </div>
+      </div>
       </div>
     </section>
 
@@ -346,7 +349,7 @@ const url=(f,w)=>`img/${f}-${w}.webp`;
 const srcset=f=>[320,640,1200,1800].filter(w=>w<1800||!NO1800.has(f)).map(w=>`${url(f,w)} ${w}w`).join(', ');
 const ready=im=>im.complete&&im.naturalWidth?Promise.resolve():(im.decode?im.decode():new Promise((r,j)=>{im.onload=r;im.onerror=j}));
 const P=[
-  {k:'tjalk',t:'Tjalk',c:'Amstelveen',d:'Vrijstaande villa met tuin',n:[45,43,1,5,6,15,25,34,47]},
+  {k:'tjalk',t:'Tjalk',c:'Amstelveen',d:'Vrijstaande villa met tuin',n:[43,45,1,5,6,15,25,34,47]},
   {k:'valeriusterras',t:'Valeriusterras',c:'Amsterdam',d:'Nieuwbouwproject The One Floors',n:[1,7,10,11,12,17,18,19]},
   {k:'schotersingel',t:'Schotersingel',c:'Haarlem',d:'Benedenwoning met tuin',n:[11,1,4,21,26,44,55]},
   {k:'egelantiersstraat',t:'Egelantiersstraat',c:'Amsterdam',d:'Grachtenpand met vide',n:[3,1,5,13,16,17,29,33,43]},
