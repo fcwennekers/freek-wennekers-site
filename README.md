@@ -21,6 +21,13 @@ Eén statische pagina: geen framework, geen build-stap. Live op https://freek-we
 2. `npm i --no-save sharp` en daarna `node tools/build-img.mjs <map>`.
 3. Pas in `index.html` de lijst `P` (reeks per woning) en de werkkaarten aan.
 
+## Foto bij Over
+
+Bij Over staat nog een tijdelijke woningfoto (`schotersingel-21`). Vervang die door een foto van
+Freek die door een woning loopt en fotografeert: zet hem om met `tools/build-img.mjs`, pas in
+`index.html` bij `<figure class="pic">` de bestandsnamen aan en zet de alt-tekst op
+"Freek Wennekers fotografeert een woning".
+
 ## Online zetten
 
 ```bash
