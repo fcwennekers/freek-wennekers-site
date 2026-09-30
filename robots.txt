@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://freek-wennekers.vercel.app/sitemap.xml
+Sitemap: https://freekwennekers.com/sitemap.xml

@@ -1,7 +1,7 @@
 # Freek Wennekers Vastgoedfotografie
 
 De website van Freek Wennekers, vastgoedfotograaf in Haarlem en omstreken.
-Eén statische pagina: geen framework, geen build-stap. Live op https://freek-wennekers.vercel.app
+Eén statische pagina: geen framework, geen build-stap. Live op https://freekwennekers.com
 
 ## Inhoud
 
@@ -30,11 +30,12 @@ Freek die door een woning loopt en fotografeert: zet hem om met `tools/build-img
 
 ## Online zetten
 
-```bash
-vercel deploy --prod
-```
+Elke push naar `main` gaat automatisch live via Vercel (account van Freek). Er is geen testomgeving:
+wat op `main` staat, staat op de site. Terugdraaien kan in Vercel onder Deployments (Instant Rollback).
 
-## Eigen domein
+## Domein
 
-Bij een eigen domein de url `https://freek-wennekers.vercel.app` vervangen in `index.html`
+Hoofdadres `freekwennekers.com`; `www.freekwennekers.com` stuurt door naar het hoofdadres.
+De DNS-instellingen en de rest van de uitleg staan in `docs/handleiding.pdf`.
+Wordt het domein ooit anders, vervang dan `https://freekwennekers.com` in `index.html`
 (canonical, og:url, og:image, twitter:image en de structured data), `robots.txt` en `sitemap.xml`.
