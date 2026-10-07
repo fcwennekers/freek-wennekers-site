@@ -1,6 +1,14 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/",
+      "has": [{ "type": "header", "key": "accept", "value": "(.*)text/markdown(.*)" }],
+      "destination": "/index.md",
+      "permanent": false
+    }
+  ],
   "headers": [
     {
       "source": "/img/(.*)",
@@ -17,6 +25,24 @@
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
         { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
         { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+      ]
+    },
+    {
+      "source": "/",
+      "headers": [{ "key": "Vary", "value": "Accept" }]
+    },
+    {
+      "source": "/llms.txt",
+      "headers": [
+        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
+        { "key": "X-Robots-Tag", "value": "noindex" }
+      ]
+    },
+    {
+      "source": "/index.md",
+      "headers": [
+        { "key": "Content-Type", "value": "text/markdown; charset=utf-8" },
+        { "key": "X-Robots-Tag", "value": "noindex" }
       ]
     }
   ]
