@@ -1,6 +1,6 @@
 # Freek Wennekers Vastgoedfotografie
 
-> Vastgoedfotografie voor makelaars in Haarlem en omstreken. Fotografie, video, 360°-tour en NEN 2580-meetrapport in één afspraak, binnen 3 werkdagen opgeleverd.
+> Vastgoedfotografie voor makelaars in Haarlem, Amsterdam en omstreken. Fotografie, video, 360°-tour en NEN 2580-meetrapport in één afspraak, binnen 3 werkdagen opgeleverd.
 
 Website: https://freekwennekers.com/ · Telefoon: +31 6 28 18 65 51 · E-mail: freekwennekers@gmail.com · KvK-nummer: 88955672
 
@@ -37,7 +37,7 @@ Zes woningen, van grachtenpand tot villa.
 
 ## Over
 
-Ik ben Freek Wennekers, vastgoedfotograaf in Haarlem en omstreken. Ik werk voor makelaars, ontwikkelaars en particuliere verkopers en heb ruim 2.400 woningen gefotografeerd.
+Ik ben Freek Wennekers, vastgoedfotograaf in Haarlem, Amsterdam en omstreken. Ik werk voor makelaars, ontwikkelaars en particuliere verkopers en heb ruim 2.400 woningen gefotografeerd.
 
 Ik neem de tijd voor licht en opstelling, en bewerk al het materiaal zelf. Zo krijgt elke woning dezelfde zorg en dezelfde stijl, van de eerste foto tot de plattegrond.
 
