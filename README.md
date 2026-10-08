@@ -7,7 +7,7 @@ Eén statische pagina: geen framework, geen build-stap. Live op https://freekwen
 
 | Pad | Wat |
 | --- | --- |
-| `index.html` | De hele site: opening, intro, diensten, werk, over, vragen, contact (HTML, CSS en JS in één bestand) |
+| `index.html` | De hele site: opening, intro, diensten, werk, over, contact (HTML, CSS en JS in één bestand) |
 | `llms.txt`, `index.md` | Samenvatting en volledige tekstversie van de site voor AI-assistenten |
 | `img/` | Alle foto's als WebP in 320, 640, 1200 en 1800 px breed |
 | `fonts/` | Switzer 400 en 500 (Indian Type Foundry, via fontshare.com, vrij voor commercieel gebruik) |
@@ -19,9 +19,8 @@ Eén statische pagina: geen framework, geen build-stap. Live op https://freekwen
 ## AI-vindbaarheid
 
 Dezelfde feiten staan op vier plekken: de zichtbare tekst in `index.html`, de JSON-LD bovenin `index.html`,
-`index.md` en `llms.txt`. Verander je iets aan diensten, werkgebied, levertijd, portfolio, vragen of contact,
-pas het dan overal aan. Werk ook `sitemap.xml` bij (datum en foto's). De antwoorden in de vragensectie en in de
-JSON-LD moeten letterlijk gelijk zijn.
+`index.md` en `llms.txt`. Verander je iets aan diensten, werkgebied, levertijd, portfolio of contact,
+pas het dan overal aan. Werk ook `sitemap.xml` bij (datum en foto's).
 
 ## Foto's toevoegen of vervangen
 

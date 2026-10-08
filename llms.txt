@@ -16,7 +16,7 @@ In English: real estate photographer based in Haarlem, the Netherlands, working 
 
 ## Website
 
-- [Volledige tekst van de website](https://freekwennekers.com/index.md): diensten, werkgebied, veelgestelde vragen, portfolio en contact in Markdown
+- [Volledige tekst van de website](https://freekwennekers.com/index.md): diensten, werkgebied, portfolio en contact in Markdown
 - [Homepage](https://freekwennekers.com/): de website met het portfolio
 
 ## Optional
