@@ -63,7 +63,7 @@ const PAGES = [
       'Dronebeelden in de woningvideo, liggend en staand.',
       'Alles binnen 3 werkdagen, samen met de andere foto’s.'],
     qa: [['Wanneer hebben dronebeelden meerwaarde?', 'Bij vrijstaande woningen en villa’s, bij woningen aan het water of met een grote tuin, en overal waar de ligging een verkoopargument is.'],
-      ['Mag je overal met een drone vliegen?', 'Nee. Delen van Haarlem en Amsterdam liggen in het luchtruim rond Schiphol, waar je alleen met toestemming mag vliegen. Per adres bekijk ik vooraf wat er mogelijk is.'],
+      ['Mag je overal met een drone vliegen?', 'Nee. Rond Schiphol gelden strenge regels voor drones, en die verschillen per plek, ook in Haarlem en Amsterdam. Per adres bekijk ik vooraf wat er mogelijk is.'],
       ['Kan het samen met foto’s en video?', 'Ja. Dronebeelden maak ik in dezelfde afspraak als de foto’s en de <a class="ul" href="/vastgoedvideo">woningvideo</a>, en ze kunnen ook in die video.']],
     thumbs: [['tjalk-47', 'Tjalk, Amstelveen', 'Tuin van een villa aan de Tjalk, van bovenaf gefotografeerd'],
       ['larikslaan-03', 'Larikslaan 33, Amsterdam', 'Achtergevel en tuin van een moderne villa aan de Larikslaan'],
