@@ -18,6 +18,7 @@ User-agent: Amazonbot
 User-agent: cohere-training-data-crawler
 Disallow: /img/
 Disallow: /og.jpg
+Disallow: /og/
 
 User-agent: *
 Allow: /

@@ -8,6 +8,8 @@ Eén statische pagina: geen framework, geen build-stap. Live op https://freekwen
 | Pad | Wat |
 | --- | --- |
 | `index.html` | De hele site: opening, intro, diensten, werk, over, contact (HTML, CSS en JS in één bestand) |
+| `vastgoedvideo.html`, `dronefotografie.html`, `360-graden-tour.html`, `nen-2580-meetrapport.html` | Dienstpagina's, gemaakt met `tools/build-pages.mjs` (niet met de hand aanpassen) |
+| `og/` | Deelafbeeldingen (1200×630) per dienstpagina |
 | `llms.txt`, `index.md` | Samenvatting en volledige tekstversie van de site voor AI-assistenten |
 | `img/` | Alle foto's als WebP in 320, 640, 1200 en 1800 px breed |
 | `fonts/` | Switzer 400 en 500 (Indian Type Foundry, via fontshare.com, vrij voor commercieel gebruik) |
@@ -15,12 +17,13 @@ Eén statische pagina: geen framework, geen build-stap. Live op https://freekwen
 | `robots.txt`, `sitemap.xml` | Voor zoekmachines en AI-crawlers (trainingsbots mogen de foto's niet ophalen) |
 | `vercel.json` | Nette url's, caching van foto's en fonts, security-headers, tekstversie voor AI-agents |
 | `tools/build-img.mjs` | Zet nieuwe foto's om naar de juiste formaten (wordt niet online gezet) |
+| `tools/build-pages.mjs` | Tekst en opmaak van de dienstpagina's; draai `node tools/build-pages.mjs` na een wijziging |
 
 ## AI-vindbaarheid
 
 Dezelfde feiten staan op vier plekken: de zichtbare tekst in `index.html`, de JSON-LD bovenin `index.html`,
 `index.md` en `llms.txt`. Verander je iets aan diensten, werkgebied, levertijd, portfolio of contact,
-pas het dan overal aan. Werk ook `sitemap.xml` bij (datum en foto's).
+pas het dan overal aan, ook in `tools/build-pages.mjs` (dienstpagina's). Werk ook `sitemap.xml` bij (datum en foto's).
 
 ## Foto's toevoegen of vervangen
 

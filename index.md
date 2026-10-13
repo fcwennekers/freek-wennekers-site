@@ -1,6 +1,6 @@
 # Freek Wennekers Vastgoedfotografie
 
-> Vastgoedfotografie voor makelaars in Haarlem, Amsterdam en omstreken. Fotografie, video, 360°-tour en NEN 2580-meetrapport in één afspraak, binnen 3 werkdagen opgeleverd.
+> Vastgoedfotograaf in Haarlem voor makelaars. Foto’s, video, dronebeelden, een 360°-tour en een NEN 2580-meetrapport in één afspraak, binnen drie werkdagen opgeleverd. Ruim 2.400 woningen gefotografeerd, van stadsappartement tot villa.
 
 Website: https://freekwennekers.com/ · Telefoon: +31 6 28 18 65 51 · E-mail: freekwennekers@gmail.com · KvK-nummer: 88955672
 
@@ -9,10 +9,11 @@ Website: https://freekwennekers.com/ · Telefoon: +31 6 28 18 65 51 · E-mail: f
 Alles in één afspraak, binnen 3 werkdagen opgeleverd.
 
 1. **Fotografie**: Interieur, exterieur en details, klaar voor Funda.
-2. **Video**: Een rustige rondgang, liggend en staand.
-3. **360°-tour**: Kopers lopen zelf door de woning.
-4. **NEN 2580 inmeten**: Meetrapport met 2D- en 3D-plattegronden.
-5. **Nabewerking**: Belichting, kleur en rechte lijnen in eigen hand.
+2. **Video**: Een rustige rondgang, liggend en staand. Meer: [Vastgoedvideo](https://freekwennekers.com/vastgoedvideo)
+3. **Drone**: Foto’s en video vanuit de lucht: tuin, ligging en omgeving. Meer: [Dronefotografie](https://freekwennekers.com/dronefotografie)
+4. **360°-tour**: Kopers lopen zelf door de woning. Meer: [360°-tour](https://freekwennekers.com/360-graden-tour)
+5. **NEN 2580 inmeten**: Meetrapport met 2D- en 3D-plattegronden. Meer: [NEN 2580 inmeten](https://freekwennekers.com/nen-2580-meetrapport)
+6. **Nabewerking**: Belichting, kleur en rechte lijnen in eigen hand.
 
 ## Werkgebied
 
@@ -38,6 +39,8 @@ Zes woningen, van grachtenpand tot villa.
 ## Over
 
 Ik ben Freek Wennekers, vastgoedfotograaf in Haarlem, Amsterdam en omstreken. Ik werk voor makelaars, ontwikkelaars en particuliere verkopers en heb ruim 2.400 woningen gefotografeerd.
+
+Vanuit Haarlem werk ik onder meer in Heemstede, Bloemendaal, Zandvoort, Hoofddorp, Amsterdam en Amstelveen, ook voor woningen in het hogere segment.
 
 Ik neem de tijd voor licht en opstelling, en bewerk al het materiaal zelf. Zo krijgt elke woning dezelfde zorg en dezelfde stijl, van de eerste foto tot de plattegrond.
 
