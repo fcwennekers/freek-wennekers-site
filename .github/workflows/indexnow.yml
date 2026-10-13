@@ -1,0 +1,31 @@
+# Meldt na elke wijziging op main alle pagina's uit sitemap.xml bij IndexNow.
+# IndexNow geeft dit door aan Bing (en daarmee aan ChatGPT-zoeken en Copilot), Yandex en andere zoekmachines.
+# De sleutel staat als <sleutel>.txt in de hoofdmap; die moet online blijven staan.
+name: IndexNow
+on:
+  push:
+    branches: [main]
+    paths: ['*.html', 'sitemap.xml', '.github/workflows/indexnow.yml']
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Wacht tot Vercel de nieuwe versie online heeft
+        run: |
+          KEY=$(ls | grep -E '^[0-9a-f]{32}\.txt$' | head -1 | sed 's/\.txt$//')
+          for i in $(seq 1 20); do
+            if [ "$(curl -s "https://freekwennekers.com/$KEY.txt")" = "$KEY" ]; then sleep 60; exit 0; fi
+            sleep 30
+          done
+          echo "Sleutelbestand niet online gevonden" && exit 1
+      - name: Stuur de URL's uit de sitemap naar IndexNow
+        run: |
+          KEY=$(ls | grep -E '^[0-9a-f]{32}\.txt$' | head -1 | sed 's/\.txt$//')
+          URLS=$(grep -o '<loc>[^<]*</loc>' sitemap.xml | sed -e 's#<loc>##' -e 's#</loc>##' | python3 -c 'import sys,json;print(json.dumps([l.strip() for l in sys.stdin if l.strip()]))')
+          echo "URL's: $URLS"
+          curl -sS -X POST https://api.indexnow.org/indexnow \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            -d "{\"host\":\"freekwennekers.com\",\"key\":\"$KEY\",\"keyLocation\":\"https://freekwennekers.com/$KEY.txt\",\"urlList\":$URLS}" \
+            -o /dev/null -w 'IndexNow antwoordt HTTP %{http_code}\n'

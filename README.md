@@ -15,6 +15,7 @@ Eén statische pagina: geen framework, geen build-stap. Live op https://freekwen
 | `fonts/` | Switzer 400 en 500 (Indian Type Foundry, via fontshare.com, vrij voor commercieel gebruik) |
 | `404.html` | Pagina voor links die niet bestaan |
 | `robots.txt`, `sitemap.xml` | Voor zoekmachines en AI-crawlers (trainingsbots mogen de foto's niet ophalen) |
+| `563824d44d09488c1f1de62e1a77b533.txt`, `.github/workflows/indexnow.yml` | IndexNow: na elke wijziging op main worden de pagina's uit de sitemap automatisch bij Bing gemeld. Het sleutelbestand niet weghalen |
 | `vercel.json` | Nette url's, caching van foto's en fonts, security-headers, tekstversie voor AI-agents |
 | `tools/build-img.mjs` | Zet nieuwe foto's om naar de juiste formaten (wordt niet online gezet) |
 | `tools/build-pages.mjs` | Tekst en opmaak van de dienstpagina's; draai `node tools/build-pages.mjs` na een wijziging |
