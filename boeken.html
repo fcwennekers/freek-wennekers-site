@@ -201,7 +201,8 @@ nav a:hover{background-size:100% 1px}
       <fieldset><legend>De woning</legend><div class="fg">
         <div class="f full"><label for="f-adres">Adres</label><input id="f-adres" name="Adres" required autocomplete="off" placeholder="Straat en huisnummer"></div>
         <div class="f"><label for="f-plaats">Plaats</label><input id="f-plaats" name="Plaats" required autocomplete="off"></div>
-        <div class="f"><label for="f-m2">Woonoppervlakte</label><div class="unit"><input id="f-m2" name="Woonoppervlakte" type="number" inputmode="numeric" min="10" max="5000" step="1" required><span>m²</span></div></div>
+        <div class="f"><label for="f-m2">Woonoppervlakte</label><div class="unit"><input id="f-m2" name="Woonoppervlakte" inputmode="numeric" autocomplete="off" placeholder="Zoek ik voor je op"><span>m²</span></div></div>
+          <p class="h full" id="f-m2-h" aria-live="polite">Vul adres en plaats in, dan zoek ik de woonoppervlakte op in het Kadaster.</p>
       </div></fieldset>
       <fieldset><legend>Pakket</legend><div>
         <div class="opts">
@@ -212,7 +213,6 @@ nav a:hover{background-size:100% 1px}
         <p class="sub">Extra’s <i>(optioneel)</i></p>
         <div class="checks">
           <label class="chk"><input type="checkbox" name="Extra" value="Schemerfoto’s"><span>Schemerfoto’s<small>Buitenfoto’s in de schemering, met de lichten aan.</small></span></label>
-          <label class="chk"><input type="checkbox" name="Extra" value="Teaser ‘binnenkort te koop’"><span>Teaser ‘binnenkort te koop’<small>3 tot 5 foto’s en een staande video van 20 seconden.</small></span></label>
           <label class="chk"><input type="checkbox" name="Extra" value="Sleutelservice"><span>Sleutelservice<small>Ik haal de sleutel op en breng hem terug.</small></span></label>
         </div>
       </div></fieldset>
@@ -264,10 +264,19 @@ nav a:hover{background-size:100% 1px}
 function q(s){return f.querySelector(s)}
 var pq=(location.search.match(/[?&]pakket=([a-z]+)/)||[])[1];if(pq){var r0=q('input[data-id='+pq+']');if(r0)r0.checked=true}
 var dag=q('#f-dag'),t=new Date();t.setDate(t.getDate()+1);dag.min=t.toISOString().slice(0,10);
+var m2=q('#f-m2'),hint=document.getElementById('f-m2-h'),own=false,timer,seq=0;m2.addEventListener('input',function(){own=!!m2.value.trim()});
+function say(s){hint.textContent=s}
+function zoek(){var a=q('#f-adres').value.trim(),pl=q('#f-plaats').value.trim();if(!/\d/.test(a)||pl.length<2)return;var n=++seq;say('Woonoppervlakte opzoeken…');
+fetch('https://api.pdok.nl/bzk/locatieserver/search/v3_1/free?fq=type:adres&rows=1&fl=weergavenaam,adresseerbaarobject_id,centroide_ll&q='+encodeURIComponent(a+' '+pl)).then(function(r){return r.json()}).then(function(j){
+var d=j.response&&j.response.docs&&j.response.docs[0];if(!d||!d.centroide_ll)throw 0;var c=d.centroide_ll.match(/[-\d.]+/g),x=+c[0],y=+c[1],id=String(d.adresseerbaarobject_id).replace(/^0+/,'');
+return fetch('https://api.pdok.nl/kadaster/bag/ogc/v2/collections/verblijfsobject/items?f=json&limit=100&bbox='+[x-0.0004,y-0.0003,x+0.0004,y+0.0003].join(',')).then(function(r){return r.json()}).then(function(g){
+var fs=(g.features||[]).filter(function(f){return String(f.properties.identificatie||f.id||'').replace(/^0+/,'')===id});var o=fs[0]&&+fs[0].properties.oppervlakte;if(!o)throw 0;
+if(n!==seq)return;if(!own)m2.value=o;say('Gevonden in het Kadaster: '+o+' m² voor '+d.weergavenaam+'. Klopt het niet? Pas het gerust aan.')})}).catch(function(){if(n===seq)say('Ik kon de woonoppervlakte niet vinden. Weet je hem, vul hem dan in; anders zoek ik hem zelf op.')})}
+['#f-adres','#f-plaats'].forEach(function(s){q(s).addEventListener('input',function(){clearTimeout(timer);timer=setTimeout(zoek,700)})});
 f.addEventListener('submit',function(e){e.preventDefault();function v(id){var el=q('#'+id);return el?el.value.trim():''}
 var r=q('input[name=Pakket]:checked'),xs=[].map.call(f.querySelectorAll('input[name=Extra]:checked'),function(c){return c.value}),d=v('f-dag');
 if(d){d=new Date(d+'T12:00').toLocaleDateString('nl-NL',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}
-var body=['Adres: '+v('f-adres'),'Plaats: '+v('f-plaats'),'Woonoppervlakte: '+v('f-m2')+' m²','Pakket: '+(r?r.value:''),'Extra’s: '+(xs.join(', ')||'geen'),'Voorkeursdag: '+(d||'geen voorkeur'),'Verkoper: '+[v('f-vnaam'),v('f-vtel')].filter(Boolean).join(', '),'Makelaarskantoor: '+(v('f-kantoor')||'particulier'),'Naam: '+v('f-naam'),'E-mail: '+v('f-mail'),'Telefoon: '+v('f-tel'),'','Opmerkingen:',v('f-opm')];
+var body=['Adres: '+v('f-adres'),'Plaats: '+v('f-plaats'),'Woonoppervlakte: '+(v('f-m2')?v('f-m2')+' m²':'onbekend'),'Pakket: '+(r?r.value:''),'Extra’s: '+(xs.join(', ')||'geen'),'Voorkeursdag: '+(d||'geen voorkeur'),'Verkoper: '+[v('f-vnaam'),v('f-vtel')].filter(Boolean).join(', '),'Makelaarskantoor: '+(v('f-kantoor')||'particulier'),'Naam: '+v('f-naam'),'E-mail: '+v('f-mail'),'Telefoon: '+v('f-tel'),'','Opmerkingen:',v('f-opm')];
 location.href='mailto:freekwennekers@gmail.com?subject='+encodeURIComponent('Opname '+v('f-adres')+', '+v('f-plaats'))+'&body='+encodeURIComponent(body.join('\r\n'));
 document.getElementById('f-msg').textContent='Je mailprogramma opent nu met je aanvraag. Verstuur die mail, dan neem ik contact op met de verkoper.'})})();</script>
 </body>
