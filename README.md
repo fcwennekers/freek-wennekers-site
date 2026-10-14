@@ -9,6 +9,7 @@ Eén statische pagina: geen framework, geen build-stap. Live op https://freekwen
 | --- | --- |
 | `index.html` | De hele site: opening, intro, diensten, werk, over, contact (HTML, CSS en JS in één bestand) |
 | `vastgoedvideo.html`, `dronefotografie.html`, `360-graden-tour.html`, `nen-2580-meetrapport.html` | Dienstpagina's, gemaakt met `tools/build-pages.mjs` (niet met de hand aanpassen) |
+| `woningfotografie-amsterdam.html`, `boeken.html` | Lokale pagina Amsterdam en boekingsformulier (noindex), ook gemaakt met `tools/build-pages.mjs` |
 | `og/` | Deelafbeeldingen (1200×630) per dienstpagina |
 | `llms.txt`, `index.md` | Samenvatting en volledige tekstversie van de site voor AI-assistenten |
 | `img/` | Alle foto's als WebP in 320, 640, 1200 en 1800 px breed |

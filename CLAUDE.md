@@ -1,8 +1,11 @@
 # Werkafspraken voor deze site
 
-- Statische site: homepage `index.html` plus vier dienstpagina's, live via Vercel vanaf `main`. Zie `README.md`.
-- De dienstpagina's (`vastgoedvideo.html`, `dronefotografie.html`, `360-graden-tour.html`, `nen-2580-meetrapport.html`)
-  worden gemaakt door `node tools/build-pages.mjs`; pas de tekst daar aan, niet in de .html-bestanden.
+- Statische site: homepage `index.html` plus vier dienstpagina's, een Amsterdam-pagina en `/boeken`, live via Vercel vanaf `main`. Zie `README.md`.
+- De dienstpagina's (`vastgoedvideo.html`, `dronefotografie.html`, `360-graden-tour.html`, `nen-2580-meetrapport.html`),
+  `woningfotografie-amsterdam.html` en `boeken.html` worden gemaakt door `node tools/build-pages.mjs`;
+  pas de tekst daar aan, niet in de .html-bestanden.
+- Geen prijzen op de site (ook niet in JSON-LD). Pakketten: Foto + Meting, Alles in één, Verhuur.
+- Het boekformulier (`/boeken`, noindex) verstuurt via het mailprogramma en zoekt de woonoppervlakte op in de BAG (PDOK).
 - Grote wijzigingen eerst op een previewbranch; pas naar `main` (productie) met akkoord van Freek.
 - Dezelfde feiten staan op vier plekken: zichtbare tekst in `index.html`, de JSON-LD bovenin `index.html`,
   `index.md` en `llms.txt` (en voor diensten ook `tools/build-pages.mjs`). Pas bij elke inhoudelijke wijziging (diensten, werkgebied, levertijd, portfolio,

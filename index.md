@@ -19,6 +19,8 @@ Alles in één afspraak, binnen 3 werkdagen opgeleverd.
 
 Vanuit Haarlem: Haarlem, Heemstede, Bloemendaal, Zandvoort, Velsen, Haarlemmermeer, Amsterdam, Amstelveen en Abcoude.
 
+Meer over Amsterdam: [Woningfotografie Amsterdam](https://freekwennekers.com/woningfotografie-amsterdam)
+
 ## Werk
 
 Zes woningen, van grachtenpand tot villa.
@@ -46,7 +48,7 @@ Ik neem de tijd voor licht en opstelling, en bewerk al het materiaal zelf. Zo kr
 
 ## Contact
 
-Bel of mail gerust, ook als je nog aan het oriënteren bent. Stuur het adres van de woning en wat je nodig hebt mee, dan maak ik een vrijblijvende offerte op maat.
+Boek een opname via het formulier: [Opname boeken](https://freekwennekers.com/boeken). Kies een pakket: Foto + Meting (foto’s en NEN 2580-meetrapport met 2D- en 3D-plattegrond), Alles in één (ook video en 360°-tour) of Verhuur (foto’s en maten voor de WWS-puntentelling). Ik plan de afspraak direct met de verkoper. Vragen? Bel of mail gerust, ook als je nog aan het oriënteren bent.
 
 - Telefoon: +31 6 28 18 65 51
 - E-mail: freekwennekers@gmail.com

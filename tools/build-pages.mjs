@@ -12,7 +12,7 @@ const SITE = 'https://freekwennekers.com';
 const NAME = 'Freek Wennekers Vastgoedfotografie';
 const TEL = '+31628186551', TEL_TXT = '+31 6 28 18 65 51', MAIL = 'freekwennekers@gmail.com';
 const KVK = '88955672', LINKEDIN = 'https://www.linkedin.com/in/freekwennekers';
-const MODIFIED = '2026-10-13';
+const MODIFIED = '2026-10-14';
 const AREAS = [['City', 'Haarlem'], ['City', 'Heemstede'], ['City', 'Bloemendaal'], ['City', 'Zandvoort'],
   ['AdministrativeArea', 'Velsen'], ['AdministrativeArea', 'Haarlemmermeer'], ['City', 'Amsterdam'],
   ['City', 'Amstelveen'], ['City', 'Abcoude']];
@@ -27,7 +27,7 @@ const SERVICES = [
 ];
 
 const FLOW = [
-  'Stuur het adres van de woning en wat je nodig hebt. Je krijgt een vrijblijvende offerte op maat.',
+  'Boek de opname via het formulier. Ik plan de afspraak direct met de verkoper.',
   'In één afspraak maak ik alles wat je kiest: foto’s, video, dronebeelden, 360°-tour en meetrapport.',
   'Ik bewerk al het materiaal zelf, zodat alles dezelfde stijl heeft.',
   'Binnen 3 werkdagen staat alles klaar.',
@@ -142,7 +142,10 @@ nav a:hover{background-size:100% 1px}
 .bar{position:sticky;top:0;z-index:60;background:rgba(247,246,242,.92);background:color-mix(in srgb,var(--bg) 88%,transparent);-webkit-backdrop-filter:saturate(1.3) blur(14px);backdrop-filter:saturate(1.3) blur(14px);box-shadow:0 1px 0 var(--line)}
 .bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:56px}
 .bar .sig{height:24px}
-.bar nav{display:flex;gap:24px;font-size:14px}
+.bar nav{display:flex;align-items:center;gap:24px;font-size:14px}
+.bar nav .nb{margin:-7px 0;padding:7px 13px;background:var(--ink);color:var(--bg);transition:background .3s var(--soft)}
+.bar nav .nb:hover,.bar nav .nb[aria-current=page]{background:#35332f}
+.c-intro .btn{justify-self:start;margin-top:8px}
 @media (max-width:560px){.bar nav{gap:18px}nav .opt{display:none}.bar .sig{height:22px}}
 .hero{padding-top:clamp(40px,6vw,88px);padding-bottom:clamp(40px,5vw,64px)}
 .crumbs ol{display:flex;flex-wrap:wrap;gap:8px;font-size:14px;color:var(--ink-3)}
@@ -267,7 +270,7 @@ ${CSS}
 <header class="bar" id="top">
   <div class="wrap">
     <a href="/" aria-label="${NAME}, naar de homepage"><i class="sig" aria-hidden="true"></i></a>
-    <nav aria-label="Hoofdmenu"><a href="/#diensten">Diensten</a><a href="/#werk">Werk</a><a class="opt" href="/#over">Over</a><a href="#contact">Contact</a></nav>
+    <nav aria-label="Hoofdmenu"><a href="/#diensten">Diensten</a><a href="/#werk">Werk</a><a class="opt" href="/#over">Over</a><a class="opt" href="#contact">Contact</a><a class="nb" href="/boeken">Boeken</a></nav>
   </div>
 </header>
 
@@ -276,7 +279,7 @@ ${CSS}
     <nav class="crumbs" aria-label="Kruimelpad"><ol><li><a class="ul" href="/">Home</a></li><li aria-current="page">${p.crumb}</li></ol></nav>
     <h1 class="display" id="h-pagina">${p.h1}</h1>
     <p class="lead">${p.lead}</p>
-    <div class="cta"><a class="btn" href="#contact">Offerte aanvragen</a><a class="ul" href="tel:${TEL}">${TEL_TXT}</a></div>
+    <div class="cta"><a class="btn" href="/boeken">Boek een opname</a><a class="ul" href="tel:${TEL}">${TEL_TXT}</a></div>
     <figure class="hero-img"><img src="img/${p.hero[0]}-1200.webp" srcset="${srcset(p.hero[0])}" sizes="(min-width: 1280px) 1200px, 100vw" alt="${esc(p.hero[1])}" fetchpriority="high" decoding="async"></figure>
   </section>
 
@@ -332,7 +335,7 @@ ${others.map(s => `      <li><a class="ul" href="${s.href}">${s.name}</a><p>${s.
     <div class="split">
     <h2 class="label" id="h-contact">Contact</h2>
     <div class="cbox">
-      <div class="c-intro"><p class="display">Offerte aanvragen?</p><p class="note">Stuur het adres van de woning en wat je nodig hebt, dan maak ik een vrijblijvende offerte op maat. Bellen of mailen kan ook als je nog aan het oriënteren bent.</p></div>
+      <div class="c-intro"><p class="display">Opname boeken?</p><p class="note">Vul het formulier in, dan plan ik de afspraak direct met de verkoper. Bellen of mailen kan ook als je nog aan het oriënteren bent.</p><a class="btn" href="/boeken">Boek een opname</a></div>
       <div class="c-ways">
         <div class="way"><span class="k">E-mail</span><a class="ul" href="mailto:${MAIL}">${MAIL}</a></div>
         <div class="way"><span class="k">Telefoon</span><a class="ul" href="tel:${TEL}">${TEL_TXT}</a></div>
@@ -441,10 +444,7 @@ const plain = s => strip(md(s)).replace(/\s+/g, ' ').trim();
 
 const CSS2 = `
 .vh{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
-.bar nav{align-items:center}
 .bar nav a[aria-current=page]{background-size:100% 1px}
-.bar nav .nb{margin:-7px 0;padding:7px 13px;background:var(--ink);color:var(--bg);transition:background .3s var(--soft)}
-.bar nav .nb:hover,.bar nav .nb[aria-current=page]{background:#35332f}
 @media (max-width:400px){.bar .wrap{gap:14px}.bar nav{gap:14px}.bar .sig{height:20px}}
 .facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:clamp(20px,2.4vw,28px);font-size:14px;color:var(--ink-3)}
 .facts li{display:flex;align-items:center;gap:9px}
@@ -470,7 +470,6 @@ const CSS2 = `
 .places a,.places span{display:inline-block;padding:8px 15px;border:1px solid var(--line);border-radius:99px;font-size:15px;color:var(--ink-2)}
 .places a{border-color:var(--ink);color:var(--ink);font-weight:500;transition:background .3s var(--soft),color .3s var(--soft)}
 .places a:hover{background:var(--ink);color:var(--bg)}
-.c-intro .btn{justify-self:start;margin-top:8px}
 .book{max-width:760px}
 .book fieldset{min-width:0;margin:0 0 clamp(34px,3.6vw,50px);padding:0;border:0}
 .book legend{float:left;width:100%;margin:0 0 22px;padding:16px 0 0;border-top:1px solid var(--ink);font-size:14px;font-weight:500}
