@@ -23,7 +23,7 @@ Meer over Amsterdam: [Woningfotografie Amsterdam](https://freekwennekers.com/won
 
 ## Werk
 
-Zeven woningen, van grachtenpand tot villa.
+Zes woningen, van grachtenpand tot villa.
 
 - **Tjalk, Amstelveen**: vrijstaande villa met tuin (8 foto’s)  
   ![Vastgoedfoto Tjalk, Amstelveen: vrijstaande villa bij schemering](https://freekwennekers.com/img/tjalk-43-1200.webp)
@@ -37,8 +37,6 @@ Zeven woningen, van grachtenpand tot villa.
   ![Vastgoedfoto Peppinghof 24, Abcoude: woning met open keuken](https://freekwennekers.com/img/peppinghof-01-1200.webp)
 - **De Schulp 9, Amstelveen**: moderne villa met binnenzwembad (3 foto’s)  
   ![Vastgoedfoto De Schulp 9, Amstelveen: moderne villa vanaf de straat](https://freekwennekers.com/img/deschulp-03-1200.webp)
-- **Schotersingel 67E, Haarlem**: benedenwoning met tuin (7 foto’s)  
-  ![Vastgoedfoto Schotersingel 67E, Haarlem: benedenwoning aan de singel](https://freekwennekers.com/img/schotersingel-01-1200.webp)
 
 ## Over
 
