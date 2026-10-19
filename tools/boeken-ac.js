@@ -1,4 +1,4 @@
-// Boekformulier: aanvullen van makelaarskantoor en naam. Wordt door build-pages.mjs in boeken.html gezet.
+// Boekformulier: aanvullen van adres (PDOK Locatieserver), makelaarskantoor en naam. Wordt door build-pages.mjs in boeken.html gezet.
 // Kantoren komen uit /data/makelaars.json (bron: tools/makelaars.txt). Namen komen alleen uit wat
 // eerder op dit apparaat is ingevuld (localStorage); er staat geen lijst met namen van personen op de site.
 (function () {
@@ -15,6 +15,8 @@
     for (var i = 0; i < qs.length; i++) { if (!words.some(function (w) { return w.indexOf(qs[i]) === 0; })) return 0; }
     return 2;
   }
+  var STOP = { makelaar: 1, makelaars: 1, makelaardij: 1, nvm: 1, en: 1, de: 1, b: 1, v: 1, bv: 1 };
+  function kq(q) { return q.split(' ').filter(function (w) { return w && !STOP[w]; }).join(' '); }
   var kantoor = f.querySelector('#f-kantoor'), naam = f.querySelector('#f-naam'), mail = f.querySelector('#f-mail'), tel = f.querySelector('#f-tel');
   if (!kantoor || !naam) return;
   if (load().length) naam.setAttribute('autocomplete', 'off');
@@ -32,10 +34,14 @@
       [].forEach.call(box.children, function (li, k) { li.setAttribute('aria-selected', String(k === i)); });
       if (i >= 0) { input.setAttribute('aria-activedescendant', id + '-' + i); box.children[i].scrollIntoView({ block: 'nearest' }); }
     }
+    var seq = 0;
     function open() {
-      var q = norm(input.value);
+      var q = norm(input.value), n = ++seq;
       if (!q && !showEmpty) return close();
-      items = source(q);
+      Promise.resolve(source(q, input.value)).then(function (res) { if (n === seq && document.activeElement === input) show(res, q); }, function () {});
+    }
+    function show(res, q) {
+      items = res || [];
       if (!items.length || (items.length === 1 && norm(items[0].v) === q)) return close();
       box.textContent = '';
       items.forEach(function (it, k) {
@@ -65,9 +71,14 @@
   // kantoren: eerder gebruikt op dit apparaat bovenaan, daarna de lijst
   combo(kantoor, function (q) {
     var seen = {}, out = [];
-    load().forEach(function (m) { var s = score(m.k, q); if (m.k && s && !seen[norm(m.k)]) { seen[norm(m.k)] = 1; out.push({ v: m.k, sub: 'eerder gebruikt', s: s + 2 }); } });
-    (kantoren || []).forEach(function (m) { var s = score(m.n, q); if (s && !seen[norm(m.n)]) { seen[norm(m.n)] = 1; out.push({ v: m.n, sub: m.p, s: s }); } });
-    return out.sort(function (a, b) { return b.s - a.s || a.v.localeCompare(b.v, 'nl'); }).slice(0, 6);
+    var k = kq(q);
+    if (!k) return [];
+    load().forEach(function (m) { var s = score(m.k, k); if (m.k && s && !seen[norm(m.k)]) { seen[norm(m.k)] = 1; out.push({ v: m.k, sub: 'eerder gebruikt', s: s + 4 }); } });
+    (kantoren || []).forEach(function (m) {
+      var s = score(m.n, k) * 2 || (score(m.n + ' ' + m.p, k) ? 1 : 0); // naam telt zwaarder dan plaats
+      if (s && !seen[norm(m.n)]) { seen[norm(m.n)] = 1; out.push({ v: m.n, sub: m.p, s: s }); }
+    });
+    return out.sort(function (a, b) { return b.s - a.s || a.v.localeCompare(b.v, 'nl'); }).slice(0, 8);
   }, function () {}, false);
   kantoor.addEventListener('focus', function () {
     if (kantoren) return; kantoren = [];
@@ -88,6 +99,28 @@
     if (it.m.t) tel.value = it.m.t;
     if (!kantoor.value && it.m.k) kantoor.value = it.m.k;
   }, true);
+
+  // adres: suggesties van de PDOK Locatieserver terwijl je typt (straat + huisnummer, of postcode + huisnummer)
+  var adres = f.querySelector('#f-adres'), plaats = f.querySelector('#f-plaats'), PD = 'https://api.pdok.nl/bzk/locatieserver/search/v3_1/', wacht;
+  if (adres && plaats && window.fetch) {
+    adres.setAttribute('autocomplete', 'off');
+    combo(adres, function (q, raw) {
+      if (raw.trim().length < 3) return [];
+      return new Promise(function (ok) { clearTimeout(wacht); wacht = setTimeout(ok, 220); }).then(function () {
+        var term = raw.trim() + (plaats.value.trim() ? ' ' + plaats.value.trim() : '');
+        return fetch(PD + 'suggest?rows=6&fq=type:adres&q=' + encodeURIComponent(term)).then(function (r) { return r.json(); });
+      }).then(function (j) {
+        return ((j.response && j.response.docs) || []).map(function (d) { return { v: d.weergavenaam, id: d.id }; });
+      });
+    }, function (it) {
+      adres.value = it.v.split(',')[0];
+      fetch(PD + 'lookup?fl=straatnaam,huis_nlt,woonplaatsnaam&id=' + encodeURIComponent(it.id)).then(function (r) { return r.json(); }).then(function (j) {
+        var d = j.response && j.response.docs && j.response.docs[0]; if (!d) return;
+        if (d.straatnaam && d.huis_nlt) adres.value = d.straatnaam + ' ' + d.huis_nlt;
+        if (d.woonplaatsnaam) { plaats.value = d.woonplaatsnaam; plaats.dispatchEvent(new Event('input', { bubbles: true })); }
+      }).catch(function () {});
+    }, false);
+  }
 
   // na versturen onthouden op dit apparaat
   f.addEventListener('submit', function () {

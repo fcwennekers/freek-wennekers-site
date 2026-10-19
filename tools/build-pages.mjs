@@ -443,8 +443,7 @@ const PAGES2 = [
         'Video, liggend voor je website en staand voor social media.',
         'Een link naar de 360°-tour.',
         'Het NEN 2580-meetrapport als pdf.',
-        '2D- en 3D-plattegronden als losse bestanden.',
-        'Een kenmerkenlijst met wat Funda vraagt, zoals tuinligging, isolatie, cv-ketel en daktype.'] },
+        '2D- en 3D-plattegronden als losse bestanden.'] },
       { kind: 'text', id: 'stijl', label: 'Vaste fotograaf, vaste stijl', paras: [
         'Elke woning fotografeer en bewerk ik zelf. Zo ziet al je aanbod er hetzelfde uit, van het appartement tot de villa, en weet je wat je krijgt.',
         'Heb je meerdere woningen per maand, dan plan ik graag een vaste fotodag met je kantoor. Je krijgt één factuur per maand.'] },
@@ -468,7 +467,7 @@ const PAGES2 = [
     h1: 'Hoger op Funda: zo zet je een woning compleet online.',
     lead: 'Sinds 16 september 2026 kijkt Funda bij de volgorde in de resultaten naar het pakket en naar hoe compleet de woningpresentatie is. Met alles uit één afspraak haal je het meeste uit de eerste dagen.',
     hero: ['tjalk-05', 'Lichte woon- en eetkamer met hoge ramen naar de tuin in een villa aan de Tjalk in Amstelveen'],
-    service: 'Complete woningpresentatie voor Funda', serviceType: 'Foto’s, video, 360°-tour, plattegrond en kenmerkenlijst voor Funda',
+    service: 'Complete woningpresentatie voor Funda', serviceType: 'Foto’s, video, 360°-tour en plattegrond voor Funda',
     sections: [
       { kind: 'flow', id: 'volgorde', label: 'De volgorde op Funda', items: [
         'Eerst woningen die in de afgelopen 48 uur met een pakket online zijn gekomen.',
@@ -482,12 +481,10 @@ const PAGES2 = [
         'Een video.',
         'Een losse plattegrond, niet tussen de foto’s.',
         'Ingevulde kenmerken.'],
-        after: 'Met het pakket Alles in één lever ik al deze onderdelen, uit één afspraak.' },
+        after: 'Met het pakket Alles in één lever ik de foto’s, de video, de 360°-tour en de losse plattegrond, uit één afspraak. De kenmerken vul je zelf in.' },
       { kind: 'text', id: 'eerste', label: 'De eerste 48 uur', paras: [
         'In de eerste 48 uur met een pakket staat een woning bovenaan, en die kans krijg je maar één keer. Zet de woning daarom pas online als alles binnen is: foto’s, video, tour, plattegrond en kenmerken.',
         'Omdat ik alles binnen 3 werkdagen na de opname aanlever, ook het meetrapport, hoef je niet te kiezen tussen snel en compleet.'] },
-      { kind: 'list', id: 'kenmerken', label: 'Kenmerken die vaak ontbreken', intro: 'Deze kenmerken blijven vaak leeg. Ik lever ze aan als kenmerkenlijst, zodat je ze zo kunt overnemen:', items: [
-        'Energielabel', 'Ligging van de tuin', 'Cv-ketel', 'Isolatie', 'Warm water', 'Parkeren', 'Badkamers', 'Soort dak'] },
       { kind: 'text', id: 'pakket', label: 'Welk Funda-pakket?', paras: [
         'Bij Brons draait het om foto’s en een plattegrond. Zilver en Goud voegen video, 360°-foto’s en een 3D-tour toe.',
         'Foto + Meting levert alles voor Brons. Alles in één levert ook de video en de 360°-tour, zodat je alles uit Zilver en Goud haalt.'] },
@@ -767,7 +764,7 @@ ${s.items.map((t, i) => `        <li><b>${String(i + 1).padStart(2, '0')}</b><p>
     <h2 class="vh" id="h-${s.id}">${s.label}</h2>
     <form class="book" id="boek" action="mailto:${MAIL}" method="post" enctype="text/plain">
       <fieldset><legend>De woning</legend><div class="fg">
-        <div class="f full"><label for="f-adres">Adres</label><input id="f-adres" name="Adres" required autocomplete="off" placeholder="Straat en huisnummer"></div>
+        <div class="f full"><label for="f-adres">Adres</label><input id="f-adres" name="Adres" required autocomplete="off" placeholder="Straat en huisnummer, of postcode en huisnummer"></div>
         <div class="f"><label for="f-plaats">Plaats</label><input id="f-plaats" name="Plaats" required autocomplete="off"></div>
         <div class="f"><label for="f-m2">Woonoppervlakte</label><div class="unit"><input id="f-m2" name="Woonoppervlakte" inputmode="numeric" autocomplete="off" placeholder="Zoek ik voor je op"><span>m²</span></div></div>
           <p class="h full" id="f-m2-h" aria-live="polite">Vul adres en plaats in, dan zoek ik de woonoppervlakte op in het Kadaster.</p>
