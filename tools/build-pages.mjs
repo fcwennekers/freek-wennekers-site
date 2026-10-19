@@ -370,7 +370,7 @@ const TEL_NL = '06 28 18 65 51';
 const PACKAGES = [
   { id: 'meting', name: 'Foto + Meting', text: 'Foto’s en een NEN 2580-meetrapport met 2D- en 3D-plattegrond.', short: 'Foto’s en meetrapport met plattegrond' },
   { id: 'alles', name: 'Alles in één', text: 'Foto’s, meetrapport en plattegrond, plus video (liggend en staand) en een 360°-tour.', short: 'Ook video en een 360°-tour' },
-  { id: 'verhuur', name: 'Verhuur', text: 'Foto’s en een plattegrond met NEN 2580-maten voor de WWS-puntentelling.', short: 'Foto’s en maten voor de puntentelling' },
+  { id: 'verhuur', name: 'Verhuur', text: 'Foto’s en een plattegrond met NEN 2580-maten, voor de verhuur van de woning.', short: 'Foto’s en plattegrond met maten' },
 ];
 const EXTRAS = [
   { name: 'Schemerfoto’s', text: 'Buitenfoto’s in de schemering, met de lichten aan.' },
@@ -382,7 +382,6 @@ const PLACES = [['/vastgoedfotograaf-haarlem', 'Haarlem'], ['/vastgoedfotograaf-
   ['/woningfotografie-amsterdam', 'Amsterdam'], ['/vastgoedfotograaf-amstelveen', 'Amstelveen'], ['/vastgoedfotograaf-haarlemmermeer', 'Haarlemmermeer']];
 const SERVICES2 = [...SERVICES,
   { href: '/plattegrond-laten-maken', name: 'Plattegrond laten maken', text: '2D en 3D, als losse bestanden voor Funda.' },
-  { href: '/verhuur-puntentelling', name: 'Verhuur en puntentelling', text: 'Foto’s en NEN 2580-maten voor de WWS.' },
   { href: '/nieuwbouw', name: 'Nieuwbouw', text: 'Modelwoningen en opleveringen, per fase.' },
   { href: '/voor-makelaars', name: 'Voor makelaars', text: 'Vaste fotograaf, vaste stijl, één factuur.' }];
 
