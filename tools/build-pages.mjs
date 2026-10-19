@@ -199,10 +199,6 @@ nav a:hover{background-size:100% 1px}
 .foot .wrap>div{display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px;padding:24px 0 calc(28px + env(safe-area-inset-bottom));border-top:1px solid var(--ink);font-size:13px;color:var(--ink-3)}
 .foot .sig{height:24px;margin-right:auto;color:var(--ink)}
 .foot a{color:var(--ink);font-weight:500}
-.foot .wrap>div{padding-bottom:14px}
-.foot .fl{display:flex;flex-wrap:wrap;gap:6px 22px;padding-bottom:calc(28px + env(safe-area-inset-bottom));font-size:13px}
-.foot .fl a{color:var(--ink-3);font-weight:400;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;padding-bottom:2px;transition:background-size .5s var(--out),color .3s var(--soft)}
-.foot .fl a:hover{color:var(--ink);background-size:100% 1px}
 `.trim().replace(/\n/g, '\n');
 
 function page(p) {
@@ -359,9 +355,7 @@ ${others.map(s => `      <li><a class="ul" href="${s.href}">${s.name}</a><p>${s.
     <a class="ul" href="${LINKEDIN}" rel="me noopener" target="_blank">LinkedIn</a>
     <a class="ul" href="llms.txt">llms.txt</a>
     <a class="ul" href="#top">Naar boven</a>
-  </div>
-  ${footLinks()}
-  </div>
+  </div></div>
 </footer>
 </body>
 </html>
@@ -445,12 +439,6 @@ const PAGES2 = [
   },
 ];
 
-// stille linkregel onderaan elke pagina: diensten en werkgebied (alleen pagina's die bestaan)
-const FOOT = [['/vastgoedvideo', 'Vastgoedvideo'], ['/dronefotografie', 'Dronefotografie'], ['/360-graden-tour', '360°-tour'],
-  ['/nen-2580-meetrapport', 'NEN 2580 inmeten'], ['/voor-makelaars', 'Voor makelaars'], ['/hoger-op-funda', 'Hoger op Funda'],
-  ['/plattegrond-laten-maken', 'Plattegrond laten maken'], ['/verhuur-puntentelling', 'Verhuur en puntentelling'], ['/nieuwbouw', 'Nieuwbouw'],
-  ['/woningfotografie-amsterdam', 'Woningfotografie Amsterdam'], ['/vastgoedfotograaf-amstelveen', 'Vastgoedfotograaf Amstelveen'], ['/boeken', 'Opname boeken']];
-const footLinks = () => `<nav class="fl" aria-label="Diensten en werkgebied">${FOOT.filter(([h]) => ROUTES.has(h)).map(([h, t]) => `<a href="${h}">${t}</a>`).join('')}</nav>`;
 const ROUTES = new Set(['/', ...PAGES.map(p => `/${p.slug}`), ...PAGES2.map(p => `/${p.slug}`)]);
 const route = h => h.split(/[?#]/)[0] || '/';
 const md = s => s.replace(/\[([^\]]+)\]\((\/[^)\s]*)\)/g, (_, t, h) => ROUTES.has(route(h)) ? `<a class="ul" href="${h}">${t}</a>` : t);
@@ -736,9 +724,7 @@ ${p.sections.map(s => renderSection(s, p)).join('')}${isForm ? '' : `
     <a class="ul" href="${LINKEDIN}" rel="me noopener" target="_blank">LinkedIn</a>
     <a class="ul" href="llms.txt">llms.txt</a>
     <a class="ul" href="#top">Naar boven</a>
-  </div>
-  ${footLinks()}
-  </div>
+  </div></div>
 </footer>${isForm ? `
 <script>${FORM_JS}
 ${AC_JS}</script>` : ''}
