@@ -7,7 +7,8 @@
 - Geen prijzen op de site (ook niet in JSON-LD). Freek maakt geen WWS-puntentellingen; noem die niet als dienst. Pakketten: Foto + Meting, Alles in één, Verhuur.
 - Het boekformulier (`/boeken`, noindex) verstuurt via het mailprogramma en zoekt de woonoppervlakte op in de BAG (PDOK).
   Makelaarskantoren vult het aan uit `tools/makelaars.txt` (wordt `data/makelaars.json`, script in `tools/boeken-ac.js`).
-  Namen van personen staan niet op de site; die onthoudt alleen het apparaat van de bezoeker.
+  Namen van personen alleen als Freek dat per kantoor vraagt (derde kolom in makelaars.txt, nu alleen Lunshof);
+  verder onthoudt alleen het apparaat van de bezoeker namen.
 - Geen zichtbare 'Meer over'-links of linkregels: de homepage verwijst alleen via de titels van de diensten (zelfde uiterlijk als gewone tekst).
 - Grote wijzigingen eerst op een previewbranch; pas naar `main` (productie) met akkoord van Freek.
 - Dezelfde feiten staan op vier plekken: zichtbare tekst in `index.html`, de JSON-LD bovenin `index.html`,

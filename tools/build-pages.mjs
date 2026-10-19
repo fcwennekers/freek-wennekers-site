@@ -739,7 +739,7 @@ const check = p => {
 };
 // kantorenlijst voor het boekformulier
 const kantoren = readFileSync(join(ROOT, 'tools/makelaars.txt'), 'utf8').split('\n').map(l => l.trim()).filter(l => l && !l.startsWith('#'))
-  .map(l => { const [n, pl] = l.split('|').map(x => x.trim()); return { n, p: pl || '' }; }).sort((a, b) => a.n.localeCompare(b.n, 'nl'));
+  .map(l => { const [n, pl, team] = l.split('|').map(x => x.trim()); return { n, p: pl || '', ...(team ? { t: team.split(';').map(x => x.trim()).filter(Boolean) } : {}) }; }).sort((a, b) => a.n.localeCompare(b.n, 'nl'));
 mkdirSync(join(ROOT, 'data'), { recursive: true });
 writeFileSync(join(ROOT, 'data/makelaars.json'), JSON.stringify(kantoren) + '\n');
 console.log('ok', `data/makelaars.json (${kantoren.length} kantoren)`);

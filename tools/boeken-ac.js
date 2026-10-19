@@ -1,6 +1,6 @@
 // Boekformulier: aanvullen van adres (PDOK Locatieserver), makelaarskantoor en naam. Wordt door build-pages.mjs in boeken.html gezet.
-// Kantoren komen uit /data/makelaars.json (bron: tools/makelaars.txt). Namen komen alleen uit wat
-// eerder op dit apparaat is ingevuld (localStorage); er staat geen lijst met namen van personen op de site.
+// Kantoren komen uit /data/makelaars.json (bron: tools/makelaars.txt). Namen komen uit wat eerder op dit apparaat
+// is ingevuld (localStorage), en uit het team van een kantoor als Freek dat in makelaars.txt heeft gezet.
 (function () {
   var f = document.getElementById('boek'); if (!f) return;
   var KEY = 'fw-boeken-v1', kantoren = null;
@@ -80,20 +80,29 @@
     });
     return out.sort(function (a, b) { return b.s - a.s || a.v.localeCompare(b.v, 'nl'); }).slice(0, 8);
   }, function () {}, false);
-  kantoor.addEventListener('focus', function () {
-    if (kantoren) return; kantoren = [];
-    fetch('/data/makelaars.json').then(function (r) { return r.json(); }).then(function (j) { kantoren = j; if (document.activeElement === kantoor && kantoor.value) kantoor.dispatchEvent(new Event('input')); }).catch(function () {});
-  });
+  var laden = null;
+  function haal() {
+    if (!laden) laden = fetch('/data/makelaars.json').then(function (r) { return r.json(); }).then(function (j) { kantoren = j; return j; }).catch(function () { kantoren = []; return []; });
+    return laden;
+  }
+  kantoor.addEventListener('focus', function () { haal().then(function () { if (document.activeElement === kantoor && kantoor.value) kantoor.dispatchEvent(new Event('input')); }); });
 
   // namen: alleen wie op dit apparaat eerder boekte, bij voorkeur van hetzelfde kantoor; kiezen vult ook e-mail en telefoon
   combo(naam, function (q) {
-    var k = norm(kantoor.value), seen = {}, out = [];
-    load().forEach(function (m) {
-      var s = score(m.n, q), key = norm(m.n) + '|' + norm(m.k);
-      if (!m.n || !s || seen[key] || (k && norm(m.k) !== k)) return;
-      seen[key] = 1; out.push({ v: m.n, sub: m.k || '', m: m, s: s });
+    return haal().then(function () {
+      var k = norm(kantoor.value), seen = {}, out = [];
+      load().forEach(function (m) {
+        var s = score(m.n, q), key = norm(m.n) + '|' + norm(m.k);
+        if (!m.n || !s || seen[key] || (k && norm(m.k) !== k)) return;
+        seen[key] = 1; out.push({ v: m.n, sub: m.k || '', m: m, s: s });
+      });
+      // team van het gekozen kantoor
+      (kantoren || []).forEach(function (o) {
+        if (!o.t || !k || norm(o.n) !== k) return;
+        o.t.forEach(function (n) { var key = norm(n) + '|' + k; if (!seen[key] && score(n, q)) { seen[key] = 1; out.push({ v: n, sub: o.n, m: {}, s: 1 }); } });
+      });
+      return out.slice(0, 10);
     });
-    return out.slice(0, 6);
   }, function (it) {
     if (it.m.e) mail.value = it.m.e;
     if (it.m.t) tel.value = it.m.t;
