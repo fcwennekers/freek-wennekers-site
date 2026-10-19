@@ -1,8 +1,9 @@
 # Werkafspraken voor deze site
 
-- Statische site: homepage `index.html` plus vier dienstpagina's, een Amsterdam-pagina en `/boeken`, live via Vercel vanaf `main`. Zie `README.md`.
+- Statische site: homepage `index.html` plus dienstpagina's, pagina's voor makelaars, plaatspagina's (Amsterdam, Amstelveen) en `/boeken`, live via Vercel vanaf `main`. Zie `README.md`.
 - De dienstpagina's (`vastgoedvideo.html`, `dronefotografie.html`, `360-graden-tour.html`, `nen-2580-meetrapport.html`),
-  `woningfotografie-amsterdam.html` en `boeken.html` worden gemaakt door `node tools/build-pages.mjs`;
+  en alle pagina's uit `PAGES2` (onder meer `voor-makelaars`, `hoger-op-funda`, `plattegrond-laten-maken`, `verhuur-puntentelling`,
+  `nieuwbouw`, `woningfotografie-amsterdam`, `vastgoedfotograaf-amstelveen`, `boeken`) worden gemaakt door `node tools/build-pages.mjs`;
   pas de tekst daar aan, niet in de .html-bestanden.
 - Geen prijzen op de site (ook niet in JSON-LD). Pakketten: Foto + Meting, Alles in één, Verhuur.
 - Het boekformulier (`/boeken`, noindex) verstuurt via het mailprogramma en zoekt de woonoppervlakte op in de BAG (PDOK).

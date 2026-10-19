@@ -83,6 +83,7 @@ const PAGES = [
       'Binnen 3 werkdagen klaar, samen met de foto’s.'],
     qa: [['Wat is het verschil tussen een 360°-foto en een virtuele tour?', 'Een 360°-foto toont één ruimte in alle richtingen. In een virtuele tour zijn die foto’s aan elkaar gekoppeld, zodat je van ruimte naar ruimte loopt.'],
       ['Voor welke woningen is een tour handig?', 'Voor kopers die van verder weg komen of eerst online rondkijken, en voor woningen waarin de indeling het verhaal vertelt.'],
+      ['Waarom gebruiken expats een 360°-tour?', 'Kopers die nog in het buitenland wonen of niet snel kunnen langskomen, lopen met een tour toch door de woning, voordat ze een bezichtiging plannen.'],
       ['Kan het samen met een plattegrond?', 'Ja. Het <a class="ul" href="/nen-2580-meetrapport">NEN 2580-meetrapport</a> met 2D- en 3D-plattegronden maak ik in dezelfde afspraak.']],
     thumbs: [['egelantiersstraat-13', 'Egelantiersstraat, Amsterdam', 'Open keuken en eethoek in een grachtenpand aan de Egelantiersstraat'],
       ['valeriusterras-01', 'Valeriusterras, Amsterdam', 'Woonkamer met trap in een nieuwbouwappartement aan het Valeriusterras'],
@@ -102,7 +103,8 @@ const PAGES = [
       'Alles binnen 3 werkdagen, samen met de foto’s.'],
     qa: [['Wat is NEN 2580?', 'NEN 2580 is de Nederlandse norm voor het meten van oppervlakten en inhouden van gebouwen. Hij legt vast wat wel en niet meetelt als gebruiksoppervlakte.'],
       ['Wat is het verschil met de meetinstructie van makelaars?', 'Makelaars werken vaak met een branchebrede meetinstructie. Die is gebaseerd op NEN 2580, maar wijkt op enkele punten af.'],
-      ['Waarom een woning laten inmeten?', 'Met een meetrapport vermeld je de gebruiksoppervlakte eenduidig, bijvoorbeeld op Funda. Zo weten kopers precies hoeveel vierkante meter ze krijgen.']],
+      ['Waarom een woning laten inmeten?', 'Met een meetrapport vermeld je de gebruiksoppervlakte eenduidig, bijvoorbeeld op Funda. Zo weten kopers precies hoeveel vierkante meter ze krijgen.'],
+      ['Waarom is de meetinstructie belangrijk voor makelaars?', 'NVM-makelaars vermelden de gebruiksoppervlakte volgens de meetinstructie. In 2018 oordeelde de Hoge Raad dat kopers daarop mogen vertrouwen; een makelaar die anders meet, kan aansprakelijk zijn voor de schade.']],
     thumbs: [['egelantiersstraat-16', 'Egelantiersstraat, Amsterdam', 'Keuken met kookeiland in een grachtenpand aan de Egelantiersstraat'],
       ['larikslaan-04', 'Larikslaan 33, Amsterdam', 'Keuken met kookeiland in een moderne villa aan de Larikslaan'],
       ['deschulp-01', 'De Schulp 9, Amstelveen', 'Keuken met raam over de volle breedte aan De Schulp']],
@@ -429,6 +431,214 @@ const PAGES2 = [
     ],
   },
   {
+    slug: 'voor-makelaars', crumb: 'Voor makelaars',
+    title: 'Fotograaf voor makelaars · Haarlem en Amsterdam | Freek Wennekers',
+    description: 'Vastgoedfotograaf voor makelaars in Haarlem, Amsterdam en omstreken: foto’s, video, 360°-tour en NEN 2580-meetrapport in één afspraak, binnen 3 werkdagen.',
+    h1: 'Voor makelaars: één afspraak, alles binnen 3 werkdagen.',
+    lead: 'Foto’s, video liggend en staand, een 360°-tour en het NEN 2580-meetrapport met 2D- en 3D-plattegrond maak ik in één afspraak. Ik plan direct met de verkoper, en binnen 3 werkdagen na de opname staat alles klaar, ook het meetrapport.',
+    facts: ['Ruim 2.400 woningen gefotografeerd', 'Eén vaste fotograaf en stijl', 'Echte foto’s, kloppende maten'],
+    hero: ['larikslaan-01', 'Moderne villa aan de Larikslaan in Amsterdam bij schemering'],
+    service: 'Vastgoedfotografie voor makelaars', serviceType: 'Woningfotografie, vastgoedvideo, 360°-tour en NEN 2580-meetrapport voor makelaars',
+    sections: [
+      { kind: 'flow', id: 'werkwijze', label: 'Zo werkt het', items: [
+        'Je [boekt de opname](/boeken) online of belt. Adres en pakket zijn genoeg.',
+        'Ik plan de afspraak direct met de verkoper. Jij hoeft niets te regelen.',
+        'In één afspraak maak ik foto’s, video, de 360°-tour en het meetrapport.',
+        'Binnen 3 werkdagen na de opname staat alles in één downloadlink.'] },
+      { kind: 'list', id: 'krijgt', label: 'Wat je krijgt', intro: 'Bij Alles in één krijg je, in één downloadlink met vaste mapnamen:', items: [
+        '25 tot 40 foto’s, klaar voor Funda.',
+        'Video, liggend voor je website en staand voor social media.',
+        'Een link naar de 360°-tour.',
+        'Het NEN 2580-meetrapport als pdf.',
+        '2D- en 3D-plattegronden als losse bestanden.',
+        'Een kenmerkenlijst met wat Funda vraagt, zoals tuinligging, isolatie, cv-ketel en daktype.'] },
+      { kind: 'text', id: 'stijl', label: 'Vaste fotograaf, vaste stijl', paras: [
+        'Elke woning fotografeer en bewerk ik zelf. Zo ziet al je aanbod er hetzelfde uit, van het appartement tot de villa, en weet je wat je krijgt.',
+        'Heb je meerdere woningen per maand, dan plan ik graag een vaste fotodag met je kantoor. Je krijgt één factuur per maand.'] },
+      { kind: 'text', id: 'echt', label: 'Echte foto’s, kloppende maten', paras: [
+        'Licht, kleur en lijnen bewerk ik. Aan de woning zelf verander ik niets. Virtual staging doe ik alleen op verzoek, apart en duidelijk als bewerkt aangegeven.',
+        'De woning meet ik in volgens NEN 2580, dus de vierkante meters in je advertentie kloppen. Waarom dat voor makelaars telt, lees je bij [NEN 2580 inmeten](/nen-2580-meetrapport).'] },
+      { kind: 'packs', id: 'pakketten', label: 'Pakketten' },
+      { kind: 'faq', id: 'weten', label: 'Goed om te weten', qa: [
+        ['Hoe snel lever je op?', 'Binnen 3 werkdagen na de opname, ook het meetrapport. Alles komt tegelijk, in één downloadlink met vaste mapnamen.'],
+        ['Moet ik zelf bij de opname zijn?', 'Nee. Ik plan de afspraak direct met de verkoper. Met de sleutelservice haal ik de sleutel op en breng ik hem terug.'],
+        ['In welke plaatsen werk je?', 'Vanuit Haarlem werk ik in Haarlem, Heemstede, Bloemendaal, Zandvoort, Velsen, Haarlemmermeer, Amsterdam, Amstelveen en Abcoude.'],
+        ['Kan de plattegrond los op Funda?', 'Ja. Je krijgt de 2D- en 3D-plattegronden als losse bestanden, zodat ze niet tussen de foto’s staan. Bij [hoger op Funda](/hoger-op-funda) lees je waarom dat telt.']] },
+      { kind: 'services', id: 'diensten', label: 'Diensten' },
+      { kind: 'places', id: 'werkgebied', label: 'Werkgebied' },
+    ],
+  },
+  {
+    slug: 'hoger-op-funda', crumb: 'Hoger op Funda',
+    title: 'Hoger op Funda: complete woningpresentatie | Freek Wennekers',
+    description: 'Hoe Funda sinds 16 september 2026 woningen sorteert, wat compleet betekent en hoe je met foto’s, video, 360°-tour en plattegrond alles uit je pakket haalt.',
+    h1: 'Hoger op Funda: zo zet je een woning compleet online.',
+    lead: 'Sinds 16 september 2026 kijkt Funda bij de volgorde in de resultaten naar het pakket en naar hoe compleet de woningpresentatie is. Met alles uit één afspraak haal je het meeste uit de eerste dagen.',
+    hero: ['tjalk-05', 'Lichte woon- en eetkamer met hoge ramen naar de tuin in een villa aan de Tjalk in Amstelveen'],
+    service: 'Complete woningpresentatie voor Funda', serviceType: 'Foto’s, video, 360°-tour, plattegrond en kenmerkenlijst voor Funda',
+    sections: [
+      { kind: 'flow', id: 'volgorde', label: 'De volgorde op Funda', items: [
+        'Eerst woningen die in de afgelopen 48 uur met een pakket online zijn gekomen.',
+        'Daarna beschikbare woningen, vóór woningen die onder bod staan.',
+        'Binnen die groepen telt het pakket: Goud boven Zilver, Zilver boven Brons.',
+        'Daarbinnen telt hoe compleet de woningpresentatie is.'],
+        after: 'Bron: [Funda voor Makelaars](https://www.funda.nl/voormakelaars/artikel-makelaar/hoe-komt-mijn-object-zo-hoog-mogelijk-in-de-resultatenlijst/), juni en september 2026.' },
+      { kind: 'list', id: 'compleet', label: 'Wat Funda compleet noemt', items: [
+        'Minstens 10 foto’s.',
+        'Vier 360°-foto’s of een 3D-tour.',
+        'Een video.',
+        'Een losse plattegrond, niet tussen de foto’s.',
+        'Ingevulde kenmerken.'],
+        after: 'Met het pakket Alles in één lever ik al deze onderdelen, uit één afspraak.' },
+      { kind: 'text', id: 'eerste', label: 'De eerste 48 uur', paras: [
+        'In de eerste 48 uur met een pakket staat een woning bovenaan, en die kans krijg je maar één keer. Zet de woning daarom pas online als alles binnen is: foto’s, video, tour, plattegrond en kenmerken.',
+        'Omdat ik alles binnen 3 werkdagen na de opname aanlever, ook het meetrapport, hoef je niet te kiezen tussen snel en compleet.'] },
+      { kind: 'list', id: 'kenmerken', label: 'Kenmerken die vaak ontbreken', intro: 'Deze kenmerken blijven vaak leeg. Ik lever ze aan als kenmerkenlijst, zodat je ze zo kunt overnemen:', items: [
+        'Energielabel', 'Ligging van de tuin', 'Cv-ketel', 'Isolatie', 'Warm water', 'Parkeren', 'Badkamers', 'Soort dak'] },
+      { kind: 'text', id: 'pakket', label: 'Welk Funda-pakket?', paras: [
+        'Bij Brons draait het om foto’s en een plattegrond. Zilver en Goud voegen video, 360°-foto’s en een 3D-tour toe.',
+        'Foto + Meting levert alles voor Brons. Alles in één levert ook de video en de 360°-tour, zodat je alles uit Zilver en Goud haalt.'] },
+      { kind: 'packs', id: 'pakketten', label: 'Pakketten' },
+      { kind: 'faq', id: 'weten', label: 'Goed om te weten', qa: [
+        ['Hoe bepaalt Funda de volgorde?', 'Eerst komen woningen die in de afgelopen 48 uur met een pakket online kwamen, en beschikbare woningen vóór woningen onder bod. Daarna tellen het pakket (Goud, Zilver, Brons) en hoe compleet de presentatie is.'],
+        ['Wanneer zet ik een woning het best online?', 'Als alles binnen is. De eerste 48 uur bovenaan krijg je maar één keer.'],
+        ['Wat is een losse plattegrond?', 'Een plattegrond die apart op Funda staat, niet als foto tussen de andere foto’s. Daarom lever ik de plattegronden als losse bestanden.'],
+        ['Ben je verbonden aan Funda?', 'Nee. Ik ben een zelfstandige vastgoedfotograaf. De informatie op deze pagina komt van Funda voor Makelaars.']] },
+      { kind: 'services', id: 'diensten', label: 'Diensten' },
+    ],
+  },
+  {
+    slug: 'plattegrond-laten-maken', crumb: 'Plattegrond laten maken',
+    title: 'Plattegrond laten maken in 2D en 3D · Freek Wennekers',
+    description: 'Plattegrond van je woning laten maken in 2D en 3D, ingemeten volgens NEN 2580. Losse bestanden voor Funda, in één afspraak met de foto’s, binnen 3 werkdagen.',
+    h1: 'Plattegrond laten maken: 2D en 3D, ingemeten volgens NEN 2580.',
+    lead: 'Ik meet de woning in en maak er 2D- en 3D-plattegronden van. Je krijgt ze als losse bestanden, klaar voor Funda, binnen 3 werkdagen na de opname.',
+    facts: ['Ruim 2.400 woningen gefotografeerd', 'Echte foto’s, kloppende maten'],
+    hero: ['valeriusterras-01', 'Woonkamer met trap in een nieuwbouwappartement aan het Valeriusterras in Amsterdam'],
+    service: 'Plattegrond laten maken', serviceType: '2D- en 3D-plattegronden met NEN 2580-meting',
+    sections: [
+      { kind: 'list', id: 'krijgt', label: 'Wat je krijgt', items: [
+        '2D-plattegronden van de woning.',
+        '3D-plattegronden die de indeling in één oogopslag laten zien.',
+        'De plattegronden als losse bestanden, apart van de foto’s.',
+        'Het NEN 2580-meetrapport met de gebruiksoppervlakte.',
+        'Alles binnen 3 werkdagen na de opname, samen met de foto’s.'] },
+      { kind: 'text', id: 'verschil', label: '2D of 3D?', paras: [
+        'Een 2D-plattegrond is de tekening van bovenaf: muren, deuren, ramen en de indeling. Kopers zien meteen hoe de ruimtes zich tot elkaar verhouden.',
+        'Een 3D-plattegrond laat dezelfde indeling zien in perspectief. Zo begrijpen ook kopers die geen tekeningen lezen hoe de woning in elkaar zit. Je krijgt ze allebei.'] },
+      { kind: 'text', id: 'meting', label: 'Ingemeten, niet geschat', paras: [
+        'Ik meet de woning ter plekke in volgens NEN 2580. De plattegrond en het meetrapport komen uit dezelfde meting, dus de vierkante meters op de tekening en in de advertentie zijn gelijk.',
+        'Meer over de meting lees je bij [NEN 2580 inmeten](/nen-2580-meetrapport).'] },
+      { kind: 'text', id: 'funda', label: 'Los op Funda', paras: [
+        'Funda telt een plattegrond pas mee voor een complete presentatie als hij los staat, niet als foto tussen de andere foto’s. Daarom lever ik de plattegronden als aparte bestanden. Zie ook [hoger op Funda](/hoger-op-funda).'] },
+      { kind: 'packs', id: 'pakketten', label: 'Pakketten' },
+      { kind: 'faq', id: 'weten', label: 'Goed om te weten', qa: [
+        ['Bij welk pakket hoort een plattegrond?', 'Bij alle drie: Foto + Meting, Alles in één en Verhuur.'],
+        ['Wanneer heb ik de plattegrond?', 'Binnen 3 werkdagen na de opname, samen met de foto’s en het meetrapport.'],
+        ['Wat is het verschil tussen een plattegrond en een meetrapport?', 'De plattegrond laat de indeling zien. Het meetrapport legt de gebruiksoppervlakte vast volgens NEN 2580. Je krijgt ze uit één meting.'],
+        ['Waarom de plattegrond los aanleveren?', 'Funda telt een losse plattegrond mee voor een complete presentatie. Tussen de foto’s telt hij niet als plattegrond.']] },
+      { kind: 'services', id: 'diensten', label: 'Diensten' },
+      { kind: 'places', id: 'werkgebied', label: 'Werkgebied' },
+    ],
+  },
+  {
+    slug: 'verhuur-puntentelling', crumb: 'Verhuur en puntentelling',
+    title: 'Verhuur en WWS-puntentelling: foto’s en maten | Freek Wennekers',
+    description: 'Sinds 1 januari 2025 hoort bij elk nieuw huurcontract een WWS-puntentelling. Ik maak de foto’s en meet de woning in volgens NEN 2580, in één afspraak.',
+    h1: 'Woning verhuren: foto’s en kloppende maten voor de puntentelling.',
+    lead: 'Sinds 1 januari 2025 moet een verhuurder bij een nieuw huurcontract de puntentelling van het woningwaarderingsstelsel (WWS) meegeven. De oppervlakte telt daarin zwaar mee. Ik meet de woning in volgens NEN 2580 en maak in dezelfde afspraak de foto’s voor de advertentie.',
+    facts: ['Ruim 2.400 woningen gefotografeerd', 'Echte foto’s, kloppende maten'],
+    hero: ['valeriusterras-10', 'Lichte woonkamer in een appartement aan het Valeriusterras in Amsterdam'],
+    service: 'Foto’s en NEN 2580-maten voor verhuur', serviceType: 'Woningfotografie en plattegrond met NEN 2580-maten voor de WWS-puntentelling',
+    sections: [
+      { kind: 'text', id: 'wws', label: 'De puntentelling', paras: [
+        'Het woningwaarderingsstelsel geeft een woning punten, onder meer voor de oppervlakte, het energielabel en de voorzieningen. Het aantal punten bepaalt of de woning in de sociale huur, de middenhuur of de vrije sector valt, en wat daar de maximale huur is.',
+        'Sinds 1 januari 2025 hoort de puntentelling bij elk nieuw huurcontract, in alle segmenten, ook in de vrije sector. De verhuurder kan de punten berekenen met de huurprijscheck van de Huurcommissie.'] },
+      { kind: 'text', id: 'maten', label: 'Waarom de maten moeten kloppen', paras: [
+        'Elke vierkante meter telt mee in de punten. Klopt de oppervlakte niet, dan klopt de puntentelling ook niet.',
+        'Met een meting volgens NEN 2580 staat vast hoeveel vierkante meter de woning heeft. Je krijgt een plattegrond met die maten, uit dezelfde afspraak als de foto’s.'] },
+      { kind: 'list', id: 'krijgt', label: 'Wat je krijgt', intro: 'Het pakket Verhuur:', items: [
+        'Foto’s van de woning voor de huuradvertentie.',
+        'Een plattegrond met de maten volgens NEN 2580, voor de puntentelling.',
+        'Alles binnen 3 werkdagen na de opname.'] },
+      { kind: 'packs', id: 'pakketten', label: 'Pakketten' },
+      { kind: 'faq', id: 'weten', label: 'Goed om te weten', qa: [
+        ['Is een puntentelling verplicht?', 'Ja. Sinds 1 januari 2025 hoort bij elk nieuw huurcontract een WWS-puntentelling, ook in de vrije sector.'],
+        ['Waarom de woning laten inmeten?', 'De oppervlakte telt mee in de punten. Met een meting volgens NEN 2580 staat vast hoeveel vierkante meter de woning heeft.'],
+        ['Krijg ik ook foto’s voor de advertentie?', 'Ja. Het pakket Verhuur bestaat uit foto’s en een plattegrond met NEN 2580-maten, in één afspraak.'],
+        ['Hoe snel is het klaar?', 'Binnen 3 werkdagen na de opname.']] },
+      { kind: 'services', id: 'diensten', label: 'Diensten' },
+      { kind: 'places', id: 'werkgebied', label: 'Werkgebied' },
+    ],
+  },
+  {
+    slug: 'nieuwbouw', crumb: 'Nieuwbouw',
+    title: 'Nieuwbouwfotografie voor modelwoningen · Freek Wennekers',
+    description: 'Foto’s, video en 360°-tours van nieuwbouw: modelwoningen voor de verkoop, de oplevering en elke bouwfase. Voor makelaars en ontwikkelaars, Haarlem en Amsterdam.',
+    h1: 'Nieuwbouwfotografie: modelwoningen, opleveringen en elke fase.',
+    lead: 'Voor nieuwbouw fotografeer ik de modelwoning voor de verkoop, leg ik de oplevering vast en kom ik per fase terug. Steeds in dezelfde stijl, zodat het hele project één verhaal vertelt.',
+    facts: ['Ruim 2.400 woningen gefotografeerd', 'Eén vaste fotograaf en stijl'],
+    hero: ['valeriusterras-18', 'Nieuwbouwappartement met glazen pui en terras aan het Valeriusterras in Amsterdam'],
+    service: 'Nieuwbouwfotografie', serviceType: 'Fotografie, video en 360°-tours van nieuwbouwprojecten',
+    sections: [
+      { kind: 'list', id: 'maak', label: 'Wat ik maak', items: [
+        'Foto’s, video en een 360°-tour van de modelwoning, voor de verkoop.',
+        'Foto’s bij de oplevering, voor het opleveringsrapport.',
+        'Vastlegging per bouwfase, in dezelfde stijl.',
+        'Alles binnen 3 werkdagen na elke opname.'] },
+      { kind: 'text', id: 'verkoop', label: 'Voor de verkoop', paras: [
+        'Een modelwoning verkoopt de rest van het project. Met video en een 360°-tour lopen kopers er online doorheen, ook als ze niet naar de bouwplaats kunnen komen.',
+        'Ik fotografeer en bewerk alles zelf. Zo blijven licht, kleur en kadrering gelijk, van de eerste modelwoning tot de laatste oplevering: in de brochure, op Funda en op de projectsite.'] },
+      { kind: 'text', id: 'fase', label: 'Per fase', paras: [
+        'Per fase leg ik vast hoe het project groeit, van de eerste opgeleverde woningen tot de afgewerkte omgeving. Zo heb je voor de verkoop en de communicatie met kopers steeds beelden die bij elkaar passen.'] },
+      { kind: 'projects', id: 'portfolio', label: 'Nieuwbouw in het portfolio', items: [
+        ['valeriusterras-07', 'Open woonkeuken in een nieuwbouwappartement aan het Valeriusterras in Amsterdam', 'Woonkeuken', 'Valeriusterras, Amsterdam', 'Open keuken met kookeiland en eettafel.'],
+        ['valeriusterras-01', 'Woonkamer met houten trap in een nieuwbouwappartement aan het Valeriusterras in Amsterdam', 'Woonkamer', 'Valeriusterras, Amsterdam', 'Houten trap en visgraatvloer.'],
+        ['valeriusterras-11', 'Slaapkamer met openslaande deuren naar het balkon aan het Valeriusterras in Amsterdam', 'Slaapkamer', 'Valeriusterras, Amsterdam', 'Openslaande deuren naar het balkon.']] },
+      { kind: 'faq', id: 'weten', label: 'Goed om te weten', qa: [
+        ['Fotografeer je ook een modelwoning?', 'Ja. Foto’s, video en een 360°-tour van de modelwoning maak ik in één afspraak.'],
+        ['Kun je per fase terugkomen?', 'Ja. Ik leg het project per fase vast, in dezelfde stijl.'],
+        ['Kunnen kopers de modelwoning online bekijken?', 'Ja. Met een [360°-tour](/360-graden-tour) lopen kopers zelf door de modelwoning, wanneer het hun uitkomt.'],
+        ['Hoe snel lever je op?', 'Binnen 3 werkdagen na elke opname.']] },
+      { kind: 'services', id: 'diensten', label: 'Diensten' },
+      { kind: 'places', id: 'werkgebied', label: 'Werkgebied' },
+    ],
+  },
+  {
+    slug: 'vastgoedfotograaf-amstelveen', crumb: 'Vastgoedfotograaf Amstelveen',
+    title: 'Vastgoedfotograaf Amstelveen · Woningfotografie | Freek Wennekers',
+    description: 'Vastgoedfotograaf in Amstelveen: foto’s, video, 360°-tour en NEN 2580-meetrapport in één afspraak. Voor makelaars, binnen 3 werkdagen na de opname klaar.',
+    h1: 'Vastgoedfotograaf in Amstelveen, met oog voor licht, tuin en ligging.',
+    lead: 'Vanuit Haarlem fotografeer ik woningen in heel Amstelveen. Foto’s, video, een 360°-tour en het NEN 2580-meetrapport maak ik in één afspraak, en binnen 3 werkdagen na de opname heb je alles.',
+    facts: ['Ruim 2.400 woningen gefotografeerd', 'Eén vaste fotograaf en stijl', 'Echte foto’s, kloppende maten'],
+    hero: ['tjalk-45', 'Vrijstaande villa aan de Tjalk in Amstelveen bij schemering'],
+    place: { type: 'City', name: 'Amstelveen' },
+    service: 'Vastgoedfotografie in Amstelveen', serviceType: 'Woningfotografie, vastgoedvideo, 360°-tour en NEN 2580-meetrapport',
+    sections: [
+      { kind: 'projects', id: 'woningen', label: 'Woningen in Amstelveen', items: [
+        ['tjalk-15', 'Achtergevel en tuin van een vrijstaande villa aan de Tjalk in Amstelveen', 'Tjalk', 'Amstelveen', 'Vrijstaande villa met grote tuin en tuindeuren.'],
+        ['deschulp-02', 'Binnenzwembad in een moderne villa aan De Schulp in Amstelveen', 'De Schulp 9', 'Amstelveen', 'Moderne villa met binnenzwembad.'],
+        ['tjalk-06', 'Keuken met kookeiland en tuindeuren in een villa aan de Tjalk in Amstelveen', 'Tjalk', 'Amstelveen', 'Keuken met kookeiland en zicht op de tuin.']] },
+      { kind: 'text', id: 'amstelveen', label: 'In Amstelveen', paras: [
+        'In Amstelveen staan veel woningen met een tuin of aan het groen. Ik laat zien hoe binnen en buiten in elkaar overlopen, en hoe het licht door de woning valt.',
+        'Licht, kleur en lijnen bewerk ik. Aan de woning zelf verander ik niets: echte foto’s, kloppende maten.',
+        'In dezelfde afspraak meet ik de woning in volgens NEN 2580. Je krijgt het [meetrapport](/nen-2580-meetrapport) met 2D- en 3D-plattegronden.'] },
+      { kind: 'list', id: 'krijgt', label: 'Wat je krijgt', items: [
+        'Foto’s van interieur, exterieur en details, klaar voor Funda.',
+        '[Video](/vastgoedvideo), liggend en staand.',
+        'Een [360°-tour](/360-graden-tour), handig voor kopers van verder weg en expats.',
+        'Een [NEN 2580-meetrapport](/nen-2580-meetrapport) met 2D- en 3D-plattegrond.',
+        'Alles binnen 3 werkdagen na de opname, in één downloadlink.'] },
+      { kind: 'packs', id: 'pakketten', label: 'Pakketten' },
+      { kind: 'faq', id: 'weten', label: 'Goed om te weten', qa: [
+        ['Kom je voor een opname naar Amstelveen?', 'Ja. Vanuit Haarlem werk ik in heel Amstelveen, en ook in Amsterdam en Abcoude.'],
+        ['Kan er in Amstelveen een drone vliegen?', 'Amstelveen ligt dicht bij Schiphol. Daar gelden strenge regels voor drones, dus per adres bekijk ik vooraf wat er mogelijk is.'],
+        ['Hoe snel heb ik alles?', 'Binnen 3 werkdagen na de opname, ook het meetrapport.']] },
+      { kind: 'places', id: 'buurt', label: 'Ook in de buurt' },
+      { kind: 'services', id: 'diensten', label: 'Diensten' },
+    ],
+  },
+  {
     slug: 'boeken', crumb: 'Boeken', noindex: true,
     title: 'Opname boeken · Freek Wennekers Vastgoedfotografie',
     description: 'Boek een opname: foto’s, video, 360°-tour en NEN 2580-meetrapport in één afspraak. Kies je pakket, ik plan de afspraak met de verkoper.',
@@ -453,7 +663,8 @@ const FOOT = [['/vastgoedvideo', 'Vastgoedvideo'], ['/dronefotografie', 'Dronefo
 const footLinks = () => `<nav class="fl" aria-label="Diensten en werkgebied">${FOOT.filter(([h]) => ROUTES.has(h)).map(([h, t]) => `<a href="${h}">${t}</a>`).join('')}</nav>`;
 const ROUTES = new Set(['/', ...PAGES.map(p => `/${p.slug}`), ...PAGES2.map(p => `/${p.slug}`)]);
 const route = h => h.split(/[?#]/)[0] || '/';
-const md = s => s.replace(/\[([^\]]+)\]\((\/[^)\s]*)\)/g, (_, t, h) => ROUTES.has(route(h)) ? `<a class="ul" href="${h}">${t}</a>` : t);
+const md = s => s.replace(/\[([^\]]+)\]\((\/[^)\s]*)\)/g, (_, t, h) => ROUTES.has(route(h)) ? `<a class="ul" href="${h}">${t}</a>` : t)
+  .replace(/\[([^\]]+)\]\((https:\/\/[^)\s]+)\)/g, (_, t, h) => `<a class="ul" href="${h}" rel="noopener" target="_blank">${t}</a>`);
 const plain = s => strip(md(s)).replace(/\s+/g, ' ').trim();
 
 const CSS2 = `
@@ -480,6 +691,9 @@ const CSS2 = `
 .packs h3{font-size:clamp(20px,1.7vw,24px);font-weight:500;letter-spacing:-.025em;line-height:1.15}
 .packs p{font-size:15px;color:var(--ink-2);text-wrap:pretty}
 .packs a{margin-top:auto;padding-top:8px;font-size:15px;font-weight:500;justify-self:start;align-self:flex-start}
+.intro,.after{max-width:62ch;color:var(--ink-2);text-wrap:pretty}
+.intro{margin-bottom:20px}
+.after{margin-top:24px}
 .places{display:flex;flex-wrap:wrap;gap:10px}
 .places a,.places span{display:inline-block;padding:8px 15px;border:1px solid var(--line);border-radius:99px;font-size:15px;color:var(--ink-2)}
 .places a{border-color:var(--ink);color:var(--ink);font-weight:500;transition:background .3s var(--soft),color .3s var(--soft)}
@@ -560,9 +774,13 @@ ${inner}
 
 function renderSection(s, p) {
   switch (s.kind) {
-    case 'list': return section(s.id, s.label, `    <ul class="list">
-${s.items.map(t => `      <li>${md(t)}</li>`).join('\n')}
-    </ul>`);
+    case 'list': return section(s.id, s.label, `    <div>${s.intro ? `
+      <p class="intro">${md(s.intro)}</p>` : ''}
+      <ul class="list">
+${s.items.map(t => `        <li>${md(t)}</li>`).join('\n')}
+      </ul>${s.after ? `
+      <p class="after">${md(s.after)}</p>` : ''}
+    </div>`);
     case 'text': return section(s.id, s.label, `    <div class="prose">
 ${s.paras.map(t => `      <p>${md(t)}</p>`).join('\n')}
     </div>`);
@@ -581,9 +799,12 @@ ${SERVICES2.filter(x => x.href !== `/${p.slug}` && ROUTES.has(x.href)).map(x => 
     case 'places': return section(s.id, s.label, `    <ul class="places">
 ${PLACES.filter(([h]) => h !== `/${p.slug}`).map(([h, n]) => `      <li>${ROUTES.has(h) ? `<a href="${h}">${n}</a>` : `<span>${n}</span>`}</li>`).join('\n')}
     </ul>`);
-    case 'flow': return section(s.id, s.label, `    <ol class="flow">
-${s.items.map((t, i) => `      <li><b>${String(i + 1).padStart(2, '0')}</b><p>${t}</p></li>`).join('\n')}
-    </ol>`);
+    case 'flow': return section(s.id, s.label, `    <div>
+      <ol class="flow">
+${s.items.map((t, i) => `        <li><b>${String(i + 1).padStart(2, '0')}</b><p>${md(t)}</p></li>`).join('\n')}
+      </ol>${s.after ? `
+      <p class="after">${md(s.after)}</p>` : ''}
+    </div>`);
     case 'form': return `
   <section class="sec tight wrap" aria-labelledby="h-${s.id}">
     <h2 class="vh" id="h-${s.id}">${s.label}</h2>
@@ -643,7 +864,7 @@ function page2(p) {
   ];
   if (p.service) {
     graph.push({ '@type': 'Service', '@id': `${url}#dienst`, name: p.service, serviceType: p.serviceType, description: p.description, url,
-      ...(heroUrl ? { image: heroUrl } : {}), provider: { '@id': B }, areaServed: { '@type': p.place.type, name: p.place.name },
+      ...(heroUrl ? { image: heroUrl } : {}), provider: { '@id': B }, areaServed: p.place ? { '@type': p.place.type, name: p.place.name } : AREAS.map(([t, n]) => ({ '@type': t, name: n })),
       hasOfferCatalog: { '@type': 'OfferCatalog', name: 'Pakketten', itemListElement: PACKAGES.map(k => ({
         '@type': 'Offer', itemOffered: { '@type': 'Service', name: k.name, description: k.text }, url: `${SITE}/boeken?pakket=${k.id}` })) } });
   }
