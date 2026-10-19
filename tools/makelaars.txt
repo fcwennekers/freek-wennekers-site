@@ -1,6 +1,7 @@
 # Makelaarskantoren voor het aanvullen in het boekformulier (/boeken). Eén kantoor per regel: naam | plaats(en), met komma’s
+# Optioneel een derde kolom met het team (namen met ; ertussen), alleen voor kantoren waarvoor Freek dat vraagt.
 # build-pages.mjs maakt hier data/makelaars.json van. Ontbreekt een kantoor of klopt een naam niet? Pas het hier aan.
-# Alleen bedrijfsnamen, geen namen van personen. Deze lijst zegt niets over met wie Freek werkt.
+# Bedrijfsnamen; teamnamen alleen waar Freek dat vraagt. Deze lijst zegt niets over met wie Freek werkt.
 # Startlijst oktober 2026, samengesteld uit openbare makelaarsoverzichten (funda, pararius, NVM-vergelijkers).
 
 Overspaern Makelaardij | Haarlem
@@ -112,3 +113,4 @@ Van der Wurff Makelaars | Uithoorn
 Geijsel Makelaardij | Ouderkerk aan de Amstel
 Wind Makelaars | Ouderkerk aan de Amstel
 Makelaardij De Nederlanden | Abcoude
+Lunshof Makelaardij | Amstelveen, Amsterdam | Stefano Djoemena; Rico Christ; Johan Grijzenhout; Dick Sniekers; Cindy Verkaik; Floor Luiken; Charlotte Reijnders; Myrthe Panman
