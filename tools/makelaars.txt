@@ -1,11 +1,11 @@
-# Makelaarskantoren voor het aanvullen in het boekformulier (/boeken). Eén kantoor per regel: naam | plaats
+# Makelaarskantoren voor het aanvullen in het boekformulier (/boeken). Eén kantoor per regel: naam | plaats(en), met komma’s
 # build-pages.mjs maakt hier data/makelaars.json van. Ontbreekt een kantoor of klopt een naam niet? Pas het hier aan.
 # Alleen bedrijfsnamen, geen namen van personen. Deze lijst zegt niets over met wie Freek werkt.
 # Startlijst oktober 2026, samengesteld uit openbare makelaarsoverzichten (funda, pararius, NVM-vergelijkers).
 
 Overspaern Makelaardij | Haarlem
-Keijser & Drieman NVM Makelaars | Haarlem
-Hoekstra en Van Eck | Haarlem
+Keijser & Drieman NVM Makelaars | Haarlem, Hoofddorp
+Hoekstra en Van Eck | Haarlem, Hoofddorp, Amsterdam
 Van Engelen Makelaars | Haarlem
 Hugtenburg & De Vries | Haarlem
 Cirkel Makelaars | Haarlem
@@ -13,12 +13,12 @@ Spaarneduin | Haarlem
 Haarlemsche Huizen Makelaars | Haarlem
 Wouter Makelaardij | Haarlem
 Ideler Makelaars | Haarlem
-Van Waalwijk van Doorn | Haarlem
+Van Waalwijk van Doorn | Haarlem, Santpoort-Noord, IJmuiden
 Boonstra Heijmeijer Makelaars | Haarlem
 Leef! Makelaars | Haarlem
 VK Makelaars | Haarlem
-JRS Makelaars | Haarlem
-PUUR Makelaars | Haarlem
+JRS Makelaars | Haarlem, Heemstede
+PUUR Makelaars | Haarlem, Bloemendaal, Heemstede
 Spaarne Makelaars | Haarlem
 MKLRDIJ De Makelaars van Haarlem | Haarlem
 Koning Makelaardij & Taxaties | Haarlem
@@ -40,11 +40,11 @@ Brantjes Makelaars Velsen | IJmuiden
 JandeMakelaar | Hoofddorp
 VLIEG Makelaars Hoofddorp | Hoofddorp
 Van Groenigen Makelaardij | Hoofddorp
-Mooijekind Vleut Makelaars | Hoofddorp
+Mooijekind Vleut Makelaars | Haarlem, Heemstede, Hoofddorp
 RE/MAX Uw Makelaar | Hoofddorp
 Lokaal Makelaardij | Hoofddorp
 Adventus Makelaars | Amstelveen
-EKZ Makelaars | Amstelveen
+EKZ Makelaars | Amstelveen, Uithoorn
 Amstelhoven Makelaars | Amstelveen
 VLIEG Makelaars Amstelveen | Amstelveen
 Voorma & Millenaar Makelaars | Amstelveen
@@ -69,3 +69,46 @@ DKV Makelaars | Amsterdam
 ME Makelaars | Amsterdam
 Aemestelle Makelaars | Amsterdam
 Groot Amsterdam Makelaardij | Amsterdam
+Jeroen van den Boogaard Makelaars | Nieuw-Vennep
+Meermakelaars | Hoofddorp
+Makelaarshuijs Eikelenboom | Hoofddorp
+gWoon Makelaars | Hoofddorp
+Poldermakelaars & Leopardi | Hoofddorp
+Hoofddorp Makelaars | Hoofddorp
+Wietse Makelaardij | Hoofddorp
+Hier Makelaars | Nieuw-Vennep
+Weijers Makelaardij & Taxaties | Nieuw-Vennep
+Barnhoorn Vermeer Makelaars | Badhoevedorp
+Onkenhout Makelaars | Badhoevedorp
+ERA Ketel Makelaardij | Badhoevedorp
+Arjen Ketel Makelaars | Badhoevedorp
+P&P Vastgoed Makelaars | Badhoevedorp
+Van der Schaaf & Kooijmans Makelaars | Haarlem, Bloemendaal
+PMA Makelaardij en beheer | Haarlem
+Joost Makelaars | Bloemendaal
+KOK Makelaars | Overveen
+Makelaarskantoor Bosch & Duyn | Overveen
+DMC Makelaars | Overveen
+Makelaardij Strumphler & Van Zijl | Aerdenhout
+Aerdenhout & Omstreken | Aerdenhout
+Companyon | Heemstede
+Kramer & Partners | Heemstede
+WvD Makelaardij | Zandvoort
+Vogel Makelaars | IJmuiden
+Bakker Makelaardij | Beverwijk
+ALAND Makelaars | Amsterdam
+SEM Makelaars | Amsterdam
+Makelaar Jordaan | Amsterdam
+HVJ Group | Amsterdam
+Huisman Makelaardij | Amsterdam
+VLIEG Makelaars Amsterdam | Amsterdam
+Bert van Vulpen Makelaars | Amstelveen
+Metropool Makelaars | Amstelveen
+Brockhoff Makelaars | Amstelveen
+Koop Lenstra Makelaars | Uithoorn
+Amstel Makelaardij | Uithoorn
+Emmelien Huisman Makelaardij | Uithoorn
+Van der Wurff Makelaars | Uithoorn
+Geijsel Makelaardij | Ouderkerk aan de Amstel
+Wind Makelaars | Ouderkerk aan de Amstel
+Makelaardij De Nederlanden | Abcoude

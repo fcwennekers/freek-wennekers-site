@@ -576,7 +576,7 @@ ${s.items.map((t, i) => `      <li><b>${String(i + 1).padStart(2, '0')}</b><p>${
     <h2 class="vh" id="h-${s.id}">${s.label}</h2>
     <form class="book" id="boek" action="mailto:${MAIL}" method="post" enctype="text/plain">
       <fieldset><legend>De woning</legend><div class="fg">
-        <div class="f full"><label for="f-adres">Adres</label><input id="f-adres" name="Adres" required autocomplete="off" placeholder="Straat en huisnummer"></div>
+        <div class="f full"><label for="f-adres">Adres</label><input id="f-adres" name="Adres" required autocomplete="off" placeholder="Straat en huisnummer, of postcode en huisnummer"></div>
         <div class="f"><label for="f-plaats">Plaats</label><input id="f-plaats" name="Plaats" required autocomplete="off"></div>
         <div class="f"><label for="f-m2">Woonoppervlakte</label><div class="unit"><input id="f-m2" name="Woonoppervlakte" inputmode="numeric" autocomplete="off" placeholder="Zoek ik voor je op"><span>m²</span></div></div>
           <p class="h full" id="f-m2-h" aria-live="polite">Vul adres en plaats in, dan zoek ik de woonoppervlakte op in het Kadaster.</p>
