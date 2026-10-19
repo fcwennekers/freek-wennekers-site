@@ -3,7 +3,7 @@
 // Daarnaast de nieuwe pagina's (boeken.html, woningfotografie-amsterdam.html) uit PAGES2. Geen prijzen op de site.
 // Gebruik: node tools/build-pages.mjs   (daarna de .html-bestanden committen; Vercel zet ze online)
 // Tekst aanpassen: hieronder in PAGES of PAGES2. Een voorbeeld toevoegen (video, tour, plattegrond): vul `example` in.
-import { writeFileSync } from 'fs';
+import { writeFileSync, readFileSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -12,7 +12,7 @@ const SITE = 'https://freekwennekers.com';
 const NAME = 'Freek Wennekers Vastgoedfotografie';
 const TEL = '+31628186551', TEL_TXT = '+31 6 28 18 65 51', MAIL = 'freekwennekers@gmail.com';
 const KVK = '88955672', LINKEDIN = 'https://www.linkedin.com/in/freekwennekers';
-const MODIFIED = '2026-10-14';
+const MODIFIED = '2026-10-19';
 const AREAS = [['City', 'Haarlem'], ['City', 'Heemstede'], ['City', 'Bloemendaal'], ['City', 'Zandvoort'],
   ['AdministrativeArea', 'Velsen'], ['AdministrativeArea', 'Haarlemmermeer'], ['City', 'Amsterdam'],
   ['City', 'Amstelveen'], ['City', 'Abcoude']];
@@ -199,6 +199,10 @@ nav a:hover{background-size:100% 1px}
 .foot .wrap>div{display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px;padding:24px 0 calc(28px + env(safe-area-inset-bottom));border-top:1px solid var(--ink);font-size:13px;color:var(--ink-3)}
 .foot .sig{height:24px;margin-right:auto;color:var(--ink)}
 .foot a{color:var(--ink);font-weight:500}
+.foot .wrap>div{padding-bottom:14px}
+.foot .fl{display:flex;flex-wrap:wrap;gap:6px 22px;padding-bottom:calc(28px + env(safe-area-inset-bottom));font-size:13px}
+.foot .fl a{color:var(--ink-3);font-weight:400;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;padding-bottom:2px;transition:background-size .5s var(--out),color .3s var(--soft)}
+.foot .fl a:hover{color:var(--ink);background-size:100% 1px}
 `.trim().replace(/\n/g, '\n');
 
 function page(p) {
@@ -215,6 +219,8 @@ function page(p) {
       image: heroUrl, provider: { '@id': B }, areaServed: AREAS.map(([t, n]) => ({ '@type': t, name: n })) },
     { '@type': 'LocalBusiness', '@id': B, name: NAME, url: `${SITE}/`, telephone: TEL, email: MAIL,
       address: { '@type': 'PostalAddress', addressLocality: 'Haarlem', addressRegion: 'Noord-Holland', addressCountry: 'NL' } },
+    { '@type': 'FAQPage', '@id': `${url}#vragen`, url, inLanguage: 'nl-NL', mainEntity: p.qa.map(([q, a]) => ({
+      '@type': 'Question', name: strip(q), acceptedAnswer: { '@type': 'Answer', text: strip(a) } })) },
     { '@type': 'WebSite', '@id': `${SITE}/#website`, url: `${SITE}/`, name: NAME, inLanguage: 'nl-NL' },
   ] };
   const ldJson = JSON.stringify(ld).replace(/</g, '\\u003c');
@@ -353,7 +359,9 @@ ${others.map(s => `      <li><a class="ul" href="${s.href}">${s.name}</a><p>${s.
     <a class="ul" href="${LINKEDIN}" rel="me noopener" target="_blank">LinkedIn</a>
     <a class="ul" href="llms.txt">llms.txt</a>
     <a class="ul" href="#top">Naar boven</a>
-  </div></div>
+  </div>
+  ${footLinks()}
+  </div>
 </footer>
 </body>
 </html>
@@ -437,6 +445,12 @@ const PAGES2 = [
   },
 ];
 
+// stille linkregel onderaan elke pagina: diensten en werkgebied (alleen pagina's die bestaan)
+const FOOT = [['/vastgoedvideo', 'Vastgoedvideo'], ['/dronefotografie', 'Dronefotografie'], ['/360-graden-tour', '360°-tour'],
+  ['/nen-2580-meetrapport', 'NEN 2580 inmeten'], ['/voor-makelaars', 'Voor makelaars'], ['/hoger-op-funda', 'Hoger op Funda'],
+  ['/plattegrond-laten-maken', 'Plattegrond laten maken'], ['/verhuur-puntentelling', 'Verhuur en puntentelling'], ['/nieuwbouw', 'Nieuwbouw'],
+  ['/woningfotografie-amsterdam', 'Woningfotografie Amsterdam'], ['/vastgoedfotograaf-amstelveen', 'Vastgoedfotograaf Amstelveen'], ['/boeken', 'Opname boeken']];
+const footLinks = () => `<nav class="fl" aria-label="Diensten en werkgebied">${FOOT.filter(([h]) => ROUTES.has(h)).map(([h, t]) => `<a href="${h}">${t}</a>`).join('')}</nav>`;
 const ROUTES = new Set(['/', ...PAGES.map(p => `/${p.slug}`), ...PAGES2.map(p => `/${p.slug}`)]);
 const route = h => h.split(/[?#]/)[0] || '/';
 const md = s => s.replace(/\[([^\]]+)\]\((\/[^)\s]*)\)/g, (_, t, h) => ROUTES.has(route(h)) ? `<a class="ul" href="${h}">${t}</a>` : t);
@@ -502,10 +516,17 @@ const CSS2 = `
 .send .btn{border:0;font:inherit;font-size:15px;font-weight:500;cursor:pointer}
 .send .ok{font-size:14px;font-weight:500}
 .send .ok:empty{display:none}
+.ac{position:relative}
+.ac ul{position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:30;max-height:300px;margin:0;padding:6px;overflow:auto;list-style:none;border:1px solid var(--line);border-radius:10px;background:#fff;box-shadow:0 14px 34px rgba(19,19,18,.12)}
+.ac li{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:10px 12px;border-radius:6px;font-size:15px;cursor:pointer}
+.ac li small{flex:none;font-size:13px;color:var(--ink-3)}
+.ac li[aria-selected=true],.ac li:hover{background:var(--bg)}
+.lnk{padding:0;border:0;background:none;color:var(--ink);font:inherit;text-decoration:underline;text-underline-offset:2px;cursor:pointer}
 @media (max-width:640px){.fg,.opts{grid-template-columns:1fr}.send .btn{width:100%;justify-content:center}}
 `.trim();
 
 // boekingsformulier: pakket uit de link overnemen en (voorlopig) versturen via het mailprogramma
+const AC_JS = readFileSync(join(ROOT, 'tools/boeken-ac.js'), 'utf8').replace(/^\/\/.*\n/gm, '').trim();
 const FORM_JS = `(function(){var f=document.getElementById('boek');if(!f)return;
 function q(s){return f.querySelector(s)}
 var pq=(location.search.match(/[?&]pakket=([a-z]+)/)||[])[1];if(pq){var r0=q('input[data-id='+pq+']');if(r0)r0.checked=true}
@@ -589,7 +610,7 @@ ${EXTRAS.map(x => `          <label class="chk"><input type="checkbox" name="Ext
         <p class="h full">Ik plan de afspraak direct met de verkoper.</p>
       </div></fieldset>
       <fieldset><legend>Jouw gegevens</legend><div class="fg">
-        <div class="f full"><label for="f-kantoor">Makelaarskantoor</label><input id="f-kantoor" name="Makelaarskantoor" autocomplete="organization"><span class="h">Leeg laten als je de woning zelf verkoopt of verhuurt.</span></div>
+        <div class="f full"><label for="f-kantoor">Makelaarskantoor</label><input id="f-kantoor" name="Makelaarskantoor" autocomplete="off" spellcheck="false" placeholder="Begin te typen, bijvoorbeeld Overs…"><span class="h">Leeg laten als je de woning zelf verkoopt of verhuurt.</span></div>
         <div class="f"><label for="f-naam">Je naam</label><input id="f-naam" name="Naam" required autocomplete="name"></div>
         <div class="f"><label for="f-tel">Telefoon</label><input id="f-tel" name="Telefoon" type="tel" autocomplete="tel"></div>
         <div class="f full"><label for="f-mail">E-mail</label><input id="f-mail" name="E-mail" type="email" required autocomplete="email"></div>
@@ -598,7 +619,7 @@ ${EXTRAS.map(x => `          <label class="chk"><input type="checkbox" name="Ext
       <div class="send">
         <button class="btn" type="submit">Opname aanvragen</button>
         <p class="ok" id="f-msg" role="status"></p>
-        <p class="h">Ik gebruik je gegevens en die van de verkoper alleen om de opname te plannen.</p>
+        <p class="h">Ik gebruik je gegevens en die van de verkoper alleen om de opname te plannen. Je eigen naam en kantoor onthoudt dit apparaat voor een volgende boeking. <button class="lnk" type="button" id="f-vergeet" hidden>Vergeet mijn gegevens</button></p>
       </div>
     </form>
   </section>
@@ -715,9 +736,12 @@ ${p.sections.map(s => renderSection(s, p)).join('')}${isForm ? '' : `
     <a class="ul" href="${LINKEDIN}" rel="me noopener" target="_blank">LinkedIn</a>
     <a class="ul" href="llms.txt">llms.txt</a>
     <a class="ul" href="#top">Naar boven</a>
-  </div></div>
+  </div>
+  ${footLinks()}
+  </div>
 </footer>${isForm ? `
-<script>${FORM_JS}</script>` : ''}
+<script>${FORM_JS}
+${AC_JS}</script>` : ''}
 </body>
 </html>
 `;
@@ -728,6 +752,13 @@ const check = p => {
     if (strip(p[k]).length > max) throw new Error(`${p.slug}: ${k} is ${strip(p[k]).length} tekens (max ${max})`);
   }
 };
+// kantorenlijst voor het boekformulier
+const kantoren = readFileSync(join(ROOT, 'tools/makelaars.txt'), 'utf8').split('\n').map(l => l.trim()).filter(l => l && !l.startsWith('#'))
+  .map(l => { const [n, pl] = l.split('|').map(x => x.trim()); return { n, p: pl || '' }; }).sort((a, b) => a.n.localeCompare(b.n, 'nl'));
+mkdirSync(join(ROOT, 'data'), { recursive: true });
+writeFileSync(join(ROOT, 'data/makelaars.json'), JSON.stringify(kantoren) + '\n');
+console.log('ok', `data/makelaars.json (${kantoren.length} kantoren)`);
+
 for (const p of PAGES) {
   check(p);
   writeFileSync(join(ROOT, `${p.slug}.html`), page(p));

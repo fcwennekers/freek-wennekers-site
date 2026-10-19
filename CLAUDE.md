@@ -6,6 +6,9 @@
   pas de tekst daar aan, niet in de .html-bestanden.
 - Geen prijzen op de site (ook niet in JSON-LD). Pakketten: Foto + Meting, Alles in één, Verhuur.
 - Het boekformulier (`/boeken`, noindex) verstuurt via het mailprogramma en zoekt de woonoppervlakte op in de BAG (PDOK).
+  Makelaarskantoren vult het aan uit `tools/makelaars.txt` (wordt `data/makelaars.json`, script in `tools/boeken-ac.js`).
+  Namen van personen staan niet op de site; die onthoudt alleen het apparaat van de bezoeker.
+- Geen losse 'Meer over'-links in de tekst van de homepage; interne links staan in de linkregel onderaan (`FOOT` in build-pages.mjs, ook in `index.html`).
 - Grote wijzigingen eerst op een previewbranch; pas naar `main` (productie) met akkoord van Freek.
 - Dezelfde feiten staan op vier plekken: zichtbare tekst in `index.html`, de JSON-LD bovenin `index.html`,
   `index.md` en `llms.txt` (en voor diensten ook `tools/build-pages.mjs`). Pas bij elke inhoudelijke wijziging (diensten, werkgebied, levertijd, portfolio,

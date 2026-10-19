@@ -1,0 +1,71 @@
+# Makelaarskantoren voor het aanvullen in het boekformulier (/boeken). Eén kantoor per regel: naam | plaats
+# build-pages.mjs maakt hier data/makelaars.json van. Ontbreekt een kantoor of klopt een naam niet? Pas het hier aan.
+# Alleen bedrijfsnamen, geen namen van personen. Deze lijst zegt niets over met wie Freek werkt.
+# Startlijst oktober 2026, samengesteld uit openbare makelaarsoverzichten (funda, pararius, NVM-vergelijkers).
+
+Overspaern Makelaardij | Haarlem
+Keijser & Drieman NVM Makelaars | Haarlem
+Hoekstra en Van Eck | Haarlem
+Van Engelen Makelaars | Haarlem
+Hugtenburg & De Vries | Haarlem
+Cirkel Makelaars | Haarlem
+Spaarneduin | Haarlem
+Haarlemsche Huizen Makelaars | Haarlem
+Wouter Makelaardij | Haarlem
+Ideler Makelaars | Haarlem
+Van Waalwijk van Doorn | Haarlem
+Boonstra Heijmeijer Makelaars | Haarlem
+Leef! Makelaars | Haarlem
+VK Makelaars | Haarlem
+JRS Makelaars | Haarlem
+PUUR Makelaars | Haarlem
+Spaarne Makelaars | Haarlem
+MKLRDIJ De Makelaars van Haarlem | Haarlem
+Koning Makelaardij & Taxaties | Haarlem
+UP Makelaars | Haarlem
+Centraal Makelaardij Haarlem | Haarlem
+Huizenstede Makelaardij | Haarlem
+Koops Makelaardij | Haarlem
+Lighthouse Property Services | Haarlem
+Esther Otten Makelaardij | Spaarndam
+MakelaarsatWork Qualis | Bloemendaal
+Mijn Huis Makelaardij | Heemstede
+Makelaardij o.z. Bloemensteede | Heemstede
+Parkhage Makelaars | Heemstede
+Wbos Makelaars | Heemstede
+Eigenwijs Makelaars | Zandvoort
+Zandvoort Makelaars | Zandvoort
+Cense Makelaars | Zandvoort
+Brantjes Makelaars Velsen | IJmuiden
+JandeMakelaar | Hoofddorp
+VLIEG Makelaars Hoofddorp | Hoofddorp
+Van Groenigen Makelaardij | Hoofddorp
+Mooijekind Vleut Makelaars | Hoofddorp
+RE/MAX Uw Makelaar | Hoofddorp
+Lokaal Makelaardij | Hoofddorp
+Adventus Makelaars | Amstelveen
+EKZ Makelaars | Amstelveen
+Amstelhoven Makelaars | Amstelveen
+VLIEG Makelaars Amstelveen | Amstelveen
+Voorma & Millenaar Makelaars | Amstelveen
+Vos Makelaardij Ouderkerk | Ouderkerk aan de Amstel
+Yourhome Makelaars | Amsterdam
+Vos & Kleian | Amsterdam
+Keizerskroon | Amsterdam
+Den Uyl | Amsterdam
+Van Westerloo | Amsterdam
+020-Makelaars | Amsterdam
+KIJCK | Amsterdam
+De Graaf & Groot | Amsterdam
+KRK Makelaars | Amsterdam
+Hallie & Van Klooster Makelaardij | Amsterdam
+De Makelaers | Amsterdam
+Makelaar Bert | Amsterdam
+Edens Makelaardij | Amsterdam
+Tel Makelaars | Amsterdam
+iQ Makelaars | Amsterdam
+Boomsma & Bruinsma Makelaars | Amsterdam
+DKV Makelaars | Amsterdam
+ME Makelaars | Amsterdam
+Aemestelle Makelaars | Amsterdam
+Groot Amsterdam Makelaardij | Amsterdam

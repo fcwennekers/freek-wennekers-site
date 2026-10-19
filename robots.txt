@@ -5,6 +5,8 @@
 # Crawlers die verzamelen voor het trainen van AI-modellen mogen de tekst lezen,
 # maar niet de foto's.
 #
+# /data/ bevat alleen hulpgegevens voor het boekformulier.
+#
 # Samenvatting voor AI-assistenten: https://freekwennekers.com/llms.txt
 
 User-agent: GPTBot
@@ -19,8 +21,10 @@ User-agent: cohere-training-data-crawler
 Disallow: /img/
 Disallow: /og.jpg
 Disallow: /og/
+Disallow: /data/
 
 User-agent: *
 Allow: /
+Disallow: /data/
 
 Sitemap: https://freekwennekers.com/sitemap.xml

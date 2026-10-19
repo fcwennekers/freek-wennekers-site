@@ -27,7 +27,7 @@
 <meta name="twitter:image" content="https://freekwennekers.com/og.jpg">
 <link rel="preload" href="fonts/switzer-500.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/switzer-400.woff2" as="font" type="font/woff2" crossorigin>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://freekwennekers.com/boeken#webpage","url":"https://freekwennekers.com/boeken","name":"Opname boeken · Freek Wennekers Vastgoedfotografie","description":"Boek een opname: foto’s, video, 360°-tour en NEN 2580-meetrapport in één afspraak. Kies je pakket, ik plan de afspraak met de verkoper.","inLanguage":"nl-NL","isPartOf":{"@id":"https://freekwennekers.com/#website"},"about":{"@id":"https://freekwennekers.com/#bedrijf"},"breadcrumb":{"@id":"https://freekwennekers.com/boeken#kruimelpad"},"dateModified":"2026-10-14"},{"@type":"BreadcrumbList","@id":"https://freekwennekers.com/boeken#kruimelpad","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freekwennekers.com/"},{"@type":"ListItem","position":2,"name":"Boeken","item":"https://freekwennekers.com/boeken"}]},{"@type":"LocalBusiness","@id":"https://freekwennekers.com/#bedrijf","name":"Freek Wennekers Vastgoedfotografie","url":"https://freekwennekers.com/","telephone":"+31628186551","email":"freekwennekers@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Haarlem","addressRegion":"Noord-Holland","addressCountry":"NL"}},{"@type":"WebSite","@id":"https://freekwennekers.com/#website","url":"https://freekwennekers.com/","name":"Freek Wennekers Vastgoedfotografie","inLanguage":"nl-NL"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://freekwennekers.com/boeken#webpage","url":"https://freekwennekers.com/boeken","name":"Opname boeken · Freek Wennekers Vastgoedfotografie","description":"Boek een opname: foto’s, video, 360°-tour en NEN 2580-meetrapport in één afspraak. Kies je pakket, ik plan de afspraak met de verkoper.","inLanguage":"nl-NL","isPartOf":{"@id":"https://freekwennekers.com/#website"},"about":{"@id":"https://freekwennekers.com/#bedrijf"},"breadcrumb":{"@id":"https://freekwennekers.com/boeken#kruimelpad"},"dateModified":"2026-10-19"},{"@type":"BreadcrumbList","@id":"https://freekwennekers.com/boeken#kruimelpad","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freekwennekers.com/"},{"@type":"ListItem","position":2,"name":"Boeken","item":"https://freekwennekers.com/boeken"}]},{"@type":"LocalBusiness","@id":"https://freekwennekers.com/#bedrijf","name":"Freek Wennekers Vastgoedfotografie","url":"https://freekwennekers.com/","telephone":"+31628186551","email":"freekwennekers@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Haarlem","addressRegion":"Noord-Holland","addressCountry":"NL"}},{"@type":"WebSite","@id":"https://freekwennekers.com/#website","url":"https://freekwennekers.com/","name":"Freek Wennekers Vastgoedfotografie","inLanguage":"nl-NL"}]}</script>
 <style>
 /* pagina gemaakt door tools/build-pages.mjs: zelfde letters, kleuren en raster als de homepage */
 @font-face{font-family:"Switzer";src:url(fonts/switzer-400.woff2) format("woff2");font-weight:400;font-display:swap}
@@ -114,6 +114,10 @@ nav a:hover{background-size:100% 1px}
 .foot .wrap>div{display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px;padding:24px 0 calc(28px + env(safe-area-inset-bottom));border-top:1px solid var(--ink);font-size:13px;color:var(--ink-3)}
 .foot .sig{height:24px;margin-right:auto;color:var(--ink)}
 .foot a{color:var(--ink);font-weight:500}
+.foot .wrap>div{padding-bottom:14px}
+.foot .fl{display:flex;flex-wrap:wrap;gap:6px 22px;padding-bottom:calc(28px + env(safe-area-inset-bottom));font-size:13px}
+.foot .fl a{color:var(--ink-3);font-weight:400;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;padding-bottom:2px;transition:background-size .5s var(--out),color .3s var(--soft)}
+.foot .fl a:hover{color:var(--ink);background-size:100% 1px}
 .vh{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .bar nav a[aria-current=page]{background-size:100% 1px}
 @media (max-width:400px){.bar .wrap{gap:14px}.bar nav{gap:14px}.bar .sig{height:20px}}
@@ -173,6 +177,12 @@ nav a:hover{background-size:100% 1px}
 .send .btn{border:0;font:inherit;font-size:15px;font-weight:500;cursor:pointer}
 .send .ok{font-size:14px;font-weight:500}
 .send .ok:empty{display:none}
+.ac{position:relative}
+.ac ul{position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:30;max-height:300px;margin:0;padding:6px;overflow:auto;list-style:none;border:1px solid var(--line);border-radius:10px;background:#fff;box-shadow:0 14px 34px rgba(19,19,18,.12)}
+.ac li{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:10px 12px;border-radius:6px;font-size:15px;cursor:pointer}
+.ac li small{flex:none;font-size:13px;color:var(--ink-3)}
+.ac li[aria-selected=true],.ac li:hover{background:var(--bg)}
+.lnk{padding:0;border:0;background:none;color:var(--ink);font:inherit;text-decoration:underline;text-underline-offset:2px;cursor:pointer}
 @media (max-width:640px){.fg,.opts{grid-template-columns:1fr}.send .btn{width:100%;justify-content:center}}
 </style>
 </head>
@@ -222,7 +232,7 @@ nav a:hover{background-size:100% 1px}
         <p class="h full">Ik plan de afspraak direct met de verkoper.</p>
       </div></fieldset>
       <fieldset><legend>Jouw gegevens</legend><div class="fg">
-        <div class="f full"><label for="f-kantoor">Makelaarskantoor</label><input id="f-kantoor" name="Makelaarskantoor" autocomplete="organization"><span class="h">Leeg laten als je de woning zelf verkoopt of verhuurt.</span></div>
+        <div class="f full"><label for="f-kantoor">Makelaarskantoor</label><input id="f-kantoor" name="Makelaarskantoor" autocomplete="off" spellcheck="false" placeholder="Begin te typen, bijvoorbeeld Overs…"><span class="h">Leeg laten als je de woning zelf verkoopt of verhuurt.</span></div>
         <div class="f"><label for="f-naam">Je naam</label><input id="f-naam" name="Naam" required autocomplete="name"></div>
         <div class="f"><label for="f-tel">Telefoon</label><input id="f-tel" name="Telefoon" type="tel" autocomplete="tel"></div>
         <div class="f full"><label for="f-mail">E-mail</label><input id="f-mail" name="E-mail" type="email" required autocomplete="email"></div>
@@ -231,7 +241,7 @@ nav a:hover{background-size:100% 1px}
       <div class="send">
         <button class="btn" type="submit">Opname aanvragen</button>
         <p class="ok" id="f-msg" role="status"></p>
-        <p class="h">Ik gebruik je gegevens en die van de verkoper alleen om de opname te plannen.</p>
+        <p class="h">Ik gebruik je gegevens en die van de verkoper alleen om de opname te plannen. Je eigen naam en kantoor onthoudt dit apparaat voor een volgende boeking. <button class="lnk" type="button" id="f-vergeet" hidden>Vergeet mijn gegevens</button></p>
       </div>
     </form>
   </section>
@@ -257,7 +267,9 @@ nav a:hover{background-size:100% 1px}
     <a class="ul" href="https://www.linkedin.com/in/freekwennekers" rel="me noopener" target="_blank">LinkedIn</a>
     <a class="ul" href="llms.txt">llms.txt</a>
     <a class="ul" href="#top">Naar boven</a>
-  </div></div>
+  </div>
+  <nav class="fl" aria-label="Diensten en werkgebied"><a href="/vastgoedvideo">Vastgoedvideo</a><a href="/dronefotografie">Dronefotografie</a><a href="/360-graden-tour">360°-tour</a><a href="/nen-2580-meetrapport">NEN 2580 inmeten</a><a href="/woningfotografie-amsterdam">Woningfotografie Amsterdam</a><a href="/boeken">Opname boeken</a></nav>
+  </div>
 </footer>
 <script>(function(){var f=document.getElementById('boek');if(!f)return;
 function q(s){return f.querySelector(s)}
@@ -277,6 +289,108 @@ var r=q('input[name=Pakket]:checked'),xs=[].map.call(f.querySelectorAll('input[n
 if(d){d=new Date(d+'T12:00').toLocaleDateString('nl-NL',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}
 var body=['Adres: '+v('f-adres'),'Plaats: '+v('f-plaats'),'Woonoppervlakte: '+(v('f-m2')?v('f-m2')+' m²':'onbekend'),'Pakket: '+(r?r.value:''),'Extra’s: '+(xs.join(', ')||'geen'),'Voorkeursdag: '+(d||'geen voorkeur'),'Verkoper: '+[v('f-vnaam'),v('f-vtel')].filter(Boolean).join(', '),'Makelaarskantoor: '+(v('f-kantoor')||'particulier'),'Naam: '+v('f-naam'),'E-mail: '+v('f-mail'),'Telefoon: '+v('f-tel'),'','Opmerkingen:',v('f-opm')];
 location.href='mailto:freekwennekers@gmail.com?subject='+encodeURIComponent('Opname '+v('f-adres')+', '+v('f-plaats'))+'&body='+encodeURIComponent(body.join('\r\n'));
-document.getElementById('f-msg').textContent='Je mailprogramma opent nu met je aanvraag. Verstuur die mail, dan neem ik contact op met de verkoper.'})})();</script>
+document.getElementById('f-msg').textContent='Je mailprogramma opent nu met je aanvraag. Verstuur die mail, dan neem ik contact op met de verkoper.'})})();
+(function () {
+  var f = document.getElementById('boek'); if (!f) return;
+  var KEY = 'fw-boeken-v1', kantoren = null;
+  function norm(s) { return String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/&/g, ' en ').replace(/[^a-z0-9]+/g, ' ').trim(); }
+  function load() { try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) { return []; } }
+  function save(list) { try { localStorage.setItem(KEY, JSON.stringify(list.slice(0, 30))); } catch (e) {} }
+  // elk woord uit de zoekterm moet het begin zijn van een woord in de naam ("overs" vindt "Overspaern Makelaardij")
+  function score(name, q) {
+    var n = norm(name), words = n.split(' '), qs = q.split(' ');
+    if (!q) return 1;
+    if (n.indexOf(q) === 0) return 3;
+    for (var i = 0; i < qs.length; i++) { if (!words.some(function (w) { return w.indexOf(qs[i]) === 0; })) return 0; }
+    return 2;
+  }
+  var kantoor = f.querySelector('#f-kantoor'), naam = f.querySelector('#f-naam'), mail = f.querySelector('#f-mail'), tel = f.querySelector('#f-tel');
+  if (!kantoor || !naam) return;
+  if (load().length) naam.setAttribute('autocomplete', 'off');
+
+  function combo(input, source, pick, showEmpty) {
+    var box = document.createElement('ul'), id = input.id + '-lijst', items = [], active = -1;
+    box.id = id; box.setAttribute('role', 'listbox'); box.hidden = true;
+    var wrap = document.createElement('div'); wrap.className = 'ac';
+    input.parentNode.insertBefore(wrap, input); wrap.appendChild(input); wrap.appendChild(box);
+    input.setAttribute('role', 'combobox'); input.setAttribute('aria-autocomplete', 'list');
+    input.setAttribute('aria-controls', id); input.setAttribute('aria-expanded', 'false');
+    function close() { box.hidden = true; active = -1; input.setAttribute('aria-expanded', 'false'); input.removeAttribute('aria-activedescendant'); }
+    function mark(i) {
+      active = i;
+      [].forEach.call(box.children, function (li, k) { li.setAttribute('aria-selected', String(k === i)); });
+      if (i >= 0) { input.setAttribute('aria-activedescendant', id + '-' + i); box.children[i].scrollIntoView({ block: 'nearest' }); }
+    }
+    function open() {
+      var q = norm(input.value);
+      if (!q && !showEmpty) return close();
+      items = source(q);
+      if (!items.length || (items.length === 1 && norm(items[0].v) === q)) return close();
+      box.textContent = '';
+      items.forEach(function (it, k) {
+        var li = document.createElement('li'), b = document.createElement('span');
+        li.id = id + '-' + k; li.setAttribute('role', 'option'); li.setAttribute('aria-selected', 'false');
+        b.textContent = it.v; li.appendChild(b);
+        if (it.sub) { var s = document.createElement('small'); s.textContent = it.sub; li.appendChild(s); }
+        li.addEventListener('mousedown', function (e) { e.preventDefault(); choose(k); });
+        box.appendChild(li);
+      });
+      box.hidden = false; input.setAttribute('aria-expanded', 'true'); mark(-1);
+    }
+    function choose(k) { var it = items[k]; if (!it) return; input.value = it.v; close(); pick(it); input.dispatchEvent(new Event('change', { bubbles: true })); }
+    input.addEventListener('input', open);
+    input.addEventListener('focus', function () { if (showEmpty) open(); });
+    input.addEventListener('blur', function () { setTimeout(close, 120); });
+    input.addEventListener('keydown', function (e) {
+      if (box.hidden) { if (e.key === 'ArrowDown') { open(); e.preventDefault(); } return; }
+      if (e.key === 'ArrowDown') { mark(Math.min(active + 1, items.length - 1)); e.preventDefault(); }
+      else if (e.key === 'ArrowUp') { mark(Math.max(active - 1, 0)); e.preventDefault(); }
+      else if (e.key === 'Enter' && active >= 0) { choose(active); e.preventDefault(); }
+      else if (e.key === 'Escape') { close(); }
+    });
+    return { open: open };
+  }
+
+  // kantoren: eerder gebruikt op dit apparaat bovenaan, daarna de lijst
+  combo(kantoor, function (q) {
+    var seen = {}, out = [];
+    load().forEach(function (m) { var s = score(m.k, q); if (m.k && s && !seen[norm(m.k)]) { seen[norm(m.k)] = 1; out.push({ v: m.k, sub: 'eerder gebruikt', s: s + 2 }); } });
+    (kantoren || []).forEach(function (m) { var s = score(m.n, q); if (s && !seen[norm(m.n)]) { seen[norm(m.n)] = 1; out.push({ v: m.n, sub: m.p, s: s }); } });
+    return out.sort(function (a, b) { return b.s - a.s || a.v.localeCompare(b.v, 'nl'); }).slice(0, 6);
+  }, function () {}, false);
+  kantoor.addEventListener('focus', function () {
+    if (kantoren) return; kantoren = [];
+    fetch('/data/makelaars.json').then(function (r) { return r.json(); }).then(function (j) { kantoren = j; if (document.activeElement === kantoor && kantoor.value) kantoor.dispatchEvent(new Event('input')); }).catch(function () {});
+  });
+
+  // namen: alleen wie op dit apparaat eerder boekte, bij voorkeur van hetzelfde kantoor; kiezen vult ook e-mail en telefoon
+  combo(naam, function (q) {
+    var k = norm(kantoor.value), seen = {}, out = [];
+    load().forEach(function (m) {
+      var s = score(m.n, q), key = norm(m.n) + '|' + norm(m.k);
+      if (!m.n || !s || seen[key] || (k && norm(m.k) !== k)) return;
+      seen[key] = 1; out.push({ v: m.n, sub: m.k || '', m: m, s: s });
+    });
+    return out.slice(0, 6);
+  }, function (it) {
+    if (it.m.e) mail.value = it.m.e;
+    if (it.m.t) tel.value = it.m.t;
+    if (!kantoor.value && it.m.k) kantoor.value = it.m.k;
+  }, true);
+
+  // na versturen onthouden op dit apparaat
+  f.addEventListener('submit', function () {
+    var m = { k: kantoor.value.trim(), n: naam.value.trim(), e: mail.value.trim(), t: tel.value.trim() };
+    if (!m.n) return;
+    var key = norm(m.n) + '|' + norm(m.k);
+    save([m].concat(load().filter(function (x) { return norm(x.n) + '|' + norm(x.k) !== key; })));
+    var fg = document.getElementById('f-vergeet'); if (fg) fg.hidden = false;
+  });
+  var vergeet = document.getElementById('f-vergeet');
+  if (vergeet) {
+    vergeet.hidden = !load().length;
+    vergeet.addEventListener('click', function () { try { localStorage.removeItem(KEY); } catch (e) {} vergeet.hidden = true; naam.setAttribute('autocomplete', 'name'); });
+  }
+})();</script>
 </body>
 </html>
