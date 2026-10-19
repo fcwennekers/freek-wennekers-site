@@ -21,7 +21,7 @@ Vanuit Haarlem: Haarlem, Heemstede, Bloemendaal, Zandvoort, Velsen, Haarlemmerme
 
 Meer per plaats: [Woningfotografie Amsterdam](https://freekwennekers.com/woningfotografie-amsterdam) · [Vastgoedfotograaf Amstelveen](https://freekwennekers.com/vastgoedfotograaf-amstelveen)
 
-Meer voor makelaars: [Voor makelaars](https://freekwennekers.com/voor-makelaars) · [Hoger op Funda](https://freekwennekers.com/hoger-op-funda) · [Plattegrond laten maken](https://freekwennekers.com/plattegrond-laten-maken) · [Verhuur en puntentelling](https://freekwennekers.com/verhuur-puntentelling) · [Nieuwbouw](https://freekwennekers.com/nieuwbouw)
+Meer voor makelaars: [Voor makelaars](https://freekwennekers.com/voor-makelaars) · [Hoger op Funda](https://freekwennekers.com/hoger-op-funda) · [Plattegrond laten maken](https://freekwennekers.com/plattegrond-laten-maken) · [Nieuwbouw](https://freekwennekers.com/nieuwbouw)
 
 ## Werk
 
@@ -50,7 +50,7 @@ Ik neem de tijd voor licht en opstelling, en bewerk al het materiaal zelf. Zo kr
 
 ## Contact
 
-Boek een opname via het formulier: [Opname boeken](https://freekwennekers.com/boeken). Kies een pakket: Foto + Meting (foto’s en NEN 2580-meetrapport met 2D- en 3D-plattegrond), Alles in één (ook video en 360°-tour) of Verhuur (foto’s en maten voor de WWS-puntentelling). Ik plan de afspraak direct met de verkoper. Vragen? Bel of mail gerust, ook als je nog aan het oriënteren bent.
+Boek een opname via het formulier: [Opname boeken](https://freekwennekers.com/boeken). Kies een pakket: Foto + Meting (foto’s en NEN 2580-meetrapport met 2D- en 3D-plattegrond), Alles in één (ook video en 360°-tour) of Verhuur (foto’s en een plattegrond met NEN 2580-maten). Ik plan de afspraak direct met de verkoper. Vragen? Bel of mail gerust, ook als je nog aan het oriënteren bent.
 
 - Telefoon: +31 6 28 18 65 51
 - E-mail: freekwennekers@gmail.com

@@ -9,7 +9,7 @@ Eén statische pagina: geen framework, geen build-stap. Live op https://freekwen
 | --- | --- |
 | `index.html` | De hele site: opening, intro, diensten, werk, over, contact (HTML, CSS en JS in één bestand) |
 | `vastgoedvideo.html`, `dronefotografie.html`, `360-graden-tour.html`, `nen-2580-meetrapport.html` | Dienstpagina's, gemaakt met `tools/build-pages.mjs` (niet met de hand aanpassen) |
-| `voor-makelaars.html`, `hoger-op-funda.html`, `plattegrond-laten-maken.html`, `verhuur-puntentelling.html`, `nieuwbouw.html` | Pagina's voor makelaars en per dienst, gemaakt met `tools/build-pages.mjs` |
+| `voor-makelaars.html`, `hoger-op-funda.html`, `plattegrond-laten-maken.html`, `nieuwbouw.html` | Pagina's voor makelaars en per dienst, gemaakt met `tools/build-pages.mjs` |
 | `woningfotografie-amsterdam.html`, `vastgoedfotograaf-amstelveen.html`, `boeken.html` | Plaatspagina's en boekingsformulier (noindex), ook gemaakt met `tools/build-pages.mjs` |
 | `data/makelaars.json` | Kantorenlijst voor het aanvullen in het boekformulier; gemaakt uit `tools/makelaars.txt` (niet met de hand aanpassen) |
 | `og/` | Deelafbeeldingen (1200×630) per dienstpagina |

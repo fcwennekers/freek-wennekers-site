@@ -2,10 +2,10 @@
 
 - Statische site: homepage `index.html` plus dienstpagina's, pagina's voor makelaars, plaatspagina's (Amsterdam, Amstelveen) en `/boeken`, live via Vercel vanaf `main`. Zie `README.md`.
 - De dienstpagina's (`vastgoedvideo.html`, `dronefotografie.html`, `360-graden-tour.html`, `nen-2580-meetrapport.html`),
-  en alle pagina's uit `PAGES2` (onder meer `voor-makelaars`, `hoger-op-funda`, `plattegrond-laten-maken`, `verhuur-puntentelling`,
+  en alle pagina's uit `PAGES2` (onder meer `voor-makelaars`, `hoger-op-funda`, `plattegrond-laten-maken`,
   `nieuwbouw`, `woningfotografie-amsterdam`, `vastgoedfotograaf-amstelveen`, `boeken`) worden gemaakt door `node tools/build-pages.mjs`;
   pas de tekst daar aan, niet in de .html-bestanden.
-- Geen prijzen op de site (ook niet in JSON-LD). Pakketten: Foto + Meting, Alles in één, Verhuur.
+- Geen prijzen op de site (ook niet in JSON-LD). Freek maakt geen WWS-puntentellingen; noem die niet als dienst. Pakketten: Foto + Meting, Alles in één, Verhuur.
 - Het boekformulier (`/boeken`, noindex) verstuurt via het mailprogramma en zoekt de woonoppervlakte op in de BAG (PDOK).
   Makelaarskantoren vult het aan uit `tools/makelaars.txt` (wordt `data/makelaars.json`, script in `tools/boeken-ac.js`).
   Namen van personen staan niet op de site; die onthoudt alleen het apparaat van de bezoeker.

@@ -372,7 +372,7 @@ const TEL_NL = '06 28 18 65 51';
 const PACKAGES = [
   { id: 'meting', name: 'Foto + Meting', text: 'Foto’s en een NEN 2580-meetrapport met 2D- en 3D-plattegrond.', short: 'Foto’s en meetrapport met plattegrond' },
   { id: 'alles', name: 'Alles in één', text: 'Foto’s, meetrapport en plattegrond, plus video (liggend en staand) en een 360°-tour.', short: 'Ook video en een 360°-tour' },
-  { id: 'verhuur', name: 'Verhuur', text: 'Foto’s en een plattegrond met NEN 2580-maten voor de WWS-puntentelling.', short: 'Foto’s en maten voor de puntentelling' },
+  { id: 'verhuur', name: 'Verhuur', text: 'Foto’s en een plattegrond met NEN 2580-maten, voor de verhuur van de woning.', short: 'Foto’s en plattegrond met maten' },
 ];
 const EXTRAS = [
   { name: 'Schemerfoto’s', text: 'Buitenfoto’s in de schemering, met de lichten aan.' },
@@ -384,7 +384,6 @@ const PLACES = [['/vastgoedfotograaf-haarlem', 'Haarlem'], ['/vastgoedfotograaf-
   ['/woningfotografie-amsterdam', 'Amsterdam'], ['/vastgoedfotograaf-amstelveen', 'Amstelveen'], ['/vastgoedfotograaf-haarlemmermeer', 'Haarlemmermeer']];
 const SERVICES2 = [...SERVICES,
   { href: '/plattegrond-laten-maken', name: 'Plattegrond laten maken', text: '2D en 3D, als losse bestanden voor Funda.' },
-  { href: '/verhuur-puntentelling', name: 'Verhuur en puntentelling', text: 'Foto’s en NEN 2580-maten voor de WWS.' },
   { href: '/nieuwbouw', name: 'Nieuwbouw', text: 'Modelwoningen en opleveringen, per fase.' },
   { href: '/voor-makelaars', name: 'Voor makelaars', text: 'Vaste fotograaf, vaste stijl, één factuur.' }];
 
@@ -531,36 +530,6 @@ const PAGES2 = [
         ['Wanneer heb ik de plattegrond?', 'Binnen 3 werkdagen na de opname, samen met de foto’s en het meetrapport.'],
         ['Wat is het verschil tussen een plattegrond en een meetrapport?', 'De plattegrond laat de indeling zien. Het meetrapport legt de gebruiksoppervlakte vast volgens NEN 2580. Je krijgt ze uit één meting.'],
         ['Waarom de plattegrond los aanleveren?', 'Funda telt een losse plattegrond mee voor een complete presentatie. Tussen de foto’s telt hij niet als plattegrond.']] },
-      { kind: 'services', id: 'diensten', label: 'Diensten' },
-      { kind: 'places', id: 'werkgebied', label: 'Werkgebied' },
-    ],
-  },
-  {
-    slug: 'verhuur-puntentelling', crumb: 'Verhuur en puntentelling',
-    title: 'Verhuur en WWS-puntentelling: foto’s en maten | Freek Wennekers',
-    description: 'Sinds 1 januari 2025 hoort bij elk nieuw huurcontract een WWS-puntentelling. Ik maak de foto’s en meet de woning in volgens NEN 2580, in één afspraak.',
-    h1: 'Woning verhuren: foto’s en kloppende maten voor de puntentelling.',
-    lead: 'Sinds 1 januari 2025 moet een verhuurder bij een nieuw huurcontract de puntentelling van het woningwaarderingsstelsel (WWS) meegeven. De oppervlakte telt daarin zwaar mee. Ik meet de woning in volgens NEN 2580 en maak in dezelfde afspraak de foto’s voor de advertentie.',
-    facts: ['Ruim 2.400 woningen gefotografeerd', 'Echte foto’s, kloppende maten'],
-    hero: ['valeriusterras-10', 'Lichte woonkamer in een appartement aan het Valeriusterras in Amsterdam'],
-    service: 'Foto’s en NEN 2580-maten voor verhuur', serviceType: 'Woningfotografie en plattegrond met NEN 2580-maten voor de WWS-puntentelling',
-    sections: [
-      { kind: 'text', id: 'wws', label: 'De puntentelling', paras: [
-        'Het woningwaarderingsstelsel geeft een woning punten, onder meer voor de oppervlakte, het energielabel en de voorzieningen. Het aantal punten bepaalt of de woning in de sociale huur, de middenhuur of de vrije sector valt, en wat daar de maximale huur is.',
-        'Sinds 1 januari 2025 hoort de puntentelling bij elk nieuw huurcontract, in alle segmenten, ook in de vrije sector. De verhuurder kan de punten berekenen met de huurprijscheck van de Huurcommissie.'] },
-      { kind: 'text', id: 'maten', label: 'Waarom de maten moeten kloppen', paras: [
-        'Elke vierkante meter telt mee in de punten. Klopt de oppervlakte niet, dan klopt de puntentelling ook niet.',
-        'Met een meting volgens NEN 2580 staat vast hoeveel vierkante meter de woning heeft. Je krijgt een plattegrond met die maten, uit dezelfde afspraak als de foto’s.'] },
-      { kind: 'list', id: 'krijgt', label: 'Wat je krijgt', intro: 'Het pakket Verhuur:', items: [
-        'Foto’s van de woning voor de huuradvertentie.',
-        'Een plattegrond met de maten volgens NEN 2580, voor de puntentelling.',
-        'Alles binnen 3 werkdagen na de opname.'] },
-      { kind: 'packs', id: 'pakketten', label: 'Pakketten' },
-      { kind: 'faq', id: 'weten', label: 'Goed om te weten', qa: [
-        ['Is een puntentelling verplicht?', 'Ja. Sinds 1 januari 2025 hoort bij elk nieuw huurcontract een WWS-puntentelling, ook in de vrije sector.'],
-        ['Waarom de woning laten inmeten?', 'De oppervlakte telt mee in de punten. Met een meting volgens NEN 2580 staat vast hoeveel vierkante meter de woning heeft.'],
-        ['Krijg ik ook foto’s voor de advertentie?', 'Ja. Het pakket Verhuur bestaat uit foto’s en een plattegrond met NEN 2580-maten, in één afspraak.'],
-        ['Hoe snel is het klaar?', 'Binnen 3 werkdagen na de opname.']] },
       { kind: 'services', id: 'diensten', label: 'Diensten' },
       { kind: 'places', id: 'werkgebied', label: 'Werkgebied' },
     ],
