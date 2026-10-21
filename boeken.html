@@ -161,7 +161,7 @@ nav a:hover{background-size:100% 1px}
 .unit{position:relative}
 .unit span{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--ink-3);pointer-events:none}
 .book .unit input{padding-right:46px}
-.opts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .oc{position:relative;display:grid;gap:4px;align-content:start;padding:15px 16px 16px 44px;border:1px solid var(--line);border-radius:10px;background:#fff;cursor:pointer;transition:border-color .2s var(--soft),box-shadow .2s var(--soft)}
 .oc input{position:absolute;left:16px;top:18px;width:18px;height:18px;margin:0;accent-color:var(--ink)}
 .oc:has(input:checked){border-color:var(--ink);box-shadow:0 0 0 1px var(--ink)}
@@ -214,8 +214,10 @@ nav a:hover{background-size:100% 1px}
       </div></fieldset>
       <fieldset><legend>Pakket</legend><div>
         <div class="opts">
+          <label class="oc"><input type="radio" name="Pakket" value="Alleen foto’s" data-id="fotos" required><b>Alleen foto’s</b><span>Interieur, exterieur en details</span></label>
           <label class="oc"><input type="radio" name="Pakket" value="Foto + Meting" data-id="meting" required><b>Foto + Meting</b><span>Foto’s en meetrapport met plattegrond</span></label>
           <label class="oc"><input type="radio" name="Pakket" value="Alles in één" data-id="alles" required><b>Alles in één</b><span>Ook video en een 360°-tour</span></label>
+          <label class="oc"><input type="radio" name="Pakket" value="Overig" data-id="overig" required><b>Overig</b><span>Iets anders? Beschrijf het bij opmerkingen</span></label>
         </div>
         <p class="sub">Extra’s <i>(optioneel)</i></p>
         <div class="checks">
@@ -272,6 +274,8 @@ nav a:hover{background-size:100% 1px}
 <script>(function(){var f=document.getElementById('boek');if(!f)return;
 function q(s){return f.querySelector(s)}
 var pq=(location.search.match(/[?&]pakket=([a-z]+)/)||[])[1];if(pq){var r0=q('input[data-id='+pq+']');if(r0)r0.checked=true}
+var opm=q('#f-opm'),opmL=f.querySelector('label[for=f-opm] i');function ov(){var r=q('input[name=Pakket]:checked'),o=!!r&&r.value==='Overig';opm.required=o;if(opmL)opmL.textContent=o?'(wat wil je laten maken?)':'(optioneel)'}
+[].forEach.call(f.querySelectorAll('input[name=Pakket]'),function(r){r.addEventListener('change',ov)});ov();
 var dag=q('#f-dag'),t=new Date();t.setDate(t.getDate()+1);dag.min=t.toISOString().slice(0,10);
 var m2=q('#f-m2'),hint=document.getElementById('f-m2-h'),own=false,timer,seq=0;m2.addEventListener('input',function(){own=!!m2.value.trim()});
 function say(s){hint.textContent=s}

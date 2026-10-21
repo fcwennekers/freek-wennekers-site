@@ -370,6 +370,7 @@ ${others.map(s => `      <li><a class="ul" href="${s.href}">${s.name}</a><p>${s.
 const TEL_NL = '06 28 18 65 51';
 
 const PACKAGES = [
+  { id: 'fotos', name: 'Alleen foto’s', text: 'Foto’s van interieur, exterieur en details, klaar voor Funda.', short: 'Interieur, exterieur en details' },
   { id: 'meting', name: 'Foto + Meting', text: 'Foto’s en een NEN 2580-meetrapport met 2D- en 3D-plattegrond.', short: 'Foto’s en meetrapport met plattegrond' },
   { id: 'alles', name: 'Alles in één', text: 'Foto’s, meetrapport en plattegrond, plus video (liggend en staand) en een 360°-tour.', short: 'Ook video en een 360°-tour' },
 ];
@@ -521,7 +522,7 @@ const PAGES2 = [
         'Funda telt een plattegrond pas mee voor een complete presentatie als hij los staat, niet als foto tussen de andere foto’s. Daarom lever ik de plattegronden als aparte bestanden. Zie ook [hoger op Funda](/hoger-op-funda).'] },
       { kind: 'packs', id: 'pakketten', label: 'Pakketten' },
       { kind: 'faq', id: 'weten', label: 'Goed om te weten', qa: [
-        ['Bij welk pakket hoort een plattegrond?', 'Bij allebei: Foto + Meting en Alles in één.'],
+        ['Bij welk pakket hoort een plattegrond?', 'Bij Foto + Meting en bij Alles in één. Bij Alleen foto’s zit geen plattegrond.'],
         ['Wanneer heb ik de plattegrond?', 'Binnen 3 werkdagen na de opname, samen met de foto’s en het meetrapport.'],
         ['Wat is het verschil tussen een plattegrond en een meetrapport?', 'De plattegrond laat de indeling zien. Het meetrapport legt de gebruiksoppervlakte vast volgens NEN 2580. Je krijgt ze uit één meting.'],
         ['Waarom de plattegrond los aanleveren?', 'Funda telt een losse plattegrond mee voor een complete presentatie. Tussen de foto’s telt hij niet als plattegrond.']] },
@@ -667,7 +668,7 @@ const CSS2 = `
 .unit{position:relative}
 .unit span{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--ink-3);pointer-events:none}
 .book .unit input{padding-right:46px}
-.opts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .oc{position:relative;display:grid;gap:4px;align-content:start;padding:15px 16px 16px 44px;border:1px solid var(--line);border-radius:10px;background:#fff;cursor:pointer;transition:border-color .2s var(--soft),box-shadow .2s var(--soft)}
 .oc input{position:absolute;left:16px;top:18px;width:18px;height:18px;margin:0;accent-color:var(--ink)}
 .oc:has(input:checked){border-color:var(--ink);box-shadow:0 0 0 1px var(--ink)}
@@ -698,6 +699,8 @@ const W3F_KEY = '448348a1-56f0-4a05-a776-e97cb17d18af';
 const FORM_JS = `(function(){var f=document.getElementById('boek');if(!f)return;
 function q(s){return f.querySelector(s)}
 var pq=(location.search.match(/[?&]pakket=([a-z]+)/)||[])[1];if(pq){var r0=q('input[data-id='+pq+']');if(r0)r0.checked=true}
+var opm=q('#f-opm'),opmL=f.querySelector('label[for=f-opm] i');function ov(){var r=q('input[name=Pakket]:checked'),o=!!r&&r.value==='Overig';opm.required=o;if(opmL)opmL.textContent=o?'(wat wil je laten maken?)':'(optioneel)'}
+[].forEach.call(f.querySelectorAll('input[name=Pakket]'),function(r){r.addEventListener('change',ov)});ov();
 var dag=q('#f-dag'),t=new Date();t.setDate(t.getDate()+1);dag.min=t.toISOString().slice(0,10);
 var m2=q('#f-m2'),hint=document.getElementById('f-m2-h'),own=false,timer,seq=0;m2.addEventListener('input',function(){own=!!m2.value.trim()});
 function say(s){hint.textContent=s}
@@ -779,6 +782,7 @@ ${s.items.map((t, i) => `        <li><b>${String(i + 1).padStart(2, '0')}</b><p>
       <fieldset><legend>Pakket</legend><div>
         <div class="opts">
 ${PACKAGES.map(k => `          <label class="oc"><input type="radio" name="Pakket" value="${k.name}" data-id="${k.id}" required><b>${k.name}</b><span>${k.short}</span></label>`).join('\n')}
+          <label class="oc"><input type="radio" name="Pakket" value="Overig" data-id="overig" required><b>Overig</b><span>Iets anders? Beschrijf het bij opmerkingen</span></label>
         </div>
         <p class="sub">Extra’s <i>(optioneel)</i></p>
         <div class="checks">
