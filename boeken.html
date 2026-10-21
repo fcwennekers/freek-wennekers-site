@@ -291,10 +291,10 @@ var body=['Adres: '+v('f-adres'),'Plaats: '+v('f-plaats'),'Woonoppervlakte: '+(v
 var onderwerp='Opname '+v('f-adres')+', '+v('f-plaats'),msg=document.getElementById('f-msg'),knop=q('button[type=submit]');
 function viaMail(){location.href='mailto:freekwennekers@gmail.com?subject='+encodeURIComponent(onderwerp)+'&body='+encodeURIComponent(body.join('\r\n'));
 msg.textContent='Je mailprogramma opent nu met je aanvraag. Verstuur die mail, dan neem ik contact op met de verkoper.'}
-if(!''||!window.fetch)return viaMail();
+if(!'448348a1-56f0-4a05-a776-e97cb17d18af'||!window.fetch)return viaMail();
 if(q('#f-bot').checked)return;
 knop.disabled=true;msg.textContent='Versturen…';
-fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({access_key:'',subject:onderwerp,from_name:v('f-naam')+(v('f-kantoor')?' ('+v('f-kantoor')+')':''),replyto:v('f-mail'),email:v('f-mail'),message:body.join('\n')})})
+fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({access_key:'448348a1-56f0-4a05-a776-e97cb17d18af',subject:onderwerp,from_name:v('f-naam')+(v('f-kantoor')?' ('+v('f-kantoor')+')':''),replyto:v('f-mail'),email:v('f-mail'),message:body.join('\n')})})
 .then(function(r){return r.json()}).then(function(j){if(!j.success)throw 0;msg.textContent='Dank je, je aanvraag is binnen. Ik neem contact op met de verkoper om de opname te plannen en stuur je een bevestiging.';knop.disabled=false})
 .catch(function(){knop.disabled=false;viaMail()})})})();
 (function () {

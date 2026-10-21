@@ -696,7 +696,7 @@ const CSS2 = `
 // boekingsformulier: pakket uit de link overnemen en (voorlopig) versturen via het mailprogramma
 const AC_JS = readFileSync(join(ROOT, 'tools/boeken-ac.js'), 'utf8').replace(/^\/\/.*\n/gm, '').trim();
 // Web3Forms-sleutel (openbaar, hoort in de pagina); leeg = versturen via het mailprogramma
-const W3F_KEY = '';
+const W3F_KEY = '448348a1-56f0-4a05-a776-e97cb17d18af';
 const FORM_JS = `(function(){var f=document.getElementById('boek');if(!f)return;
 function q(s){return f.querySelector(s)}
 var pq=(location.search.match(/[?&]pakket=([a-z]+)/)||[])[1];if(pq){var r0=q('input[data-id='+pq+']');if(r0)r0.checked=true}
