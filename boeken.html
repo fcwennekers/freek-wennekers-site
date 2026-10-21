@@ -238,6 +238,7 @@ nav a:hover{background-size:100% 1px}
         <div class="f full"><label for="f-opm">Opmerkingen <i>(optioneel)</i></label><textarea id="f-opm" name="Opmerkingen" rows="4" placeholder="Bijvoorbeeld over de sleutel, parkeren of de woning zelf"></textarea></div>
       </div></fieldset>
       <div class="send">
+        <input type="checkbox" id="f-bot" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
         <button class="btn" type="submit">Opname aanvragen</button>
         <p class="ok" id="f-msg" role="status"></p>
         <p class="h">Ik gebruik je gegevens en die van de verkoper alleen om de opname te plannen. Je eigen naam en kantoor onthoudt dit apparaat voor een volgende boeking. <button class="lnk" type="button" id="f-vergeet" hidden>Vergeet mijn gegevens</button></p>
@@ -287,8 +288,15 @@ f.addEventListener('submit',function(e){e.preventDefault();function v(id){var el
 var r=q('input[name=Pakket]:checked'),xs=[].map.call(f.querySelectorAll('input[name=Extra]:checked'),function(c){return c.value}),d=v('f-dag');
 if(d){d=new Date(d+'T12:00').toLocaleDateString('nl-NL',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}
 var body=['Adres: '+v('f-adres'),'Plaats: '+v('f-plaats'),'Woonoppervlakte: '+(v('f-m2')?v('f-m2')+' m²':'onbekend'),'Pakket: '+(r?r.value:''),'Extra’s: '+(xs.join(', ')||'geen'),'Voorkeursdag: '+(d||'geen voorkeur'),'Verkoper: '+[v('f-vnaam'),v('f-vtel')].filter(Boolean).join(', '),'Makelaarskantoor: '+(v('f-kantoor')||'particulier'),'Naam: '+v('f-naam'),'E-mail: '+v('f-mail'),'Telefoon: '+v('f-tel'),'','Opmerkingen:',v('f-opm')];
-location.href='mailto:freekwennekers@gmail.com?subject='+encodeURIComponent('Opname '+v('f-adres')+', '+v('f-plaats'))+'&body='+encodeURIComponent(body.join('\r\n'));
-document.getElementById('f-msg').textContent='Je mailprogramma opent nu met je aanvraag. Verstuur die mail, dan neem ik contact op met de verkoper.'})})();
+var onderwerp='Opname '+v('f-adres')+', '+v('f-plaats'),msg=document.getElementById('f-msg'),knop=q('button[type=submit]');
+function viaMail(){location.href='mailto:freekwennekers@gmail.com?subject='+encodeURIComponent(onderwerp)+'&body='+encodeURIComponent(body.join('\r\n'));
+msg.textContent='Je mailprogramma opent nu met je aanvraag. Verstuur die mail, dan neem ik contact op met de verkoper.'}
+if(!''||!window.fetch)return viaMail();
+if(q('#f-bot').checked)return;
+knop.disabled=true;msg.textContent='Versturen…';
+fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({access_key:'',subject:onderwerp,from_name:v('f-naam')+(v('f-kantoor')?' ('+v('f-kantoor')+')':''),replyto:v('f-mail'),email:v('f-mail'),message:body.join('\n')})})
+.then(function(r){return r.json()}).then(function(j){if(!j.success)throw 0;msg.textContent='Dank je, je aanvraag is binnen. Ik neem contact op met de verkoper om de opname te plannen en stuur je een bevestiging.';knop.disabled=false})
+.catch(function(){knop.disabled=false;viaMail()})})})();
 (function () {
   var f = document.getElementById('boek'); if (!f) return;
   var KEY = 'fw-boeken-v1', kantoren = null;
