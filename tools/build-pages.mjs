@@ -12,7 +12,7 @@ const SITE = 'https://freekwennekers.com';
 const NAME = 'Freek Wennekers Vastgoedfotografie';
 const TEL = '+31628186551', TEL_TXT = '+31 6 28 18 65 51', MAIL = 'freekwennekers@gmail.com';
 const KVK = '88955672', LINKEDIN = 'https://www.linkedin.com/in/freekwennekers';
-const MODIFIED = '2026-10-19';
+const MODIFIED = '2026-10-21';
 const AREAS = [['City', 'Haarlem'], ['City', 'Heemstede'], ['City', 'Bloemendaal'], ['City', 'Zandvoort'],
   ['AdministrativeArea', 'Velsen'], ['AdministrativeArea', 'Haarlemmermeer'], ['City', 'Amsterdam'],
   ['City', 'Amstelveen'], ['City', 'Abcoude']];
@@ -372,10 +372,8 @@ const TEL_NL = '06 28 18 65 51';
 const PACKAGES = [
   { id: 'meting', name: 'Foto + Meting', text: 'Foto’s en een NEN 2580-meetrapport met 2D- en 3D-plattegrond.', short: 'Foto’s en meetrapport met plattegrond' },
   { id: 'alles', name: 'Alles in één', text: 'Foto’s, meetrapport en plattegrond, plus video (liggend en staand) en een 360°-tour.', short: 'Ook video en een 360°-tour' },
-  { id: 'verhuur', name: 'Verhuur', text: 'Foto’s en een plattegrond met NEN 2580-maten, voor de verhuur van de woning.', short: 'Foto’s en plattegrond met maten' },
 ];
 const EXTRAS = [
-  { name: 'Schemerfoto’s', text: 'Buitenfoto’s in de schemering, met de lichten aan.' },
   { name: 'Sleutelservice', text: 'Ik haal de sleutel op en breng hem terug.' },
 ];
 
@@ -523,7 +521,7 @@ const PAGES2 = [
         'Funda telt een plattegrond pas mee voor een complete presentatie als hij los staat, niet als foto tussen de andere foto’s. Daarom lever ik de plattegronden als aparte bestanden. Zie ook [hoger op Funda](/hoger-op-funda).'] },
       { kind: 'packs', id: 'pakketten', label: 'Pakketten' },
       { kind: 'faq', id: 'weten', label: 'Goed om te weten', qa: [
-        ['Bij welk pakket hoort een plattegrond?', 'Bij alle drie: Foto + Meting, Alles in één en Verhuur.'],
+        ['Bij welk pakket hoort een plattegrond?', 'Bij allebei: Foto + Meting en Alles in één.'],
         ['Wanneer heb ik de plattegrond?', 'Binnen 3 werkdagen na de opname, samen met de foto’s en het meetrapport.'],
         ['Wat is het verschil tussen een plattegrond en een meetrapport?', 'De plattegrond laat de indeling zien. Het meetrapport legt de gebruiksoppervlakte vast volgens NEN 2580. Je krijgt ze uit één meting.'],
         ['Waarom de plattegrond los aanleveren?', 'Funda telt een losse plattegrond mee voor een complete presentatie. Tussen de foto’s telt hij niet als plattegrond.']] },

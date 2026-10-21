@@ -5,7 +5,7 @@
   en alle pagina's uit `PAGES2` (onder meer `voor-makelaars`, `hoger-op-funda`, `plattegrond-laten-maken`,
   `nieuwbouw`, `woningfotografie-amsterdam`, `vastgoedfotograaf-amstelveen`, `boeken`) worden gemaakt door `node tools/build-pages.mjs`;
   pas de tekst daar aan, niet in de .html-bestanden.
-- Geen prijzen op de site (ook niet in JSON-LD). Freek maakt geen WWS-puntentellingen; noem die niet als dienst. Pakketten: Foto + Meting, Alles in één, Verhuur.
+- Geen prijzen op de site (ook niet in JSON-LD). Freek maakt geen WWS-puntentellingen; noem die niet als dienst. Pakketten: Foto + Meting en Alles in één (geen Verhuur-pakket, geen schemerfoto’s als extra).
 - Het boekformulier (`/boeken`, noindex) verstuurt direct via Web3Forms naar Freeks Gmail (sleutel `W3F_KEY` in build-pages.mjs; bij een fout valt het terug op het mailprogramma) en zoekt de woonoppervlakte op in de BAG (PDOK).
   Makelaarskantoren vult het aan uit `tools/makelaars.txt` (wordt `data/makelaars.json`, script in `tools/boeken-ac.js`).
   Namen van personen alleen als Freek dat per kantoor vraagt (derde kolom in makelaars.txt, nu alleen Lunshof);
