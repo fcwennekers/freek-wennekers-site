@@ -42,6 +42,17 @@ Zeven woningen, van grachtenpand tot villa.
 - **Schotersingel 67E, Haarlem**: woning in een herenhuis uit 1906 (3 foto’s)  
   ![Vastgoedfoto Schotersingel 67E, Haarlem: herenhuis uit 1906 aan de singel](https://freekwennekers.com/img/schotersingel-61-1200.webp)
 
+## Ervaringen
+
+> We hebben de samenwerking met deze fotograaf altijd als ontzettend prettig ervaren. Zijn stijl en bewerkingen zijn prachtig, en ook de planning en communicatie verlopen altijd heel fijn en soepel. Hij denkt goed mee, komt afspraken na en zorgt voor een ontspannen sfeer. Absoluut een aanrader!
+> — Steven van der Weijden, beëdigd makelaar o.g., Ramón Mossel Makelaardij
+
+> Goede ervaringen met Freek, vriendelijk, kundig en denkt goed mee.
+> — Judith Lezer, Ramón Mossel Makelaardij (Google-review)
+
+> Perfecte totaaloplossing. Vakkundig op beeld gezet.
+> — Nemo Kanne (Google-review)
+
 ## Over
 
 Ik ben Freek Wennekers, vastgoedfotograaf in Haarlem, Amsterdam en omstreken. Ik werk voor makelaars, ontwikkelaars en particuliere verkopers en heb ruim 2.400 woningen gefotografeerd.
