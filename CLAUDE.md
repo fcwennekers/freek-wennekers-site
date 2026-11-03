@@ -8,7 +8,7 @@
 - Geen prijzen op de site (ook niet in JSON-LD). Freek maakt geen WWS-puntentellingen; noem die niet als dienst. Pakketten: Alleen foto’s, Foto + Meting en Alles in één; in het formulier ook Overig (geen Verhuur-pakket, geen schemerfoto’s als extra).
 - Het boekformulier (`/boeken`, noindex) verstuurt direct via Web3Forms naar Freeks Gmail (sleutel `W3F_KEY` in build-pages.mjs; bij een fout valt het terug op het mailprogramma) en zoekt de woonoppervlakte op in de BAG (PDOK).
   Makelaarskantoren vult het aan uit `tools/makelaars.txt` (wordt `data/makelaars.json`, script in `tools/boeken-ac.js`).
-  Namen van personen alleen als Freek dat per kantoor vraagt (derde kolom in makelaars.txt, nu alleen Lunshof);
+  Namen van personen alleen als Freek dat per kantoor vraagt (derde kolom in makelaars.txt, nu Lunshof en Hoofddorp Makelaars);
   verder onthoudt alleen het apparaat van de bezoeker namen.
 - Geen zichtbare 'Meer over'-links of linkregels: de homepage verwijst alleen via de titels van de diensten (zelfde uiterlijk als gewone tekst).
 - Grote wijzigingen eerst op een previewbranch; pas naar `main` (productie) met akkoord van Freek.
