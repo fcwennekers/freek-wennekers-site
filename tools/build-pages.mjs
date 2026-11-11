@@ -12,7 +12,7 @@ const SITE = 'https://freekwennekers.com';
 const NAME = 'Freek Wennekers Vastgoedfotografie';
 const TEL = '+31628186551', TEL_TXT = '+31 6 28 18 65 51', MAIL = 'freekwennekers@gmail.com';
 const KVK = '88955672', LINKEDIN = 'https://www.linkedin.com/in/freekwennekers';
-const MODIFIED = '2026-10-21';
+const MODIFIED = '2026-11-11';
 const AREAS = [['City', 'Haarlem'], ['City', 'Heemstede'], ['City', 'Bloemendaal'], ['City', 'Zandvoort'],
   ['AdministrativeArea', 'Velsen'], ['AdministrativeArea', 'Haarlemmermeer'], ['City', 'Amsterdam'],
   ['City', 'Amstelveen'], ['City', 'Abcoude']];
@@ -370,11 +370,15 @@ ${others.map(s => `      <li><a class="ul" href="${s.href}">${s.name}</a><p>${s.
 const TEL_NL = '06 28 18 65 51';
 
 const PACKAGES = [
-  { id: 'fotos', name: 'Alleen foto’s', text: 'Foto’s van interieur, exterieur en details, klaar voor Funda.', short: 'Interieur, exterieur en details' },
-  { id: 'meting', name: 'Foto + Meting', text: 'Foto’s en een NEN 2580-meetrapport met 2D- en 3D-plattegrond.', short: 'Foto’s en meetrapport met plattegrond' },
-  { id: 'alles', name: 'Alles in één', text: 'Foto’s, meetrapport en plattegrond, plus video (liggend en staand) en een 360°-tour.', short: 'Ook video en een 360°-tour' },
+  { id: 'meting', name: 'Basis', text: 'Foto’s en inmeten volgens NEN 2580, met meetrapport en 2D- en 3D-plattegrond.', short: 'Foto’s en inmeten volgens NEN 2580' },
+  { id: 'alles', name: 'Compleet', text: 'Alles uit Basis, plus video (liggend en staand) en een 360°-tour.', short: 'Basis plus video en een 360°-tour' },
+  { id: 'fotos', name: 'Alleen foto’s', text: 'Interieur- en exterieurfoto’s, zelf nabewerkt en klaar voor Funda. Voor als je al een inmeter of plattegrond hebt.', short: 'Foto’s, zonder inmeten' },
 ];
 const EXTRAS = [
+  { name: '360°-tour', text: 'Interactieve rondleiding door de woning, geschikt voor Funda. Zit al in Compleet.', not: 'alles' },
+  { name: 'Dronefoto’s', text: 'Luchtfoto’s van woning, tuin en omgeving.' },
+  { name: 'Dronevideo', text: 'Luchtbeelden van woning en omgeving, los of verwerkt in de woningvideo.' },
+  { name: 'Detailfoto’s', text: 'Zoals glas-in-lood, paneeldeuren, deurbeslag, rozetten, architraven en een erker.' },
   { name: 'Sleutelservice', text: 'Ik haal de sleutel op en breng hem terug.' },
 ];
 
@@ -437,7 +441,7 @@ const PAGES2 = [
         'Ik plan de afspraak direct met de verkoper. Jij hoeft niets te regelen.',
         'In één afspraak maak ik foto’s, video, de 360°-tour en het meetrapport.',
         'Binnen 3 werkdagen na de opname staat alles in één downloadlink.'] },
-      { kind: 'list', id: 'krijgt', label: 'Wat je krijgt', intro: 'Bij Alles in één krijg je, in één downloadlink met vaste mapnamen:', items: [
+      { kind: 'list', id: 'krijgt', label: 'Wat je krijgt', intro: 'Bij Compleet krijg je, in één downloadlink met vaste mapnamen:', items: [
         '25 tot 40 foto’s, klaar voor Funda.',
         'Video, liggend voor je website en staand voor social media.',
         'Een link naar de 360°-tour.',
@@ -480,13 +484,13 @@ const PAGES2 = [
         'Een video.',
         'Een losse plattegrond, niet tussen de foto’s.',
         'Ingevulde kenmerken.'],
-        after: 'Met het pakket Alles in één lever ik de foto’s, de video, de 360°-tour en de losse plattegrond, uit één afspraak. De kenmerken vul je zelf in.' },
+        after: 'Met het pakket Compleet lever ik de foto’s, de video, de 360°-tour en de losse plattegrond, uit één afspraak. De kenmerken vul je zelf in.' },
       { kind: 'text', id: 'eerste', label: 'De eerste 48 uur', paras: [
         'In de eerste 48 uur met een pakket staat een woning bovenaan, en die kans krijg je maar één keer. Zet de woning daarom pas online als alles binnen is: foto’s, video, tour, plattegrond en kenmerken.',
         'Omdat ik alles binnen 3 werkdagen na de opname aanlever, ook het meetrapport, hoef je niet te kiezen tussen snel en compleet.'] },
       { kind: 'text', id: 'pakket', label: 'Welk Funda-pakket?', paras: [
         'Bij Brons draait het om foto’s en een plattegrond. Zilver en Goud voegen video, 360°-foto’s en een 3D-tour toe.',
-        'Foto + Meting levert alles voor Brons. Alles in één levert ook de video en de 360°-tour, zodat je alles uit Zilver en Goud haalt.'] },
+        'Basis levert alles voor Brons. Compleet levert ook de video en de 360°-tour, zodat je alles uit Zilver en Goud haalt.'] },
       { kind: 'packs', id: 'pakketten', label: 'Pakketten' },
       { kind: 'faq', id: 'weten', label: 'Goed om te weten', qa: [
         ['Hoe bepaalt Funda de volgorde?', 'Eerst komen woningen die in de afgelopen 48 uur met een pakket online kwamen, en beschikbare woningen vóór woningen onder bod. Daarna tellen het pakket (Goud, Zilver, Brons) en hoe compleet de presentatie is.'],
@@ -522,7 +526,7 @@ const PAGES2 = [
         'Funda telt een plattegrond pas mee voor een complete presentatie als hij los staat, niet als foto tussen de andere foto’s. Daarom lever ik de plattegronden als aparte bestanden. Zie ook [hoger op Funda](/hoger-op-funda).'] },
       { kind: 'packs', id: 'pakketten', label: 'Pakketten' },
       { kind: 'faq', id: 'weten', label: 'Goed om te weten', qa: [
-        ['Bij welk pakket hoort een plattegrond?', 'Bij Foto + Meting en bij Alles in één. Bij Alleen foto’s zit geen plattegrond.'],
+        ['Bij welk pakket hoort een plattegrond?', 'Bij Basis en bij Compleet. Bij Alleen foto’s zit geen plattegrond.'],
         ['Wanneer heb ik de plattegrond?', 'Binnen 3 werkdagen na de opname, samen met de foto’s en het meetrapport.'],
         ['Wat is het verschil tussen een plattegrond en een meetrapport?', 'De plattegrond laat de indeling zien. Het meetrapport legt de gebruiksoppervlakte vast volgens NEN 2580. Je krijgt ze uit één meting.'],
         ['Waarom de plattegrond los aanleveren?', 'Funda telt een losse plattegrond mee voor een complete presentatie. Tussen de foto’s telt hij niet als plattegrond.']] },
@@ -699,7 +703,7 @@ const W3F_KEY = '448348a1-56f0-4a05-a776-e97cb17d18af';
 const FORM_JS = `(function(){var f=document.getElementById('boek');if(!f)return;
 function q(s){return f.querySelector(s)}
 var pq=(location.search.match(/[?&]pakket=([a-z]+)/)||[])[1];if(pq){var r0=q('input[data-id='+pq+']');if(r0)r0.checked=true}
-var opm=q('#f-opm'),opmL=f.querySelector('label[for=f-opm] i');function ov(){var r=q('input[name=Pakket]:checked'),o=!!r&&r.value==='Overig';opm.required=o;if(opmL)opmL.textContent=o?'(wat wil je laten maken?)':'(optioneel)'}
+var opm=q('#f-opm'),opmL=f.querySelector('label[for=f-opm] i');function ov(){var r=q('input[name=Pakket]:checked'),o=!!r&&r.value==='Overig';[].forEach.call(f.querySelectorAll('input[data-not]'),function(c){var x=!!r&&r.getAttribute('data-id')===c.getAttribute('data-not');c.disabled=x;if(x)c.checked=false;c.closest('label').style.opacity=x?.45:''});opm.required=o;if(opmL)opmL.textContent=o?'(wat wil je laten maken?)':'(optioneel)'}
 [].forEach.call(f.querySelectorAll('input[name=Pakket]'),function(r){r.addEventListener('change',ov)});ov();
 var dag=q('#f-dag'),t=new Date();t.setDate(t.getDate()+1);dag.min=t.toISOString().slice(0,10);
 var m2=q('#f-m2'),hint=document.getElementById('f-m2-h'),own=false,timer,seq=0;m2.addEventListener('input',function(){own=!!m2.value.trim()});
@@ -786,8 +790,9 @@ ${PACKAGES.map(k => `          <label class="oc"><input type="radio" name="Pakke
         </div>
         <p class="sub">Extra’s <i>(optioneel)</i></p>
         <div class="checks">
-${EXTRAS.map(x => `          <label class="chk"><input type="checkbox" name="Extra" value="${esc(x.name)}"><span>${x.name}<small>${x.text}</small></span></label>`).join('\n')}
+${EXTRAS.map(x => `          <label class="chk"><input type="checkbox" name="Extra" value="${esc(x.name)}"${x.not ? ` data-not="${x.not}"` : ''}><span>${x.name}<small>${x.text}</small></span></label>`).join('\n')}
         </div>
+        <p class="h" style="margin-top:12px">Dronebeelden hangen altijd af van het weer en de luchtruimregels. Bij slecht weer verzetten we de afspraak in overleg.</p>
       </div></fieldset>
       <fieldset><legend>Afspraak</legend><div class="fg">
         <div class="f full"><label for="f-dag">Voorkeursdag <i>(optioneel)</i></label><input id="f-dag" name="Voorkeursdag" type="date"></div>

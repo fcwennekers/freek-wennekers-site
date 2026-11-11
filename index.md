@@ -63,7 +63,7 @@ Ik neem de tijd voor licht en opstelling, en bewerk al het materiaal zelf. Zo kr
 
 ## Contact
 
-Boek een opname via het formulier: [Opname boeken](https://freekwennekers.com/boeken). Kies een pakket: Alleen foto’s, Foto + Meting (foto’s en NEN 2580-meetrapport met 2D- en 3D-plattegrond) of Alles in één (ook video en 360°-tour). Ik plan de afspraak direct met de verkoper. Vragen? Bel of mail gerust, ook als je nog aan het oriënteren bent.
+Boek een opname via het formulier: [Opname boeken](https://freekwennekers.com/boeken). Kies een pakket: Basis (foto’s en inmeten volgens NEN 2580, met 2D- en 3D-plattegrond), Compleet (ook video en 360°-tour) of Alleen foto’s. Extra’s: 360°-tour, dronefoto’s, dronevideo, detailfoto’s en sleutelservice. Ik plan de afspraak direct met de verkoper. Vragen? Bel of mail gerust, ook als je nog aan het oriënteren bent.
 
 - Telefoon: +31 6 28 18 65 51
 - E-mail: freekwennekers@gmail.com
