@@ -1,5 +1,6 @@
 # Makelaarskantoren voor het aanvullen in het boekformulier (/boeken). Eén kantoor per regel: naam | plaats(en), met komma’s
-# Optioneel een derde kolom met het team (namen met ; ertussen), alleen voor kantoren waarvoor Freek dat vraagt.
+# Optioneel een derde kolom met het team (namen met ; ertussen), alleen voor kantoren waarvoor Freek dat vraagt,
+# en een vierde met het telefoonnummer van het kantoor (wordt ingevuld bij Telefoon als dat nog leeg is).
 # build-pages.mjs maakt hier data/makelaars.json van. Ontbreekt een kantoor of klopt een naam niet? Pas het hier aan.
 # Bedrijfsnamen; teamnamen alleen waar Freek dat vraagt. Deze lijst zegt niets over met wie Freek werkt.
 # Startlijst oktober 2026, samengesteld uit openbare makelaarsoverzichten (funda, pararius, NVM-vergelijkers).
@@ -90,7 +91,7 @@ Joost Makelaars | Bloemendaal
 KOK Makelaars | Overveen
 Makelaarskantoor Bosch & Duyn | Overveen
 DMC Makelaars | Overveen
-Strumphler Makelaars | Aerdenhout | Henriette van Keulen-Strumphler; Janny Pleijsier-Mulder; Natalie van Capelle; Katrien Verhoeven; Manouk Grobben
+Strumphler Makelaars | Aerdenhout | Henriette van Keulen-Strumphler; Janny Pleijsier-Mulder; Natalie van Capelle; Katrien Verhoeven; Manouk Grobben | 023 - 524 34 24
 Aerdenhout & Omstreken | Aerdenhout
 Companyon | Heemstede
 Kramer & Partners | Heemstede

@@ -79,7 +79,15 @@
       if (s && !seen[norm(m.n)]) { seen[norm(m.n)] = 1; out.push({ v: m.n, sub: m.p, s: s }); }
     });
     return out.sort(function (a, b) { return b.s - a.s || a.v.localeCompare(b.v, 'nl'); }).slice(0, 8);
-  }, function () {}, false);
+  }, function () { kantoorTel(); }, false);
+  // telefoonnummer van het kantoor invullen als Telefoon nog leeg is (of eerder zo is ingevuld)
+  var autoTel = '';
+  function kantoorTel() {
+    var k = norm(kantoor.value), o = (kantoren || []).filter(function (m) { return norm(m.n) === k; })[0];
+    if (!tel || (tel.value.trim() && tel.value !== autoTel)) return;
+    tel.value = autoTel = (o && o.tel) || '';
+  }
+  kantoor.addEventListener('change', function () { haal().then(kantoorTel); });
   var laden = null;
   function haal() {
     if (!laden) laden = fetch('/data/makelaars.json').then(function (r) { return r.json(); }).then(function (j) { kantoren = j; return j; }).catch(function () { kantoren = []; return []; });
