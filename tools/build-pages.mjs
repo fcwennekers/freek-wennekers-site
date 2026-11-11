@@ -693,11 +693,53 @@ const CSS2 = `
 .ac li small{flex:none;font-size:13px;color:var(--ink-3)}
 .ac li[aria-selected=true],.ac li:hover{background:var(--bg)}
 .lnk{padding:0;border:0;background:none;color:var(--ink);font:inherit;text-decoration:underline;text-underline-offset:2px;cursor:pointer}
+.lab{font-size:14px;font-weight:500}.lab i{font-style:normal;font-weight:400;color:var(--ink-3)}
+.zon{display:grid;gap:12px;padding:18px 18px 16px;border:1px solid var(--line);border-radius:10px;background:#fff}
+.z-kop{display:flex;align-items:center;justify-content:center;gap:18px}
+.z-st{flex:none;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;background:none;color:var(--ink);font:inherit;font-size:22px;line-height:1;cursor:pointer}
+.z-tijd{min-width:6.2ch;text-align:center;font-size:clamp(32px,4vw,42px);font-weight:500;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.leeg .z-tijd{font-size:clamp(20px,2.4vw,24px);letter-spacing:-.01em;color:var(--ink-3)}
+#f-zon svg{display:block;width:100%;height:auto;touch-action:pan-y;cursor:grab;overflow:visible;outline:none;user-select:none;-webkit-user-select:none}
+#f-zon svg:focus-visible{outline:2px solid var(--ink);outline-offset:4px;border-radius:6px}
+.z-hor{stroke:var(--ink);stroke-width:1}.z-baan{fill:none;stroke:var(--line);stroke-width:2;stroke-dasharray:4 5}.z-dag{fill:none;stroke:var(--ink);stroke-width:2}.z-lijn{stroke:var(--line)}
+.z-zon{fill:#F2C46B;stroke:var(--ink);stroke-width:1.5;transition:cx .12s var(--soft),cy .12s var(--soft)}.leeg .z-zon{fill:#fff;stroke:var(--ink-3);stroke-dasharray:3 3}.leeg .z-lijn{opacity:0}
+#f-zon text{font-family:var(--sans);font-size:13px;fill:var(--ink-3)}#f-zon .z-op,#f-zon .z-onder{fill:var(--ink-2)}
+.z-info{margin:0;text-align:center}
+.z-snel{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:6px}
+.z-snel button{height:42px;padding:0 4px;border:1px solid var(--line);border-radius:8px;background:none;color:var(--ink);font:inherit;font-size:14px;cursor:pointer;font-variant-numeric:tabular-nums}
+.z-snel button[data-leeg]{grid-column:span 1;font-size:12.5px;line-height:1.15}
+.z-snel button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+@media (max-width:640px){#f-zon text{font-size:24px}#f-zon .z-u{display:none}.z-snel{grid-template-columns:repeat(4,minmax(0,1fr))}.z-snel button[data-leeg]{grid-column:1/-1}}
+.env-o{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:24px;overflow:hidden;background:var(--bg);opacity:0;transition:opacity .35s var(--soft)}
+.env-o.in{opacity:1}
+.env-s,.env-m{grid-area:1/1}
+.env-s{position:relative;width:min(300px,72vw);aspect-ratio:3/2;margin-top:26vh;transition:transform .8s cubic-bezier(.5,0,.75,0),opacity .5s .3s}
+.env-b,.env-p,.env-f{position:absolute;inset:0;border-radius:6px}
+.env-b{z-index:1;background:#D9D1C1}
+.env-p{z-index:3;background:#E9E3D7;clip-path:polygon(0 0,50% 56%,100% 0,100% 100%,0 100%);box-shadow:0 1px 0 var(--line) inset}
+.env-f{z-index:0;background:#D2C9B6;clip-path:polygon(0 0,100% 0,50% 60%);transform-origin:50% 0;transform:perspective(800px) rotateX(180deg);transition:transform .5s var(--soft)}
+.env-l{position:absolute;z-index:2;left:7%;right:7%;bottom:110%;height:150%;transition:transform .6s var(--out);filter:drop-shadow(0 6px 14px rgba(19,19,18,.08))}
+.env-t,.env-u{position:absolute;left:0;right:0;height:50%;display:flex;flex-direction:column;gap:7px;padding:16px 18px;background:#fff}
+.env-t{top:0;z-index:1;border-radius:4px 4px 0 0;transform-origin:50% 100%;transition:transform .55s var(--soft)}
+.env-u{bottom:0;justify-content:flex-end;padding-bottom:18px;border-radius:0 0 4px 4px;border-top:1px dashed var(--line)}
+.env-t b{font-size:14px;font-weight:500}.env-t span{overflow:hidden;font-size:12px;color:var(--ink-3);white-space:nowrap;text-overflow:ellipsis}
+.env-l i{display:block;height:6px;border-radius:3px;background:var(--bg-2)}.env-l i:nth-of-type(2n){width:72%}.env-l i:nth-of-type(3n){width:86%}
+.env-t>*{transition:opacity .2s}.vouw .env-t>*{opacity:0}
+.vouw .env-t{transform:perspective(700px) rotateX(-180deg);background:#FAF9F6}
+.erin .env-l{transform:translateY(68%)}
+.dicht .env-f{z-index:4;transform:perspective(800px) rotateX(0)}
+.weg .env-s{transform:translate(34vw,-70vh) rotate(-12deg) scale(.45);opacity:0}
+.env-m{display:grid;justify-items:center;gap:18px;max-width:40ch;text-align:center;opacity:0;transform:translateY(14px);pointer-events:none;transition:opacity .6s var(--soft),transform .8s var(--out)}
+.env-m .display{font-size:clamp(44px,7vw,84px);letter-spacing:-.045em;line-height:.95}
+.env-m p:not(.display){font-size:clamp(16px,1.3vw,18px);line-height:1.5;color:var(--ink-2);text-wrap:pretty}
+.env-k{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 24px;margin-top:6px}
+.env-k button{border:0;background:none;color:var(--ink);font:inherit;font-size:15px;font-weight:500;cursor:pointer}
+.klaar .env-m{opacity:1;transform:none;pointer-events:auto}
 @media (max-width:640px){.fg,.opts{grid-template-columns:1fr}.send .btn{width:100%;justify-content:center}}
 `.trim();
 
 // boekingsformulier: pakket uit de link overnemen en (voorlopig) versturen via het mailprogramma
-const AC_JS = readFileSync(join(ROOT, 'tools/boeken-ac.js'), 'utf8').replace(/^\/\/.*\n/gm, '').trim();
+const AC_JS = ['boeken-ac.js', 'boeken-tijd.js', 'boeken-envelop.js'].map(b => readFileSync(join(ROOT, 'tools', b), 'utf8').replace(/^\/\/.*\n/gm, '').trim()).join('\n');
 // Web3Forms-sleutel (openbaar, hoort in de pagina); leeg = versturen via het mailprogramma
 const W3F_KEY = '448348a1-56f0-4a05-a776-e97cb17d18af';
 const FORM_JS = `(function(){var f=document.getElementById('boek');if(!f)return;
@@ -718,7 +760,7 @@ if(n!==seq)return;if(!own)m2.value=o;say('Gevonden in het Kadaster: '+o+' m² vo
 f.addEventListener('submit',function(e){e.preventDefault();function v(id){var el=q('#'+id);return el?el.value.trim():''}
 var r=q('input[name=Pakket]:checked'),xs=[].map.call(f.querySelectorAll('input[name=Extra]:checked'),function(c){return c.value}),d=v('f-dag');
 if(d){d=new Date(d+'T12:00').toLocaleDateString('nl-NL',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}
-var body=['Adres: '+v('f-adres'),'Plaats: '+v('f-plaats'),'Woonoppervlakte: '+(v('f-m2')?v('f-m2')+' m²':'onbekend'),'Pakket: '+(r?r.value:''),'Extra’s: '+(xs.join(', ')||'geen'),'Voorkeursdag: '+(d||'geen voorkeur'),'Verkoper: '+[v('f-vnaam'),v('f-vtel')].filter(Boolean).join(', '),'Makelaarskantoor: '+(v('f-kantoor')||'particulier'),'Naam: '+v('f-naam'),'E-mail: '+v('f-mail'),'Telefoon: '+v('f-tel'),'','Opmerkingen:',v('f-opm')];
+var body=['Adres: '+v('f-adres'),'Plaats: '+v('f-plaats'),'Woonoppervlakte: '+(v('f-m2')?v('f-m2')+' m²':'onbekend'),'Pakket: '+(r?r.value:''),'Extra’s: '+(xs.join(', ')||'geen'),'Voorkeursdag: '+(d||'geen voorkeur'),'Voorkeurstijd: '+(v('f-tijd')||'geen voorkeur'),'Verkoper: '+[v('f-vnaam'),v('f-vtel')].filter(Boolean).join(', '),'Makelaarskantoor: '+(v('f-kantoor')||'particulier'),'Naam: '+v('f-naam'),'E-mail: '+v('f-mail'),'Telefoon: '+v('f-tel'),'','Opmerkingen:',v('f-opm')];
 var onderwerp='Opname '+v('f-adres')+', '+v('f-plaats'),msg=document.getElementById('f-msg'),knop=q('button[type=submit]');
 function viaMail(){location.href='mailto:${MAIL}?subject='+encodeURIComponent(onderwerp)+'&body='+encodeURIComponent(body.join('\\r\\n'));
 msg.textContent='Je mailprogramma opent nu met je aanvraag. Verstuur die mail, dan neem ik contact op met de verkoper.'}
@@ -726,7 +768,7 @@ if(!'${W3F_KEY}'||!window.fetch)return viaMail();
 if(q('#f-bot').checked)return;
 knop.disabled=true;msg.textContent='Versturen…';
 fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({access_key:'${W3F_KEY}',subject:onderwerp,from_name:v('f-naam')+(v('f-kantoor')?' ('+v('f-kantoor')+')':''),replyto:v('f-mail'),email:v('f-mail'),message:body.join('\\n')})})
-.then(function(r){return r.json()}).then(function(j){if(!j.success)throw 0;msg.textContent='Dank je, je aanvraag is binnen. Ik neem contact op met de verkoper om de opname te plannen en stuur je een bevestiging.';knop.disabled=false})
+.then(function(r){return r.json()}).then(function(j){if(!j.success)throw 0;msg.textContent='Dank je, je aanvraag is binnen. Ik neem contact op met de verkoper om de opname te plannen en stuur je een bevestiging.';knop.disabled=false;if(window.fwVerzonden)fwVerzonden({adres:v('f-adres')+', '+v('f-plaats'),wanneer:[v('f-dag')&&new Date(v('f-dag')+'T12:00').toLocaleDateString('nl-NL',{weekday:'short',day:'numeric',month:'long'}),v('f-tijd')].filter(Boolean).join(' om ')||'Datum in overleg',naam:v('f-naam')})})
 .catch(function(){knop.disabled=false;viaMail()})})})();`;
 
 function section(id, label, inner, cls = 'sec wrap') {
@@ -796,6 +838,20 @@ ${EXTRAS.map(x => `          <label class="chk"><input type="checkbox" name="Ext
       </div></fieldset>
       <fieldset><legend>Afspraak</legend><div class="fg">
         <div class="f full"><label for="f-dag">Voorkeursdag <i>(optioneel)</i></label><input id="f-dag" name="Voorkeursdag" type="date"></div>
+        <div class="f full"><span class="lab" id="f-tijd-l">Voorkeurstijd <i>(optioneel)</i></span>
+          <div class="zon leeg" id="f-zon">
+            <div class="z-kop"><button type="button" class="z-st" data-s="-15" aria-label="Kwartier eerder">−</button><output class="z-tijd" for="f-tijd" aria-live="polite">Geen voorkeur</output><button type="button" class="z-st" data-s="15" aria-label="Kwartier later">+</button></div>
+            <svg viewBox="0 24 600 168" role="slider" tabindex="0" aria-labelledby="f-tijd-l" aria-valuemin="480" aria-valuemax="1080">
+              <path class="z-baan" d=""/><path class="z-dag" d=""/><line class="z-hor" x1="24" y1="150" x2="576" y2="150"/>
+${[8, 10, 12, 14, 16, 18].map(u => `              <text class="z-u${u % 4 ? ' z-u2' : ''}" x="${24 + (u - 8) * 55.2}" y="168" text-anchor="middle">${u}:00</text>`).join('\n')}
+              <line class="z-lijn" x1="300" y1="40" x2="300" y2="150"/><circle class="z-zon" cx="300" cy="40" r="13"/>
+              <text class="z-op" x="24" y="188" text-anchor="middle"></text><text class="z-onder" x="576" y="188" text-anchor="middle"></text>
+            </svg>
+            <p class="h z-info">Sleep de zon of tik een tijd aan.</p>
+            <div class="z-snel">${[9, 10, 11, 12, 13, 14, 15, 16].map(u => `<button type="button" data-t="${u * 60}" aria-pressed="false">${u}:00</button>`).join('')}<button type="button" data-leeg>Geen voorkeur</button></div>
+            <input type="hidden" id="f-tijd" name="Voorkeurstijd">
+          </div>
+        </div>
         <div class="f"><label for="f-vnaam">Naam verkoper</label><input id="f-vnaam" name="Naam verkoper" autocomplete="off"></div>
         <div class="f"><label for="f-vtel">Telefoon verkoper</label><input id="f-vtel" name="Telefoon verkoper" type="tel" autocomplete="off"></div>
         <p class="h full">Ik plan de afspraak direct met de verkoper.</p>

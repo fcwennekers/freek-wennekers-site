@@ -182,6 +182,48 @@ nav a:hover{background-size:100% 1px}
 .ac li small{flex:none;font-size:13px;color:var(--ink-3)}
 .ac li[aria-selected=true],.ac li:hover{background:var(--bg)}
 .lnk{padding:0;border:0;background:none;color:var(--ink);font:inherit;text-decoration:underline;text-underline-offset:2px;cursor:pointer}
+.lab{font-size:14px;font-weight:500}.lab i{font-style:normal;font-weight:400;color:var(--ink-3)}
+.zon{display:grid;gap:12px;padding:18px 18px 16px;border:1px solid var(--line);border-radius:10px;background:#fff}
+.z-kop{display:flex;align-items:center;justify-content:center;gap:18px}
+.z-st{flex:none;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;background:none;color:var(--ink);font:inherit;font-size:22px;line-height:1;cursor:pointer}
+.z-tijd{min-width:6.2ch;text-align:center;font-size:clamp(32px,4vw,42px);font-weight:500;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.leeg .z-tijd{font-size:clamp(20px,2.4vw,24px);letter-spacing:-.01em;color:var(--ink-3)}
+#f-zon svg{display:block;width:100%;height:auto;touch-action:pan-y;cursor:grab;overflow:visible;outline:none;user-select:none;-webkit-user-select:none}
+#f-zon svg:focus-visible{outline:2px solid var(--ink);outline-offset:4px;border-radius:6px}
+.z-hor{stroke:var(--ink);stroke-width:1}.z-baan{fill:none;stroke:var(--line);stroke-width:2;stroke-dasharray:4 5}.z-dag{fill:none;stroke:var(--ink);stroke-width:2}.z-lijn{stroke:var(--line)}
+.z-zon{fill:#F2C46B;stroke:var(--ink);stroke-width:1.5;transition:cx .12s var(--soft),cy .12s var(--soft)}.leeg .z-zon{fill:#fff;stroke:var(--ink-3);stroke-dasharray:3 3}.leeg .z-lijn{opacity:0}
+#f-zon text{font-family:var(--sans);font-size:13px;fill:var(--ink-3)}#f-zon .z-op,#f-zon .z-onder{fill:var(--ink-2)}
+.z-info{margin:0;text-align:center}
+.z-snel{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:6px}
+.z-snel button{height:42px;padding:0 4px;border:1px solid var(--line);border-radius:8px;background:none;color:var(--ink);font:inherit;font-size:14px;cursor:pointer;font-variant-numeric:tabular-nums}
+.z-snel button[data-leeg]{grid-column:span 1;font-size:12.5px;line-height:1.15}
+.z-snel button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+@media (max-width:640px){#f-zon text{font-size:24px}#f-zon .z-u{display:none}.z-snel{grid-template-columns:repeat(4,minmax(0,1fr))}.z-snel button[data-leeg]{grid-column:1/-1}}
+.env-o{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:24px;overflow:hidden;background:var(--bg);opacity:0;transition:opacity .35s var(--soft)}
+.env-o.in{opacity:1}
+.env-s,.env-m{grid-area:1/1}
+.env-s{position:relative;width:min(300px,72vw);aspect-ratio:3/2;margin-top:26vh;transition:transform .8s cubic-bezier(.5,0,.75,0),opacity .5s .3s}
+.env-b,.env-p,.env-f{position:absolute;inset:0;border-radius:6px}
+.env-b{z-index:1;background:#D9D1C1}
+.env-p{z-index:3;background:#E9E3D7;clip-path:polygon(0 0,50% 56%,100% 0,100% 100%,0 100%);box-shadow:0 1px 0 var(--line) inset}
+.env-f{z-index:0;background:#D2C9B6;clip-path:polygon(0 0,100% 0,50% 60%);transform-origin:50% 0;transform:perspective(800px) rotateX(180deg);transition:transform .5s var(--soft)}
+.env-l{position:absolute;z-index:2;left:7%;right:7%;bottom:110%;height:150%;transition:transform .6s var(--out);filter:drop-shadow(0 6px 14px rgba(19,19,18,.08))}
+.env-t,.env-u{position:absolute;left:0;right:0;height:50%;display:flex;flex-direction:column;gap:7px;padding:16px 18px;background:#fff}
+.env-t{top:0;z-index:1;border-radius:4px 4px 0 0;transform-origin:50% 100%;transition:transform .55s var(--soft)}
+.env-u{bottom:0;justify-content:flex-end;padding-bottom:18px;border-radius:0 0 4px 4px;border-top:1px dashed var(--line)}
+.env-t b{font-size:14px;font-weight:500}.env-t span{overflow:hidden;font-size:12px;color:var(--ink-3);white-space:nowrap;text-overflow:ellipsis}
+.env-l i{display:block;height:6px;border-radius:3px;background:var(--bg-2)}.env-l i:nth-of-type(2n){width:72%}.env-l i:nth-of-type(3n){width:86%}
+.env-t>*{transition:opacity .2s}.vouw .env-t>*{opacity:0}
+.vouw .env-t{transform:perspective(700px) rotateX(-180deg);background:#FAF9F6}
+.erin .env-l{transform:translateY(68%)}
+.dicht .env-f{z-index:4;transform:perspective(800px) rotateX(0)}
+.weg .env-s{transform:translate(34vw,-70vh) rotate(-12deg) scale(.45);opacity:0}
+.env-m{display:grid;justify-items:center;gap:18px;max-width:40ch;text-align:center;opacity:0;transform:translateY(14px);pointer-events:none;transition:opacity .6s var(--soft),transform .8s var(--out)}
+.env-m .display{font-size:clamp(44px,7vw,84px);letter-spacing:-.045em;line-height:.95}
+.env-m p:not(.display){font-size:clamp(16px,1.3vw,18px);line-height:1.5;color:var(--ink-2);text-wrap:pretty}
+.env-k{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 24px;margin-top:6px}
+.env-k button{border:0;background:none;color:var(--ink);font:inherit;font-size:15px;font-weight:500;cursor:pointer}
+.klaar .env-m{opacity:1;transform:none;pointer-events:auto}
 @media (max-width:640px){.fg,.opts{grid-template-columns:1fr}.send .btn{width:100%;justify-content:center}}
 </style>
 </head>
@@ -231,6 +273,25 @@ nav a:hover{background-size:100% 1px}
       </div></fieldset>
       <fieldset><legend>Afspraak</legend><div class="fg">
         <div class="f full"><label for="f-dag">Voorkeursdag <i>(optioneel)</i></label><input id="f-dag" name="Voorkeursdag" type="date"></div>
+        <div class="f full"><span class="lab" id="f-tijd-l">Voorkeurstijd <i>(optioneel)</i></span>
+          <div class="zon leeg" id="f-zon">
+            <div class="z-kop"><button type="button" class="z-st" data-s="-15" aria-label="Kwartier eerder">−</button><output class="z-tijd" for="f-tijd" aria-live="polite">Geen voorkeur</output><button type="button" class="z-st" data-s="15" aria-label="Kwartier later">+</button></div>
+            <svg viewBox="0 24 600 168" role="slider" tabindex="0" aria-labelledby="f-tijd-l" aria-valuemin="480" aria-valuemax="1080">
+              <path class="z-baan" d=""/><path class="z-dag" d=""/><line class="z-hor" x1="24" y1="150" x2="576" y2="150"/>
+              <text class="z-u" x="24" y="168" text-anchor="middle">8:00</text>
+              <text class="z-u z-u2" x="134.4" y="168" text-anchor="middle">10:00</text>
+              <text class="z-u" x="244.8" y="168" text-anchor="middle">12:00</text>
+              <text class="z-u z-u2" x="355.20000000000005" y="168" text-anchor="middle">14:00</text>
+              <text class="z-u" x="465.6" y="168" text-anchor="middle">16:00</text>
+              <text class="z-u z-u2" x="576" y="168" text-anchor="middle">18:00</text>
+              <line class="z-lijn" x1="300" y1="40" x2="300" y2="150"/><circle class="z-zon" cx="300" cy="40" r="13"/>
+              <text class="z-op" x="24" y="188" text-anchor="middle"></text><text class="z-onder" x="576" y="188" text-anchor="middle"></text>
+            </svg>
+            <p class="h z-info">Sleep de zon of tik een tijd aan.</p>
+            <div class="z-snel"><button type="button" data-t="540" aria-pressed="false">9:00</button><button type="button" data-t="600" aria-pressed="false">10:00</button><button type="button" data-t="660" aria-pressed="false">11:00</button><button type="button" data-t="720" aria-pressed="false">12:00</button><button type="button" data-t="780" aria-pressed="false">13:00</button><button type="button" data-t="840" aria-pressed="false">14:00</button><button type="button" data-t="900" aria-pressed="false">15:00</button><button type="button" data-t="960" aria-pressed="false">16:00</button><button type="button" data-leeg>Geen voorkeur</button></div>
+            <input type="hidden" id="f-tijd" name="Voorkeurstijd">
+          </div>
+        </div>
         <div class="f"><label for="f-vnaam">Naam verkoper</label><input id="f-vnaam" name="Naam verkoper" autocomplete="off"></div>
         <div class="f"><label for="f-vtel">Telefoon verkoper</label><input id="f-vtel" name="Telefoon verkoper" type="tel" autocomplete="off"></div>
         <p class="h full">Ik plan de afspraak direct met de verkoper.</p>
@@ -294,7 +355,7 @@ if(n!==seq)return;if(!own)m2.value=o;say('Gevonden in het Kadaster: '+o+' m² vo
 f.addEventListener('submit',function(e){e.preventDefault();function v(id){var el=q('#'+id);return el?el.value.trim():''}
 var r=q('input[name=Pakket]:checked'),xs=[].map.call(f.querySelectorAll('input[name=Extra]:checked'),function(c){return c.value}),d=v('f-dag');
 if(d){d=new Date(d+'T12:00').toLocaleDateString('nl-NL',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}
-var body=['Adres: '+v('f-adres'),'Plaats: '+v('f-plaats'),'Woonoppervlakte: '+(v('f-m2')?v('f-m2')+' m²':'onbekend'),'Pakket: '+(r?r.value:''),'Extra’s: '+(xs.join(', ')||'geen'),'Voorkeursdag: '+(d||'geen voorkeur'),'Verkoper: '+[v('f-vnaam'),v('f-vtel')].filter(Boolean).join(', '),'Makelaarskantoor: '+(v('f-kantoor')||'particulier'),'Naam: '+v('f-naam'),'E-mail: '+v('f-mail'),'Telefoon: '+v('f-tel'),'','Opmerkingen:',v('f-opm')];
+var body=['Adres: '+v('f-adres'),'Plaats: '+v('f-plaats'),'Woonoppervlakte: '+(v('f-m2')?v('f-m2')+' m²':'onbekend'),'Pakket: '+(r?r.value:''),'Extra’s: '+(xs.join(', ')||'geen'),'Voorkeursdag: '+(d||'geen voorkeur'),'Voorkeurstijd: '+(v('f-tijd')||'geen voorkeur'),'Verkoper: '+[v('f-vnaam'),v('f-vtel')].filter(Boolean).join(', '),'Makelaarskantoor: '+(v('f-kantoor')||'particulier'),'Naam: '+v('f-naam'),'E-mail: '+v('f-mail'),'Telefoon: '+v('f-tel'),'','Opmerkingen:',v('f-opm')];
 var onderwerp='Opname '+v('f-adres')+', '+v('f-plaats'),msg=document.getElementById('f-msg'),knop=q('button[type=submit]');
 function viaMail(){location.href='mailto:freekwennekers@gmail.com?subject='+encodeURIComponent(onderwerp)+'&body='+encodeURIComponent(body.join('\r\n'));
 msg.textContent='Je mailprogramma opent nu met je aanvraag. Verstuur die mail, dan neem ik contact op met de verkoper.'}
@@ -302,7 +363,7 @@ if(!'448348a1-56f0-4a05-a776-e97cb17d18af'||!window.fetch)return viaMail();
 if(q('#f-bot').checked)return;
 knop.disabled=true;msg.textContent='Versturen…';
 fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({access_key:'448348a1-56f0-4a05-a776-e97cb17d18af',subject:onderwerp,from_name:v('f-naam')+(v('f-kantoor')?' ('+v('f-kantoor')+')':''),replyto:v('f-mail'),email:v('f-mail'),message:body.join('\n')})})
-.then(function(r){return r.json()}).then(function(j){if(!j.success)throw 0;msg.textContent='Dank je, je aanvraag is binnen. Ik neem contact op met de verkoper om de opname te plannen en stuur je een bevestiging.';knop.disabled=false})
+.then(function(r){return r.json()}).then(function(j){if(!j.success)throw 0;msg.textContent='Dank je, je aanvraag is binnen. Ik neem contact op met de verkoper om de opname te plannen en stuur je een bevestiging.';knop.disabled=false;if(window.fwVerzonden)fwVerzonden({adres:v('f-adres')+', '+v('f-plaats'),wanneer:[v('f-dag')&&new Date(v('f-dag')+'T12:00').toLocaleDateString('nl-NL',{weekday:'short',day:'numeric',month:'long'}),v('f-tijd')].filter(Boolean).join(' om ')||'Datum in overleg',naam:v('f-naam')})})
 .catch(function(){knop.disabled=false;viaMail()})})})();
 (function () {
   var f = document.getElementById('boek'); if (!f) return;
@@ -455,6 +516,99 @@ fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':
     vergeet.hidden = !load().length;
     vergeet.addEventListener('click', function () { try { localStorage.removeItem(KEY); } catch (e) {} vergeet.hidden = true; naam.setAttribute('autocomplete', 'name'); });
   }
-})();</script>
+})();
+(function () {
+  var box = document.getElementById('f-zon'); if (!box) return;
+  var inp = document.getElementById('f-tijd'), dag = document.getElementById('f-dag');
+  var svg = box.querySelector('svg'), pad = box.querySelector('.z-baan'), dagpad = box.querySelector('.z-dag'), zon = box.querySelector('.z-zon');
+  var lijn = box.querySelector('.z-lijn'), out = box.querySelector('.z-tijd'), info = box.querySelector('.z-info');
+  var opL = box.querySelector('.z-op'), onderL = box.querySelector('.z-onder');
+  var VAN = 8 * 60, TOT = 18 * 60, X0 = 24, X1 = 576, Y0 = 150, LAT = 52.38, LON = 4.64;
+  var t = null, op = 8 * 60, onder = 17 * 60, hoog = 1;
+  function rad(d) { return d * Math.PI / 180; }
+  // zonsopkomst en -ondergang (zonne-vergelijking), in minuten na middernacht Nederlandse tijd
+  function zonTijden(d) {
+    var ms = Date.UTC(d.getFullYear(), d.getMonth(), d.getDate(), 12), J = ms / 864e5 + 2440587.5;
+    var n = Math.round(J - 2451545 + 0.0008), Js = n - LON / 360;
+    var M = (357.5291 + 0.98560028 * Js) % 360, C = 1.9148 * Math.sin(rad(M)) + 0.02 * Math.sin(rad(2 * M)) + 0.0003 * Math.sin(rad(3 * M));
+    var L = (M + C + 282.9372) % 360, Jt = 2451545 + Js + 0.0053 * Math.sin(rad(M)) - 0.0069 * Math.sin(rad(2 * L));
+    var dec = Math.asin(Math.sin(rad(L)) * Math.sin(rad(23.4397)));
+    var w = Math.acos((Math.sin(rad(-0.833)) - Math.sin(rad(LAT)) * Math.sin(dec)) / (Math.cos(rad(LAT)) * Math.cos(dec))) * 180 / Math.PI;
+    function min(j) {
+      var p = new Intl.DateTimeFormat('nl-NL', { timeZone: 'Europe/Amsterdam', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' }).formatToParts(new Date((j - 2440587.5) * 864e5));
+      var h = 0, m = 0; p.forEach(function (x) { if (x.type === 'hour') h = +x.value; if (x.type === 'minute') m = +x.value; });
+      return h * 60 + m;
+    }
+    return { op: min(Jt - w / 360), onder: min(Jt + w / 360), hoog: (90 - LAT + dec * 180 / Math.PI) / 61 };
+  }
+  function hhmm(m) { return Math.floor(m / 60) + ':' + ('0' + m % 60).slice(-2); }
+  function x(m) { return X0 + (m - VAN) / (TOT - VAN) * (X1 - X0); }
+  function y(m) { var s = Math.sin(Math.PI * (m - op) / (onder - op)); return Y0 - Math.max(s, -0.22) * 112 * hoog; }
+  function teken() {
+    var d = dag && dag.value ? new Date(dag.value + 'T12:00') : new Date(Date.now() + 864e5), z = zonTijden(d);
+    op = z.op; onder = z.onder; hoog = 0.55 + 0.45 * Math.min(Math.max(z.hoog, 0), 1);
+    var p = '', q = '';
+    for (var m = VAN; m <= TOT; m += 10) p += (m === VAN ? 'M' : 'L') + x(m).toFixed(1) + ' ' + y(m).toFixed(1);
+    for (var k = Math.max(op, VAN); k <= Math.min(onder, TOT); k += 5) q += (q ? 'L' : 'M') + x(k).toFixed(1) + ' ' + y(k).toFixed(1);
+    pad.setAttribute('d', p); dagpad.setAttribute('d', q);
+    opL.textContent = 'zon op ' + hhmm(op); onderL.textContent = 'onder ' + hhmm(onder);
+    opL.setAttribute('x', Math.max(x(op), X0)); onderL.setAttribute('x', Math.min(x(onder), X1));
+    zet(t, true);
+  }
+  function zet(m, stil) {
+    t = m == null ? null : Math.min(Math.max(Math.round(m / 15) * 15, VAN), TOT);
+    var leeg = t == null, m2 = leeg ? 12 * 60 : t;
+    zon.setAttribute('cx', x(m2)); zon.setAttribute('cy', y(m2)); lijn.setAttribute('x1', x(m2)); lijn.setAttribute('x2', x(m2)); lijn.setAttribute('y1', y(m2));
+    box.classList.toggle('leeg', leeg);
+    out.textContent = leeg ? 'Geen voorkeur' : hhmm(t);
+    inp.value = leeg ? '' : hhmm(t);
+    svg.setAttribute('aria-valuenow', leeg ? '' : t); svg.setAttribute('aria-valuetext', leeg ? 'geen voorkeur' : hhmm(t));
+    info.textContent = leeg ? 'Sleep de zon of tik een tijd aan.' : (t < op ? 'Voor zonsopkomst: buiten is het nog donker.' : t > onder ? 'Na zonsondergang: buitenfoto’s en drone gaan dan niet.' : (t - op < 60 || onder - t < 60 ? 'Laag licht: zacht, maar snel weg.' : 'Daglicht, goed voor binnen én buiten.'));
+    [].forEach.call(box.querySelectorAll('.z-snel button[data-t]'), function (b) { b.setAttribute('aria-pressed', String(+b.dataset.t === t)); });
+  }
+  function uitPunt(e) {
+    var r = svg.getBoundingClientRect(), vx = (e.clientX - r.left) / r.width * 600;
+    return VAN + (vx - X0) / (X1 - X0) * (TOT - VAN);
+  }
+  var slepen = false;
+  svg.addEventListener('pointerdown', function (e) { slepen = true; svg.setPointerCapture(e.pointerId); zet(uitPunt(e)); });
+  svg.addEventListener('pointermove', function (e) { if (slepen) zet(uitPunt(e)); });
+  svg.addEventListener('pointerup', function () { slepen = false; });
+  svg.addEventListener('pointercancel', function () { slepen = false; });
+  svg.addEventListener('keydown', function (e) {
+    var s = { ArrowRight: 15, ArrowUp: 15, ArrowLeft: -15, ArrowDown: -15, PageUp: 60, PageDown: -60 }[e.key];
+    if (s) { zet((t == null ? 12 * 60 : t) + s); e.preventDefault(); }
+    else if (e.key === 'Home') { zet(VAN); e.preventDefault(); } else if (e.key === 'End') { zet(TOT); e.preventDefault(); }
+  });
+  box.addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return;
+    if (b.dataset.t) zet(+b.dataset.t);
+    else if (b.dataset.s) zet((t == null ? 12 * 60 : t) + +b.dataset.s);
+    else if (b.dataset.leeg != null) zet(null);
+  });
+  if (dag) dag.addEventListener('change', teken);
+  var form = box.closest('form'); if (form) form.addEventListener('reset', function () { setTimeout(function () { t = null; teken(); }, 0); });
+  teken();
+})();
+window.fwVerzonden = function (a) {
+  var f = document.getElementById('boek'); if (!f) return;
+  var stil = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var o = document.createElement('div'); o.className = 'env-o'; o.setAttribute('role', 'status');
+  function esc(s) { return String(s || '').replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  o.innerHTML =
+    '<div class="env-s" aria-hidden="true">' +
+      '<div class="env-b"></div>' +
+      '<div class="env-l"><div class="env-t"><b>Opname</b><span>' + esc(a.adres) + '</span><span>' + esc(a.wanneer) + '</span><i></i><i></i><i></i></div><div class="env-u"><i></i><i></i><i></i><i></i></div></div>' +
+      '<div class="env-p"></div><div class="env-f"></div>' +
+    '</div>' +
+    '<div class="env-m"><p class="display">Verzonden.</p><p>Dank je' + (a.naam ? ', ' + esc(a.naam.split(' ')[0]) : '') + '. Ik neem contact met je op en plan de opname direct met de verkoper.</p>' +
+    '<div class="env-k"><a class="btn" href="/">Naar de homepage</a><button class="ul" type="button">Nog een opname boeken</button></div></div>';
+  document.body.appendChild(o);
+  o.querySelector('.env-k button').addEventListener('click', function () { o.remove(); f.reset(); f.dispatchEvent(new Event('reset')); window.scrollTo(0, f.getBoundingClientRect().top + scrollY - 120); });
+  requestAnimationFrame(function () { o.classList.add('in'); if (stil) o.classList.add('klaar'); });
+  if (stil) return;
+  var stap = ['vouw', 'erin', 'dicht', 'weg', 'klaar'], tijd = [500, 1150, 1750, 2350, 2950];
+  stap.forEach(function (s, i) { setTimeout(function () { o.classList.add(s); }, tijd[i]); });
+};</script>
 </body>
 </html>
