@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://freekwennekers.com/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <image:image><image:loc>https://freekwennekers.com/og.jpg</image:loc></image:image>
     <image:image><image:loc>https://freekwennekers.com/img/tjalk-43-1800.webp</image:loc></image:image>
     <image:image><image:loc>https://freekwennekers.com/img/tjalk-45-1800.webp</image:loc></image:image>
@@ -48,52 +48,57 @@
   </url>
   <url>
     <loc>https://freekwennekers.com/vastgoedvideo</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <image:image><image:loc>https://freekwennekers.com/img/egelantiersstraat-05-1800.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://freekwennekers.com/dronefotografie</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <image:image><image:loc>https://freekwennekers.com/img/tjalk-01-1800.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://freekwennekers.com/360-graden-tour</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <image:image><image:loc>https://freekwennekers.com/img/peppinghof-01-1800.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://freekwennekers.com/nen-2580-meetrapport</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <image:image><image:loc>https://freekwennekers.com/img/valeriusterras-07-1800.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://freekwennekers.com/woningfotografie-amsterdam</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <image:image><image:loc>https://freekwennekers.com/img/egelantiersstraat-01-1800.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://freekwennekers.com/voor-makelaars</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <image:image><image:loc>https://freekwennekers.com/img/larikslaan-01-1800.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://freekwennekers.com/hoger-op-funda</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <image:image><image:loc>https://freekwennekers.com/img/tjalk-05-1800.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://freekwennekers.com/plattegrond-laten-maken</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <image:image><image:loc>https://freekwennekers.com/img/valeriusterras-01-1800.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://freekwennekers.com/nieuwbouw</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <image:image><image:loc>https://freekwennekers.com/img/valeriusterras-18-1800.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://freekwennekers.com/vastgoedfotograaf-amstelveen</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <image:image><image:loc>https://freekwennekers.com/img/tjalk-45-1800.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://freekwennekers.com/vastgoedfotograaf-haarlem</loc>
+    <lastmod>2026-11-12</lastmod>
+    <image:image><image:loc>https://freekwennekers.com/img/schotersingel-07-1800.webp</image:loc></image:image>
   </url>
 </urlset>
