@@ -760,7 +760,7 @@ if(n!==seq)return;if(!own)m2.value=o;say('Gevonden in het Kadaster: '+o+' m² vo
 f.addEventListener('submit',function(e){e.preventDefault();function v(id){var el=q('#'+id);return el?el.value.trim():''}
 var r=q('input[name=Pakket]:checked'),xs=[].map.call(f.querySelectorAll('input[name=Extra]:checked'),function(c){return c.value}),d=v('f-dag');
 if(d){d=new Date(d+'T12:00').toLocaleDateString('nl-NL',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}
-var body=['Adres: '+v('f-adres'),'Plaats: '+v('f-plaats'),'Woonoppervlakte: '+(v('f-m2')?v('f-m2')+' m²':'onbekend'),'Pakket: '+(r?r.value:''),'Extra’s: '+(xs.join(', ')||'geen'),'Voorkeursdag: '+(d||'geen voorkeur'),'Voorkeurstijd: '+(v('f-tijd')||'geen voorkeur'),'Verkoper: '+[v('f-vnaam'),v('f-vtel')].filter(Boolean).join(', '),'Makelaarskantoor: '+(v('f-kantoor')||'particulier'),'Naam: '+v('f-naam'),'E-mail: '+v('f-mail'),'Telefoon: '+v('f-tel'),'','Opmerkingen:',v('f-opm')];
+var body=['Adres: '+v('f-adres'),'Plaats: '+v('f-plaats'),'Woonoppervlakte: '+(v('f-m2')?v('f-m2')+' m²':'onbekend'),'Woning: '+((q('input[name=Bewoning]:checked')||{}).value||'niet opgegeven'),'Pakket: '+(r?r.value:''),'Extra’s: '+(xs.join(', ')||'geen'),'Voorkeursdag: '+(d||'geen voorkeur'),'Voorkeurstijd: '+(v('f-tijd')||'geen voorkeur'),'Verkoper: '+[v('f-vnaam'),v('f-vtel')].filter(Boolean).join(', '),'Makelaarskantoor: '+(v('f-kantoor')||'particulier'),'Naam: '+v('f-naam'),'E-mail: '+v('f-mail'),'Telefoon: '+v('f-tel'),'','Opmerkingen:',v('f-opm')];
 var onderwerp='Opname '+v('f-adres')+', '+v('f-plaats'),msg=document.getElementById('f-msg'),knop=q('button[type=submit]');
 function viaMail(){location.href='mailto:${MAIL}?subject='+encodeURIComponent(onderwerp)+'&body='+encodeURIComponent(body.join('\\r\\n'));
 msg.textContent='Je mailprogramma opent nu met je aanvraag. Verstuur die mail, dan neem ik contact op met de verkoper.'}
@@ -824,6 +824,12 @@ ${s.items.map((t, i) => `        <li><b>${String(i + 1).padStart(2, '0')}</b><p>
         <div class="f"><label for="f-plaats">Plaats</label><input id="f-plaats" name="Plaats" required autocomplete="off"></div>
         <div class="f"><label for="f-m2">Woonoppervlakte</label><div class="unit"><input id="f-m2" name="Woonoppervlakte" inputmode="numeric" autocomplete="off" placeholder="Zoek ik voor je op"><span>m²</span></div></div>
           <p class="h full" id="f-m2-h" aria-live="polite">Vul adres en plaats in, dan zoek ik de woonoppervlakte op in het Kadaster.</p>
+        <div class="f full"><span class="lab" id="f-won-l">Bewoond of leegstaand</span>
+          <div class="opts" role="radiogroup" aria-labelledby="f-won-l">
+            <label class="oc"><input type="radio" name="Bewoning" value="Bewoond" required><b>Bewoond</b><span>Er wordt nog gewoond</span></label>
+            <label class="oc"><input type="radio" name="Bewoning" value="Leegstaand" required><b>Leegstaand</b><span>De woning is leeg</span></label>
+          </div>
+        </div>
       </div></fieldset>
       <fieldset><legend>Pakket</legend><div>
         <div class="opts">
