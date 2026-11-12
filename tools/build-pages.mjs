@@ -12,7 +12,7 @@ const SITE = 'https://freekwennekers.com';
 const NAME = 'Freek Wennekers Vastgoedfotografie';
 const TEL = '+31628186551', TEL_TXT = '+31 6 28 18 65 51', MAIL = 'freekwennekers@gmail.com';
 const KVK = '88955672', LINKEDIN = 'https://www.linkedin.com/in/freekwennekers';
-const MODIFIED = '2026-11-12';
+const MODIFIED = '2026-11-11';
 const AREAS = [['City', 'Haarlem'], ['City', 'Heemstede'], ['City', 'Bloemendaal'], ['City', 'Zandvoort'],
   ['AdministrativeArea', 'Velsen'], ['AdministrativeArea', 'Haarlemmermeer'], ['City', 'Amsterdam'],
   ['City', 'Amstelveen'], ['City', 'Abcoude']];
@@ -232,7 +232,7 @@ function page(p) {
       </div>
     </section>
 `;
-  const others = SERVICES2.filter(s => s.href !== `/${p.slug}`);
+  const others = SERVICES.filter(s => s.href !== `/${p.slug}`);
   return `<!doctype html>
 <html lang="nl">
 <head>
@@ -502,10 +502,10 @@ const PAGES2 = [
   },
   {
     slug: 'plattegrond-laten-maken', crumb: 'Plattegrond laten maken',
-    title: 'Plattegrond laten maken voor Funda · 2D en 3D | Freek Wennekers',
-    description: 'Plattegronden laten maken voor makelaars: 2D en 3D, ingemeten volgens NEN 2580. Losse bestanden voor Funda, samen met de foto’s, binnen 3 werkdagen.',
+    title: 'Plattegrond laten maken in 2D en 3D · Freek Wennekers',
+    description: 'Plattegrond van je woning laten maken in 2D en 3D, ingemeten volgens NEN 2580. Losse bestanden voor Funda, in één afspraak met de foto’s, binnen 3 werkdagen.',
     h1: 'Plattegrond laten maken: 2D en 3D, ingemeten volgens NEN 2580.',
-    lead: 'Ik meet de woning in en maak er 2D- en 3D-plattegronden van, voor makelaars en verkopers. Je krijgt ze als losse bestanden, klaar voor Funda, binnen 3 werkdagen na de opname.',
+    lead: 'Ik meet de woning in en maak er 2D- en 3D-plattegronden van. Je krijgt ze als losse bestanden, klaar voor Funda, binnen 3 werkdagen na de opname.',
     facts: ['Ruim 2.400 woningen gefotografeerd', 'Echte foto’s, kloppende maten'],
     hero: ['valeriusterras-01', 'Woonkamer met trap in een nieuwbouwappartement aan het Valeriusterras in Amsterdam'],
     service: 'Plattegrond laten maken', serviceType: '2D- en 3D-plattegronden met NEN 2580-meting',
@@ -526,9 +526,6 @@ const PAGES2 = [
         'Funda telt een plattegrond pas mee voor een complete presentatie als hij los staat, niet als foto tussen de andere foto’s. Daarom lever ik de plattegronden als aparte bestanden. Zie ook [hoger op Funda](/hoger-op-funda).'] },
       { kind: 'packs', id: 'pakketten', label: 'Pakketten' },
       { kind: 'faq', id: 'weten', label: 'Goed om te weten', qa: [
-        ['Maak je plattegronden voor makelaars?', 'Ja. Ik werk voor makelaars, ontwikkelaars en particuliere verkopers. De plattegrond maak ik in dezelfde afspraak als de foto’s, zodat je alles voor Funda in één keer hebt.'],
-        ['Wordt de plattegrond getekend op basis van een meting?', 'Ja. Ik meet de woning zelf in volgens NEN 2580, en de plattegrond komt uit die meting. Het is dus geen schatting en geen overgetrokken oude tekening.'],
-        ['Zijn de plattegronden geschikt voor Funda?', 'Ja. Je krijgt de 2D- en 3D-plattegronden als losse bestanden, zodat Funda ze als plattegrond meetelt.'],
         ['Bij welk pakket hoort een plattegrond?', 'Bij Basis en bij Compleet. Bij Alleen foto’s zit geen plattegrond.'],
         ['Wanneer heb ik de plattegrond?', 'Binnen 3 werkdagen na de opname, samen met de foto’s en het meetrapport.'],
         ['Wat is het verschil tussen een plattegrond en een meetrapport?', 'De plattegrond laat de indeling zien. Het meetrapport legt de gebruiksoppervlakte vast volgens NEN 2580. Je krijgt ze uit één meting.'],
@@ -599,41 +596,6 @@ const PAGES2 = [
       { kind: 'faq', id: 'weten', label: 'Goed om te weten', qa: [
         ['Kom je voor een opname naar Amstelveen?', 'Ja. Vanuit Haarlem werk ik in heel Amstelveen, en ook in Amsterdam en Abcoude.'],
         ['Kan er in Amstelveen een drone vliegen?', 'Amstelveen ligt dicht bij Schiphol. Daar gelden strenge regels voor drones, dus per adres bekijk ik vooraf wat er mogelijk is.'],
-        ['Hoe snel heb ik alles?', 'Binnen 3 werkdagen na de opname, ook het meetrapport.']] },
-      { kind: 'places', id: 'buurt', label: 'Ook in de buurt' },
-      { kind: 'services', id: 'diensten', label: 'Diensten' },
-    ],
-  },
-  {
-    slug: 'vastgoedfotograaf-haarlem', crumb: 'Vastgoedfotograaf Haarlem',
-    title: 'Vastgoedfotograaf Haarlem · Woningfotografie | Freek Wennekers',
-    description: 'Vastgoedfotograaf in Haarlem: foto’s, video, 360°-tour en NEN 2580-meetrapport met plattegrond in één afspraak. Voor makelaars, binnen 3 werkdagen klaar.',
-    h1: 'Vastgoedfotograaf in Haarlem, van herenhuis tot stadsappartement.',
-    lead: 'Haarlem is mijn thuisbasis. Foto’s, video, een 360°-tour en het NEN 2580-meetrapport maak ik in één afspraak, en binnen 3 werkdagen na de opname heb je alles.',
-    facts: ['Ruim 2.400 woningen gefotografeerd', 'Eén vaste fotograaf en stijl', 'Echte foto’s, kloppende maten'],
-    hero: ['schotersingel-07', 'Woonkamer met erker in een herenhuis aan de Schotersingel in Haarlem'],
-    place: { type: 'City', name: 'Haarlem' },
-    service: 'Vastgoedfotografie in Haarlem', serviceType: 'Woningfotografie, vastgoedvideo, 360°-tour en NEN 2580-meetrapport',
-    sections: [
-      { kind: 'projects', id: 'woningen', label: 'Een woning in Haarlem', items: [
-        ['schotersingel-61', 'Voorgevel van een herenhuis uit 1906 aan de Schotersingel in Haarlem', 'Schotersingel 67E', 'Haarlem', 'Woning in een herenhuis uit 1906, aan de singel.'],
-        ['schotersingel-11', 'Erker met uitzicht op het water aan de Schotersingel in Haarlem', 'Schotersingel 67E', 'Haarlem', 'De erker, met uitzicht op het groen en het water.'],
-        ['schotersingel-07', 'Woonkamer met erker in een herenhuis aan de Schotersingel in Haarlem', 'Schotersingel 67E', 'Haarlem', 'De woonkamer, met het licht uit de erker.']] },
-      { kind: 'text', id: 'haarlem', label: 'In Haarlem', paras: [
-        'In Haarlem staan veel oudere woningen: herenhuizen, bovenwoningen en jaren-dertigwoningen, vaak met een erker, glas-in-lood of paneeldeuren. Ik laat de ruimte en het licht zien, en de details die een woning haar karakter geven.',
-        'Licht, kleur en lijnen bewerk ik. Aan de woning zelf verander ik niets: echte foto’s, kloppende maten.',
-        'In dezelfde afspraak meet ik de woning in volgens NEN 2580. Je krijgt het [meetrapport](/nen-2580-meetrapport) met een [2D- en 3D-plattegrond](/plattegrond-laten-maken).'] },
-      { kind: 'list', id: 'krijgt', label: 'Wat je krijgt', items: [
-        'Foto’s van interieur, exterieur en details, klaar voor Funda.',
-        '[Video](/vastgoedvideo), liggend en staand.',
-        'Een [360°-tour](/360-graden-tour), waarin kopers zelf door de woning lopen.',
-        'Een [NEN 2580-meetrapport](/nen-2580-meetrapport) met 2D- en 3D-plattegrond.',
-        'Alles binnen 3 werkdagen na de opname, in één downloadlink.'] },
-      { kind: 'packs', id: 'pakketten', label: 'Pakketten' },
-      { kind: 'faq', id: 'weten', label: 'Goed om te weten', qa: [
-        ['Werk je alleen in Haarlem?', 'Nee. Vanuit Haarlem werk ik ook in Heemstede, Bloemendaal, Zandvoort, Velsen, Haarlemmermeer, Amsterdam en Amstelveen.'],
-        ['Voor wie werk je?', 'Voor makelaars, ontwikkelaars en particuliere verkopers. De afspraak plan ik direct met de verkoper.'],
-        ['Kan er in Haarlem een drone vliegen?', 'Dat verschilt per adres. Ik bekijk vooraf welke regels er gelden en wat er mogelijk is.'],
         ['Hoe snel heb ik alles?', 'Binnen 3 werkdagen na de opname, ook het meetrapport.']] },
       { kind: 'places', id: 'buurt', label: 'Ook in de buurt' },
       { kind: 'services', id: 'diensten', label: 'Diensten' },

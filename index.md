@@ -19,7 +19,7 @@ Alles in één afspraak, binnen 3 werkdagen opgeleverd.
 
 Vanuit Haarlem: Haarlem, Heemstede, Bloemendaal, Zandvoort, Velsen, Haarlemmermeer, Amsterdam, Amstelveen en Abcoude.
 
-Meer per plaats: [Vastgoedfotograaf Haarlem](https://freekwennekers.com/vastgoedfotograaf-haarlem) · [Woningfotografie Amsterdam](https://freekwennekers.com/woningfotografie-amsterdam) · [Vastgoedfotograaf Amstelveen](https://freekwennekers.com/vastgoedfotograaf-amstelveen)
+Meer per plaats: [Woningfotografie Amsterdam](https://freekwennekers.com/woningfotografie-amsterdam) · [Vastgoedfotograaf Amstelveen](https://freekwennekers.com/vastgoedfotograaf-amstelveen)
 
 Meer voor makelaars: [Voor makelaars](https://freekwennekers.com/voor-makelaars) · [Hoger op Funda](https://freekwennekers.com/hoger-op-funda) · [Plattegrond laten maken](https://freekwennekers.com/plattegrond-laten-maken) · [Nieuwbouw](https://freekwennekers.com/nieuwbouw)
 
