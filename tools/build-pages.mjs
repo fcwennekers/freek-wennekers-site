@@ -704,10 +704,12 @@ const CSS2 = `
 .z-hor{stroke:var(--ink);stroke-width:1}.z-baan{fill:none;stroke:var(--line);stroke-width:2;stroke-dasharray:4 5}.z-dag{fill:none;stroke:var(--ink);stroke-width:2}.z-lijn{stroke:var(--line)}
 .z-zon{fill:#F2C46B;stroke:var(--ink);stroke-width:1.5;transition:cx .12s var(--soft),cy .12s var(--soft)}.leeg .z-zon{fill:#fff;stroke:var(--ink-3);stroke-dasharray:3 3}.leeg .z-lijn{opacity:0}
 #f-zon text{font-family:var(--sans);font-size:13px;fill:var(--ink-3)}#f-zon .z-op,#f-zon .z-onder{fill:var(--ink-2)}
+.z-n{fill:#55514B;fill-opacity:.2}.onder .z-zon{fill:var(--bg);stroke:var(--ink-3)}
 .z-info{margin:0;text-align:center}
 .z-snel{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:6px}
 .z-snel button{height:42px;padding:0 4px;border:1px solid var(--line);border-radius:8px;background:none;color:var(--ink);font:inherit;font-size:14px;cursor:pointer;font-variant-numeric:tabular-nums}
 .z-snel button[data-leeg]{grid-column:span 1;font-size:12.5px;line-height:1.15}
+.z-snel button.laag{border-color:var(--bg-2);color:var(--ink-3)}
 .z-snel button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
 @media (max-width:640px){#f-zon text{font-size:24px}#f-zon .z-u{display:none}.z-snel{grid-template-columns:repeat(4,minmax(0,1fr))}.z-snel button[data-leeg]{grid-column:1/-1}}
 .env-o{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:24px;overflow:hidden;background:var(--bg);opacity:0;transition:opacity .35s var(--soft)}
@@ -848,6 +850,8 @@ ${EXTRAS.map(x => `          <label class="chk"><input type="checkbox" name="Ext
           <div class="zon leeg" id="f-zon">
             <div class="z-kop"><button type="button" class="z-st" data-s="-15" aria-label="Kwartier eerder">−</button><output class="z-tijd" for="f-tijd" aria-live="polite">Geen voorkeur</output><button type="button" class="z-st" data-s="15" aria-label="Kwartier later">+</button></div>
             <svg viewBox="0 24 600 168" role="slider" tabindex="0" aria-labelledby="f-tijd-l" aria-valuemin="480" aria-valuemax="1080">
+              <defs><linearGradient id="z-g1"><stop offset="0" stop-color="#55514B" stop-opacity=".2"/><stop offset="1" stop-color="#55514B" stop-opacity="0"/></linearGradient><linearGradient id="z-g2"><stop offset="0" stop-color="#55514B" stop-opacity="0"/><stop offset="1" stop-color="#55514B" stop-opacity=".2"/></linearGradient><linearGradient id="z-gv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000"/><stop offset=".25" stop-color="#000"/><stop offset="1" stop-color="#fff"/></linearGradient><mask id="z-c"><rect x="24" y="24" width="552" height="126" fill="url(#z-gv)"/></mask></defs>
+              <g mask="url(#z-c)" aria-hidden="true"><rect class="z-n z-n1" y="24" height="126"/><rect class="z-s1" y="24" height="126" fill="url(#z-g1)"/><rect class="z-s2" y="24" height="126" fill="url(#z-g2)"/><rect class="z-n z-n2" y="24" height="126"/></g>
               <path class="z-baan" d=""/><path class="z-dag" d=""/><line class="z-hor" x1="24" y1="150" x2="576" y2="150"/>
 ${[8, 10, 12, 14, 16, 18].map(u => `              <text class="z-u${u % 4 ? ' z-u2' : ''}" x="${24 + (u - 8) * 55.2}" y="168" text-anchor="middle">${u}:00</text>`).join('\n')}
               <line class="z-lijn" x1="300" y1="40" x2="300" y2="150"/><circle class="z-zon" cx="300" cy="40" r="13"/>

@@ -7,7 +7,7 @@
   var lijn = box.querySelector('.z-lijn'), out = box.querySelector('.z-tijd'), info = box.querySelector('.z-info');
   var opL = box.querySelector('.z-op'), onderL = box.querySelector('.z-onder');
   var VAN = 8 * 60, TOT = 18 * 60, X0 = 24, X1 = 576, Y0 = 150, LAT = 52.38, LON = 4.64;
-  var t = null, op = 8 * 60, onder = 17 * 60, hoog = 1;
+  var SCHEMER = 50, t = null, op = 8 * 60, onder = 17 * 60, hoog = 1;
   function rad(d) { return d * Math.PI / 180; }
   // zonsopkomst en -ondergang (zonne-vergelijking), in minuten na middernacht Nederlandse tijd
   function zonTijden(d) {
@@ -27,6 +27,7 @@
   function hhmm(m) { return Math.floor(m / 60) + ':' + ('0' + m % 60).slice(-2); }
   function x(m) { return X0 + (m - VAN) / (TOT - VAN) * (X1 - X0); }
   function y(m) { var s = Math.sin(Math.PI * (m - op) / (onder - op)); return Y0 - Math.max(s, -0.22) * 112 * hoog; }
+  function band(sel, a, b) { var el = box.querySelector(sel); el.setAttribute('x', x(a).toFixed(1)); el.setAttribute('width', Math.max(x(b) - x(a), 0).toFixed(1)); }
   function teken() {
     var d = dag && dag.value ? new Date(dag.value + 'T12:00') : new Date(Date.now() + 864e5), z = zonTijden(d);
     op = z.op; onder = z.onder; hoog = 0.55 + 0.45 * Math.min(Math.max(z.hoog, 0), 1);
@@ -36,6 +37,9 @@
     pad.setAttribute('d', p); dagpad.setAttribute('d', q);
     opL.textContent = 'zon op ' + hhmm(op); onderL.textContent = 'onder ' + hhmm(onder);
     opL.setAttribute('x', Math.max(x(op), X0)); onderL.setAttribute('x', Math.min(x(onder), X1));
+    // donker en laag licht zacht inkleuren; uren rond zonsopkomst en -ondergang staan lichter
+    band('.z-n1', VAN - 60, op); band('.z-s1', op, op + SCHEMER); band('.z-s2', onder - SCHEMER, onder); band('.z-n2', onder, TOT + 60);
+    [].forEach.call(box.querySelectorAll('.z-snel button[data-t]'), function (b) { var u = +b.dataset.t; b.classList.toggle('laag', u < op + 45 || u > onder - 45); });
     zet(t, true);
   }
   function zet(m, stil) {
@@ -43,10 +47,11 @@
     var leeg = t == null, m2 = leeg ? 12 * 60 : t;
     zon.setAttribute('cx', x(m2)); zon.setAttribute('cy', y(m2)); lijn.setAttribute('x1', x(m2)); lijn.setAttribute('x2', x(m2)); lijn.setAttribute('y1', y(m2));
     box.classList.toggle('leeg', leeg);
+    var e = Math.sin(Math.PI * (m2 - op) / (onder - op)), licht = m2 > op && m2 < onder;
+    box.classList.toggle('onder', !leeg && !licht); zon.style.fillOpacity = leeg || !licht ? '' : Math.min(1, 0.3 + e * 2.4).toFixed(2);
     out.textContent = leeg ? 'Geen voorkeur' : hhmm(t);
     inp.value = leeg ? '' : hhmm(t);
     svg.setAttribute('aria-valuenow', leeg ? '' : t); svg.setAttribute('aria-valuetext', leeg ? 'geen voorkeur' : hhmm(t));
-    info.textContent = leeg ? 'Sleep de zon of tik een tijd aan.' : (t < op ? 'Voor zonsopkomst: buiten is het nog donker.' : t > onder ? 'Na zonsondergang: buitenfoto’s en drone gaan dan niet.' : (t - op < 60 || onder - t < 60 ? 'Laag licht: zacht, maar snel weg.' : 'Daglicht, goed voor binnen én buiten.'));
     [].forEach.call(box.querySelectorAll('.z-snel button[data-t]'), function (b) { b.setAttribute('aria-pressed', String(+b.dataset.t === t)); });
   }
   function uitPunt(e) {

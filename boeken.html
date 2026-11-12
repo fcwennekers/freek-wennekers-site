@@ -193,10 +193,12 @@ nav a:hover{background-size:100% 1px}
 .z-hor{stroke:var(--ink);stroke-width:1}.z-baan{fill:none;stroke:var(--line);stroke-width:2;stroke-dasharray:4 5}.z-dag{fill:none;stroke:var(--ink);stroke-width:2}.z-lijn{stroke:var(--line)}
 .z-zon{fill:#F2C46B;stroke:var(--ink);stroke-width:1.5;transition:cx .12s var(--soft),cy .12s var(--soft)}.leeg .z-zon{fill:#fff;stroke:var(--ink-3);stroke-dasharray:3 3}.leeg .z-lijn{opacity:0}
 #f-zon text{font-family:var(--sans);font-size:13px;fill:var(--ink-3)}#f-zon .z-op,#f-zon .z-onder{fill:var(--ink-2)}
+.z-n{fill:#55514B;fill-opacity:.2}.onder .z-zon{fill:var(--bg);stroke:var(--ink-3)}
 .z-info{margin:0;text-align:center}
 .z-snel{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:6px}
 .z-snel button{height:42px;padding:0 4px;border:1px solid var(--line);border-radius:8px;background:none;color:var(--ink);font:inherit;font-size:14px;cursor:pointer;font-variant-numeric:tabular-nums}
 .z-snel button[data-leeg]{grid-column:span 1;font-size:12.5px;line-height:1.15}
+.z-snel button.laag{border-color:var(--bg-2);color:var(--ink-3)}
 .z-snel button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
 @media (max-width:640px){#f-zon text{font-size:24px}#f-zon .z-u{display:none}.z-snel{grid-template-columns:repeat(4,minmax(0,1fr))}.z-snel button[data-leeg]{grid-column:1/-1}}
 .env-o{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:24px;overflow:hidden;background:var(--bg);opacity:0;transition:opacity .35s var(--soft)}
@@ -283,6 +285,8 @@ nav a:hover{background-size:100% 1px}
           <div class="zon leeg" id="f-zon">
             <div class="z-kop"><button type="button" class="z-st" data-s="-15" aria-label="Kwartier eerder">−</button><output class="z-tijd" for="f-tijd" aria-live="polite">Geen voorkeur</output><button type="button" class="z-st" data-s="15" aria-label="Kwartier later">+</button></div>
             <svg viewBox="0 24 600 168" role="slider" tabindex="0" aria-labelledby="f-tijd-l" aria-valuemin="480" aria-valuemax="1080">
+              <defs><linearGradient id="z-g1"><stop offset="0" stop-color="#55514B" stop-opacity=".2"/><stop offset="1" stop-color="#55514B" stop-opacity="0"/></linearGradient><linearGradient id="z-g2"><stop offset="0" stop-color="#55514B" stop-opacity="0"/><stop offset="1" stop-color="#55514B" stop-opacity=".2"/></linearGradient><linearGradient id="z-gv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000"/><stop offset=".25" stop-color="#000"/><stop offset="1" stop-color="#fff"/></linearGradient><mask id="z-c"><rect x="24" y="24" width="552" height="126" fill="url(#z-gv)"/></mask></defs>
+              <g mask="url(#z-c)" aria-hidden="true"><rect class="z-n z-n1" y="24" height="126"/><rect class="z-s1" y="24" height="126" fill="url(#z-g1)"/><rect class="z-s2" y="24" height="126" fill="url(#z-g2)"/><rect class="z-n z-n2" y="24" height="126"/></g>
               <path class="z-baan" d=""/><path class="z-dag" d=""/><line class="z-hor" x1="24" y1="150" x2="576" y2="150"/>
               <text class="z-u" x="24" y="168" text-anchor="middle">8:00</text>
               <text class="z-u z-u2" x="134.4" y="168" text-anchor="middle">10:00</text>
@@ -530,7 +534,7 @@ fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':
   var lijn = box.querySelector('.z-lijn'), out = box.querySelector('.z-tijd'), info = box.querySelector('.z-info');
   var opL = box.querySelector('.z-op'), onderL = box.querySelector('.z-onder');
   var VAN = 8 * 60, TOT = 18 * 60, X0 = 24, X1 = 576, Y0 = 150, LAT = 52.38, LON = 4.64;
-  var t = null, op = 8 * 60, onder = 17 * 60, hoog = 1;
+  var SCHEMER = 50, t = null, op = 8 * 60, onder = 17 * 60, hoog = 1;
   function rad(d) { return d * Math.PI / 180; }
   // zonsopkomst en -ondergang (zonne-vergelijking), in minuten na middernacht Nederlandse tijd
   function zonTijden(d) {
@@ -550,6 +554,7 @@ fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':
   function hhmm(m) { return Math.floor(m / 60) + ':' + ('0' + m % 60).slice(-2); }
   function x(m) { return X0 + (m - VAN) / (TOT - VAN) * (X1 - X0); }
   function y(m) { var s = Math.sin(Math.PI * (m - op) / (onder - op)); return Y0 - Math.max(s, -0.22) * 112 * hoog; }
+  function band(sel, a, b) { var el = box.querySelector(sel); el.setAttribute('x', x(a).toFixed(1)); el.setAttribute('width', Math.max(x(b) - x(a), 0).toFixed(1)); }
   function teken() {
     var d = dag && dag.value ? new Date(dag.value + 'T12:00') : new Date(Date.now() + 864e5), z = zonTijden(d);
     op = z.op; onder = z.onder; hoog = 0.55 + 0.45 * Math.min(Math.max(z.hoog, 0), 1);
@@ -559,6 +564,9 @@ fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':
     pad.setAttribute('d', p); dagpad.setAttribute('d', q);
     opL.textContent = 'zon op ' + hhmm(op); onderL.textContent = 'onder ' + hhmm(onder);
     opL.setAttribute('x', Math.max(x(op), X0)); onderL.setAttribute('x', Math.min(x(onder), X1));
+    // donker en laag licht zacht inkleuren; uren rond zonsopkomst en -ondergang staan lichter
+    band('.z-n1', VAN - 60, op); band('.z-s1', op, op + SCHEMER); band('.z-s2', onder - SCHEMER, onder); band('.z-n2', onder, TOT + 60);
+    [].forEach.call(box.querySelectorAll('.z-snel button[data-t]'), function (b) { var u = +b.dataset.t; b.classList.toggle('laag', u < op + 45 || u > onder - 45); });
     zet(t, true);
   }
   function zet(m, stil) {
@@ -566,10 +574,11 @@ fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':
     var leeg = t == null, m2 = leeg ? 12 * 60 : t;
     zon.setAttribute('cx', x(m2)); zon.setAttribute('cy', y(m2)); lijn.setAttribute('x1', x(m2)); lijn.setAttribute('x2', x(m2)); lijn.setAttribute('y1', y(m2));
     box.classList.toggle('leeg', leeg);
+    var e = Math.sin(Math.PI * (m2 - op) / (onder - op)), licht = m2 > op && m2 < onder;
+    box.classList.toggle('onder', !leeg && !licht); zon.style.fillOpacity = leeg || !licht ? '' : Math.min(1, 0.3 + e * 2.4).toFixed(2);
     out.textContent = leeg ? 'Geen voorkeur' : hhmm(t);
     inp.value = leeg ? '' : hhmm(t);
     svg.setAttribute('aria-valuenow', leeg ? '' : t); svg.setAttribute('aria-valuetext', leeg ? 'geen voorkeur' : hhmm(t));
-    info.textContent = leeg ? 'Sleep de zon of tik een tijd aan.' : (t < op ? 'Voor zonsopkomst: buiten is het nog donker.' : t > onder ? 'Na zonsondergang: buitenfoto’s en drone gaan dan niet.' : (t - op < 60 || onder - t < 60 ? 'Laag licht: zacht, maar snel weg.' : 'Daglicht, goed voor binnen én buiten.'));
     [].forEach.call(box.querySelectorAll('.z-snel button[data-t]'), function (b) { b.setAttribute('aria-pressed', String(+b.dataset.t === t)); });
   }
   function uitPunt(e) {
